@@ -139,9 +139,9 @@ User nhấn "Sign in with Google"
 **Requirements:**
 - **Username rules:**
   - 5-15 ký tự
-  - Cho phép: Vietnamese alphabet, W/J/Z, 0-9, "_"
+  - Cho phép: a-z, 0-9, "_" (không phân biệt hoa thường)
   - Phải có ít nhất 1 chữ cái
-  - Hỗ trợ Vietnamese unicode
+  - Không dấu, không khoảng trắng, không ký tự đặc biệt
   - Real-time validation hiển thị lỗi dưới input
 - **Avatar:** Chọn từ gallery hoặc chụp mới
 - **Choose Fandom:** Multi-select, có search, "Tiếp tục" disabled khi chưa chọn
@@ -273,11 +273,17 @@ Fan nhấn CTA Create → Chọn "Fan Letter" → Chọn Idol → Viết nội d
 - Fan KHÔNG tự chọn theme -> hệ thống set theo Idol
 - Fan thể hiện cá tính qua items trang trí + cách sắp xếp
 
+**Furniture Panel (bottom panel):**
+- Thanh scroll ngang hiển thị toàn bộ đồ nội thất fan đang sở hữu (Piano, Guitar, Plant, Sofa, Poster...)
+- Đây là danh sách **SpaceItem** — khác với **Inventory** (cards/digital assets/game items)
+- Drag item từ panel → drop vào canvas để đặt vào phòng
+- Nút "+New" (cuối panel): flow mua nội thất mới — chi tiết TBD (xem Open Question #13b)
+
 **Item Placement:**
-- Drag & drop vào phòng
+- Drag & drop từ Furniture Panel vào phòng
 - Pinch to zoom (phóng to/thu nhỏ)
 - Xoay 45 độ mỗi lần
-- Tap & hold -> Di chuyển / Xoay / Cất vào kho
+- Tap & hold → Di chuyển / Xoay / Cất lại về Furniture Panel (không phải Inventory)
 
 **Snapshot Feature:**
 - Full canvas render PNG (không crop)
@@ -332,6 +338,44 @@ Fan nhấn CTA Create → Chọn "Fan Letter" → Chọn Idol → Viết nội d
 - Fan thêm sự kiện từ calendar idol -> centralized 1 calendar
 - Ngày có sự kiện tô đỏ
 - Thả tim sự kiện đang/sắp diễn ra
+
+#### F3.5: Inventory (Kho vật phẩm)
+| Field | Detail |
+|-------|--------|
+| **User Story** | As a fan, I want to view and manage my collectible items in an inventory |
+| **Capacity** | Max 10 slots, global |
+| **Phân biệt** | Inventory ≠ Furniture Panel. Đây là 2 hệ thống riêng biệt |
+
+**Inventory chứa gì:**
+| Loại item | Ví dụ | Nguồn |
+|-----------|-------|-------|
+| Cards | Idol card, collectible card | Mission / Streak / Mua bằng Star |
+| Digital Assets | Digital poster, digital photo | QR scan merch / Mission |
+| Game reward items | Items nhận được khi chơi game | Game Hub rewards |
+
+> **KHÔNG chứa:** Đồ nội thất (SpaceItem) — nội thất được quản lý riêng qua Furniture Panel trong Studio.
+
+**Rules:**
+- Max 10 slots, global (dùng chung, không per-idol)
+- Items không expire
+- MVP1: không có trading/transfer giữa fans
+- Kho đầy → không thể nhận item mới (mission/streak bị blocked, không mất reward)
+
+**Nguồn nhận items:**
+| Nguồn | Điều kiện |
+|-------|-----------|
+| Mission / Streak / Milestone | Nhận tự động khi hoàn thành (nếu còn slot) |
+| QR Merch scan | Digital assets từ quét merch vật lý |
+| Game Hub | Items reward từ gameplay |
+| Mua bằng Star | Giá cấu hình qua CMS |
+
+**Acceptance Criteria:**
+- AC1: Inventory hiển thị slot counter "X/10"
+- AC2: Kho đầy → mission/streak reward bị blocked, không mất → toast "Kho đầy, hãy giải phóng slot để nhận vật phẩm"
+- AC3: Mua item bằng Star khi kho đầy → block transaction, toast "Hãy giải phóng slot trước khi mua"
+- AC4: Mua item bằng Star → trừ Star atomic → item xuất hiện ngay
+- AC5: Filter: Tất cả / Cards / Digital Assets / Game Items
+- AC6: Usage của từng item type → TBD (xem Open Question #13a)
 
 ---
 
@@ -666,21 +710,24 @@ Idol nhận email → Nhấn accept → Verify OTP
 
 ## IV. STAR ECONOMY (Virtual Currency)
 
-> Stars là virtual currency nội bộ, kiếm hoàn toàn qua engagement. Không có giao dịch tài chính (IAP, rút tiền). Giá trị vật phẩm được cấu hình qua CMS.
+> Stars là virtual currency nội bộ. Có 2 nguồn: kiếm qua engagement hoặc **mua qua IAP (In-App Purchase)**. Không có quy đổi ngược (rút tiền). Giá trị vật phẩm được cấu hình qua CMS.
+> Chi tiết bundle pricing và balance model sẽ được bổ sung sau.
 
 ### 4.1. Cách kiếm Stars
-| Source | Chi tiết |
-|--------|----------|
-| Check-in streak | Ngày 30: +2 stars |
-| Mission cột mốc | Level 3: +2 stars, Level 4: +2 stars, Level 5: +5 stars |
+| Source | Chi tiết | Loại |
+|--------|----------|------|
+| Check-in streak | Ngày 30: +2 stars | Free |
+| Mission cột mốc | Level 3: +2 stars, Level 4: +2 stars, Level 5: +5 stars | Free |
+| IAP Bundle | Mua Star bằng tiền thật qua App Store / Google Play | Paid |
 
-> Nguồn kiếm Stars có thể mở rộng qua CMS (thêm missions mới).
+> Nguồn kiếm Stars free có thể mở rộng qua CMS. IAP bundle tiers (giá + số star) sẽ được define riêng.
 
 ### 4.2. Cách tiêu Stars
 | Action | Range | Cấu hình |
 |--------|-------|----------|
 | Collect Digital Gift | 10 - 1,500 stars/gift | CMS |
 | Mở khóa Exclusive Content (Merch) | Tuỳ config | CMS |
+| Mua Space Item (Inventory) | Tuỳ config, 0 = không bán | CMS |
 
 ### 4.3. Points System (Engagement-based)
 | Action | Points | Giới hạn |
@@ -959,10 +1006,31 @@ YourSpace (per Fan per Idol)
 ├── items_placed[] (item_id, x, y, scale, rotation)
 └── theme_config (auto from idol)
 
-SpaceItem
-├── id, name, image, rarity
+SpaceItem  ← Đồ nội thất (Furniture Panel trong Studio)
+├── id, name, image
+├── rarity (COMMON | RARE | EPIC | LEGEND)
 ├── idol_specific (boolean), idol_profile_id (nullable)
-└── source (MISSION | STREAK | MILESTONE | EVENT)
+├── star_cost (int, 0 = không bán — chỉ unlock qua mission/level)
+├── source_rule (PURCHASE_ONLY | MISSION_ONLY | BOTH)
+└── is_active (CMS toggle)
+
+FanSpaceItemOwnership  ← Fan sở hữu furniture nào
+├── id, fan_id (FK), space_item_id (FK)
+├── acquired_source (MISSION | STREAK | MILESTONE | PURCHASE)
+└── acquired_at
+
+InventoryItem  ← Cards / Digital Assets / Game reward items (Inventory F3.5)
+├── id, name, image, description
+├── type (CARD | DIGITAL_ASSET | GAME_ITEM)
+├── idol_profile_id (nullable)
+├── star_cost (int, 0 = chỉ earn)
+├── source_rule (PURCHASE_ONLY | EARN_ONLY | BOTH)
+└── is_active (CMS toggle)
+
+FanInventory  ← Items fan đang có trong Inventory (max 10 slots)
+├── id, fan_id (FK), inventory_item_id (FK)
+├── acquired_source (MISSION | STREAK | MILESTONE | QR_SCAN | GAME | PURCHASE)
+└── acquired_at
 
 Mission
 ├── id, type (DAILY | MILESTONE | EVENT)
@@ -980,9 +1048,10 @@ FanMissionProgress
 
 StarTransaction
 ├── id, fan_id (FK)
-├── type (COLLECT_GIFT | UNLOCK_MERCH | REWARD)
-├── amount, balance_after
+├── type (COLLECT_GIFT | UNLOCK_MERCH | PURCHASE_ITEM | IAP_TOPUP | REWARD)
+├── amount (dương = nhận, âm = tiêu), balance_after
 ├── reference_id, reference_type
+├── iap_receipt (nullable, lưu receipt string cho IAP_TOPUP)
 └── created_at
 
 Notification
@@ -1013,7 +1082,10 @@ CMSAuditLog
 
 | # | Câu hỏi | Ảnh hưởng | Độ ưu tiên |
 |---|---------|-----------|------------|
-| 1 | **Star earning balance**: Hiện tại Stars chỉ có từ streak (2/30 ngày) + milestones (9 total). Cần thêm nguồn earn qua CMS? | Economy | **CRITICAL** |
+| 1 | ~~**Star earning balance**~~ — **Đã xác nhận:** IAP (mua Star) được phép. Balance details sẽ bổ sung sau. | Economy | ~~CRITICAL~~ → RESOLVED |
+| 1a | **IAP bundle tiers**: Bao nhiêu tier? (vd: $0.99/50⭐, $4.99/300⭐, $9.99/700⭐). Cần để design pricing + data model | Economy | **CRITICAL** |
+| 1b | **Space Item price range**: Min/max star cost cho item trong kho? Cần để CMS config + balance | Economy | **HIGH** |
+| 1c | **Apple/Google 30% cut**: Ai handle pricing để đảm bảo margin? | Finance/Legal | **HIGH** |
 | 2 | **Points mechanism detail**: Exact points cho mỗi action? CMS configurable hay fixed? | Engagement | HIGH |
 | 3 | **Fan Project participation**: "Tham gia" cụ thể là gì? Chỉ đăng ký/pledge hay có cam kết? | Feature | HIGH |
 | 4 | **Fan Letter moderation**: Không duyệt trước -> cần auto-filter cho spam/abuse? | Compliance | HIGH |
@@ -1025,6 +1097,8 @@ CMSAuditLog
 | 10 | **Content moderation**: Auto-scan criteria cho fan project và fan letter | Compliance | MEDIUM |
 | 11 | **Exclusive content DRM**: "Không thể cap/quay màn hình" - technical feasibility trên RN? | Technical | MEDIUM |
 | 12 | **Your Space Level 5**: Bảng rank chỉ đến Level 4 (13000 pts) nhưng mission có "Lên level 5" | Data inconsistency | HIGH |
+| 13a | **Inventory item usage**: Cards/Digital Assets/Game items trong Inventory dùng được gì? Chỉ xem/collect, hay có thể dùng trong game, đặt vào phòng, hay share? | Feature scope | **HIGH** |
+| 13b | **"+New" button trong Furniture Panel**: Dẫn đến đâu? Shop mua bằng Star, hay catalog xem/unlock? Flow cụ thể? | Feature scope | **HIGH** |
 
 ### 7.2. Technical Considerations
 
@@ -1125,4 +1199,4 @@ Onboarding (Profile + Choose Fandom)
 
 ---
 
-*Document generated by BA Agent | Fanation Project | Updated: 2026-05-21*
+*Document generated by BA Agent | Fanation Project | Updated: 2026-05-23*
