@@ -580,12 +580,11 @@ PENDING -> start_date + 2 không duyệt -> REJECTED (auto, rejected_by: system)
 ```
 Admin (CMS) nhập Gmail của Idol
   → Hệ thống check email:
-      ├── Email chưa tồn tại trong DB     → Gửi invitation email
+      ├── Email chưa tồn tại trong DB     → Gửi invitation email (chứa link xác nhận)
       └── Email đã là Fan account          → Reject + thông báo Admin
                                               "Email này đang được sử dụng bởi Fan"
 
-Idol nhận email → Nhấn accept → Verify OTP
-  → Assign role IDOL cho email
+Idol nhận email → Nhấn link xác nhận → Assign role IDOL cho email (ghi nhận luôn)
   → Idol mở app → Login Google bằng đúng Gmail đó
   → Hệ thống nhận role IDOL → Onboarding Idol (profile setup)
   → Preview & Publish
@@ -593,8 +592,8 @@ Idol nhận email → Nhấn accept → Verify OTP
 
 **Invitation Rules:**
 - Admin chỉ invite bằng Gmail (phải là @gmail.com hoặc Google Workspace)
-- OTP gửi qua email, expiry 24h
-- Sai OTP 5 lần → lock 15 phút
+- Email chứa verification link (token unique, expiry 24h)
+- Idol nhấn link = xác nhận ngay, không cần nhập OTP
 - Invitation chưa accept sau 7 ngày → expired, Admin có thể gửi lại
 - Idol bắt buộc login bằng đúng Gmail đã được invite
 
@@ -1063,8 +1062,8 @@ Notification
 
 IdolInvitation
 ├── id, email, invited_by (admin_id FK)
-├── otp_code, otp_expires_at
-├── status (PENDING | ACCEPTED | REJECTED | EXPIRED)
+├── verification_token (unique), token_expires_at
+├── status (PENDING | ACCEPTED | EXPIRED)
 └── created_at, accepted_at
 
 CMSAuditLog
