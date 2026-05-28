@@ -124,8 +124,11 @@ User nhấn "Sign in with Google"
       └── Email là Idol             → Trả token (role: IDOL) → Idol Dashboard
 ```
 
+> **MVP1:** Login chỉ qua Google. Apple + Instagram login có thể bổ sung Phase 2.
+> Instagram được hỗ trợ qua **Link Account** (F8.3), không phải login provider.
+
 **Acceptance Criteria:**
-- AC1: Hiển thị Login screen với Google option khi mở app
+- AC1: Hiển thị Login screen với Google Sign-in option
 - AC2: Gọi Google Sign-in API, lấy email làm identifier
 - AC3: Email chưa tồn tại → tạo Fan mới → redirect Onboarding
 - AC4: Email đã tồn tại → check role → redirect đúng interface (Fan app / Idol dashboard)
@@ -534,6 +537,21 @@ PENDING -> start_date + 2 không duyệt -> REJECTED (auto, rejected_by: system)
 
 ### Epic 8: Account Settings (Fan)
 
+**Settings Menu Structure (từ wireframe):**
+| Nhóm | Mục | Feature |
+|------|-----|---------|
+| **Tài khoản** | Đổi username | F8.1 |
+| | Liên kết trang xã hội | F8.3 |
+| | Thêm số điện thoại | F8.4 |
+| **Thông báo** | Cài đặt thông báo | F8.2 |
+| **Hỗ trợ** | Hỗ trợ Fanclub | F8.5 |
+| | Trung tâm trợ giúp | F8.5 |
+| | Điều khoản sử dụng | F8.5 |
+| | Chính sách bảo mật | F8.5 |
+| **Chung** | Đăng xuất | F8.6 |
+
+> **Lưu ý:** Đổi avatar không nằm trong Settings — được xử lý trực tiếp trên màn Profile.
+
 #### F8.1: Profile Management
 **Đổi avatar:**
 - JPG/PNG, max 5MB, min 200x200px
@@ -547,19 +565,71 @@ PENDING -> start_date + 2 không duyệt -> REJECTED (auto, rejected_by: system)
 - Case-insensitive uniqueness check
 - Không cho phép dấu
 
+**Đổi username — UI (từ wireframe):**
+- Hiển thị username hiện tại (read-only)
+- Input "Username mới" với real-time validation:
+  - ✅ Checkmark xanh khi hợp lệ + chưa trùng
+  - ❌ Text đỏ "Username này đã được sử dụng" khi trùng
+- Cảnh báo: *"Sau khi đổi, username cũ [old_username] bị khoá 6 tháng"*
+- 2 buttons: **"Xác nhận đổi username"** + **"Huỷ"**
+- Hiển thị số lần đổi còn lại: *"Bạn còn X/3 lần đổi username"*
+
 #### F8.2: Notification Settings
-| Loại thông báo | Push | In-app | Tắt được |
-|----------------|------|--------|----------|
-| Bài đăng mới từ idol | Yes | Yes | Yes |
-| Sự kiện sắp diễn ra | Yes | Yes | Yes |
-| Nhắc chơi game, ranking | Yes | Yes | Yes |
-| Fan letter có tương tác mới | Yes | Yes | Yes |
-| Lên cấp | Yes | Yes | Yes |
-| Fan project cập nhật | Yes | Yes | Yes |
-| Hệ thống (bảo mật) | Yes | No | **No** |
+
+**UI Layout (từ wireframe):**
+- Master toggle: **"Tắt tất cả thông báo"** — tắt toàn bộ trừ hệ thống
+- Subtitle: *"Trừ hệ thống bảo mật và tài khoản"*
+- Danh sách toggle đơn (on/off cho từng loại):
+
+| Loại thông báo | Toggle | Ghi chú |
+|----------------|--------|---------|
+| Bài đăng mới từ idol | On/Off | Mặc định: On |
+| Sự kiện sắp tới | On/Off | Mặc định: On |
+| Nhắc game / hạng | On/Off | Mặc định: On |
+| Thư fan được tim | On/Off | Mặc định: On |
+| Lên cấp | On/Off | Mặc định: On |
+| Cập nhật fan project | On/Off | Mặc định: On |
+| Nhận quà | On/Off | Mặc định: On |
+| Hệ thống (bảo mật, tài khoản) | **Luôn On** | Không cho phép tắt |
+
+**Business Rules:**
+- Master toggle Off → tắt tất cả trừ "Hệ thống"
+- Master toggle On → khôi phục trạng thái toggle trước đó cho từng loại
+- Notification list hiển thị trạng thái **Read/Unread** (bold = unread, normal = read)
+- Tap vào notification → mark as read + navigate theo deep_link
 
 #### F8.3: Social Media Linking
-- OAuth flow -> đăng nhập provider -> cấp quyền -> redirect app
+
+**Providers (từ wireframe):**
+| Provider | Trạng thái | Có thể huỷ |
+|----------|-----------|------------|
+| Google | Luôn linked (login provider) | **Không** — là tài khoản chính |
+| Instagram | Link/Unlink tuỳ chọn | **Có** |
+
+> **Không có Facebook** trong MVP1. Chỉ Google + Instagram.
+
+**Link Flow:**
+```
+Fan vào Liên kết trang xã hội
+  → Hiển thị danh sách: Google ✅ (locked), Instagram (nút "Liên kết")
+  → Nhấn "Liên kết" Instagram → OAuth consent screen
+  → Cấp quyền → Redirect app → Toast "Instagram đã liên kết [username]"
+  → Instagram hiển thị ✅ + nút "Huỷ liên kết"
+```
+
+**Unlink Flow:**
+```
+Fan nhấn "Huỷ liên kết" Instagram
+  → Confirm dialog: "Bạn có chắc muốn huỷ liên kết Instagram?"
+  → Xác nhận → Huỷ liên kết → Toast "Đã huỷ liên kết"
+```
+
+**Acceptance Criteria:**
+- AC1: Google luôn hiển thị "Đã liên kết", không có nút huỷ
+- AC2: Instagram chưa link → hiển thị nút "Liên kết"
+- AC3: Instagram đã link → hiển thị tên IG + nút "Huỷ liên kết"
+- AC4: OAuth consent hiển thị rõ quyền truy cập được yêu cầu
+- AC5: Link/Unlink thành công → toast confirmation
 
 #### F8.4: Phone Number Verification
 | Trường hợp | Xử lý |
@@ -569,6 +639,22 @@ PENDING -> start_date + 2 không duyệt -> REJECTED (auto, rejected_by: system)
 | Sai OTP 5 lần | Lock 15 phút |
 | Đổi số | OTP vào số mới |
 | Số format sai | Disable nút "Gửi mã OTP" ngay |
+
+#### F8.5: Support & Legal (Hỗ trợ)
+| Mục | Nội dung | Loại |
+|-----|----------|------|
+| Hỗ trợ Fanclub | Liên hệ hỗ trợ (email/form) | Link/WebView |
+| Trung tâm trợ giúp | FAQ và hướng dẫn sử dụng | WebView |
+| Điều khoản sử dụng | Terms of Service | WebView (static) |
+| Chính sách bảo mật | Privacy Policy | WebView (static) |
+
+> Tất cả đều là WebView hoặc deep link đến trang web. Không cần BE phức tạp cho MVP1.
+
+#### F8.6: Logout (Đăng xuất)
+- Nút "Đăng xuất" ở cuối Settings
+- Confirm dialog: *"Bạn có chắc chắn muốn đăng xuất?"* → **Đăng xuất** / **Huỷ**
+- Đăng xuất → xoá token local + clear cache → redirect Login screen
+- Không xoá push notification registration (re-register khi login lại)
 
 ---
 
@@ -916,7 +1002,8 @@ Users
 ├── Fan
 │   ├── id, email, username, avatar, bio
 │   ├── phone (verified)
-│   ├── google_id, created_at
+│   ├── google_id, instagram_id (nullable, linked via F8.3), created_at
+│   ├── username_changes_remaining (default: 3), last_username_change
 │   └── FanIdolRelation[] (per idol: level, points, default_space)
 │
 ├── IdolManagement
@@ -1098,6 +1185,13 @@ CMSAuditLog
 | 12 | **Your Space Level 5**: Bảng rank chỉ đến Level 4 (13000 pts) nhưng mission có "Lên level 5" | Data inconsistency | HIGH |
 | 13a | **Inventory item usage**: Cards/Digital Assets/Game items trong Inventory dùng được gì? Chỉ xem/collect, hay có thể dùng trong game, đặt vào phòng, hay share? | Feature scope | **HIGH** |
 | 13b | **"+New" button trong Furniture Panel**: Dẫn đến đâu? Shop mua bằng Star, hay catalog xem/unlock? Flow cụ thể? | Feature scope | **HIGH** |
+| 14 | **Mua SpaceItem bằng gì?** Star đã remove — dùng Points? Free unlock by level? Cơ chế mới? | Economy / Your Space | **HIGH** |
+| 15 | **Character gender chọn ở đâu?** Onboarding hay Settings? Có thể đổi sau không? | UX / Onboarding | MEDIUM |
+| 16 | **Instagram link — data nào lấy về?** Khi link Instagram, app lấy username/avatar/email hay chỉ xác nhận liên kết? | Account Settings | MEDIUM |
+| 17 | **Fix cứng vị trí SpaceItem — bao nhiêu slots?** Mỗi level có bao nhiêu slot? Layout guideline cụ thể? | CMS / Design | **HIGH** |
+| 18 | **Group idol — hiển thị members?** Idol loại Group có list thành viên (sub-artists) không? | Idol Hub UI | MEDIUM |
+| 19 | **Hỗ trợ Fanclub** — nội dung gì? Link ngoài hay in-app form? | Support | MEDIUM |
+| 20 | **YT/Spotify/TikTok** — bỏ hẳn Social Linking hay chuyển Phase 2? Idol Profile vẫn cần social links? | Account Settings | MEDIUM |
 
 ### 7.2. Technical Considerations
 
@@ -1198,4 +1292,4 @@ Onboarding (Profile + Choose Fandom)
 
 ---
 
-*Document generated by BA Agent | Fanation Project | Updated: 2026-05-23*
+*Document generated by BA Agent | Fanation Project | Updated: 2026-05-28*
