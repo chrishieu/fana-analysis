@@ -598,6 +598,17 @@ PENDING -> start_date + 2 không duyệt -> REJECTED (auto, rejected_by: system)
 - Notification list hiển thị trạng thái **Read/Unread** (bold = unread, normal = read)
 - Tap vào notification → mark as read + navigate theo deep_link
 
+**Acceptance Criteria:**
+- AC1: Mở Settings → Cài đặt thông báo → hiển thị master toggle + danh sách 8 loại
+- AC2: Master toggle Off → tất cả toggles (trừ Hệ thống) chuyển Off, ngừng nhận push + in-app
+- AC3: Master toggle On → khôi phục trạng thái toggle trước đó cho từng loại (không bật tất cả)
+- AC4: Toggle từng loại Off → ngừng nhận push + in-app cho loại đó
+- AC5: "Hệ thống (bảo mật, tài khoản)" luôn On, không hiển thị toggle / toggle disabled
+- AC6: Notification list hiển thị trạng thái unread (chi tiết UI theo design — TBD)
+- AC7: Read/Unread distinction rõ ràng trên notification list (chi tiết UI theo design — TBD)
+- AC8: Tap notification → mark as read + navigate đến deep_link tương ứng
+- AC9: Thay đổi settings lưu ngay (không cần nút Save), persist khi đăng xuất/đăng nhập lại
+
 #### F8.3: Social Media Linking
 
 **Providers (từ wireframe):**
