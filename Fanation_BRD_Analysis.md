@@ -88,16 +88,19 @@
 
 ### 2.3. Fan Level System & Gated Features
 
-| Level | Tên | Points | Gated Features |
-|-------|-----|--------|----------------|
-| 0 | Fan Nhí | 0 | Basic access |
-| 1 | Fan cứng | 500 | - |
-| 2 | Fan "guộc" | 2,500 | - |
-| 3 | Phú ông/Phú bà | 7,000 | Tạo Fan Project |
-| 4 | Đại sứ fandom | 13,000 | - |
+> **Confirmed 2026-05-31:** Level cap là 4 (không có Level 5). Thay đổi Studio được unlock theo level.
+
+| Level | Tên | Points | Gated Features | Thay đổi Studio |
+|-------|-----|--------|----------------|-----------------|
+| 0 | Fan Nhí | 0 | Basic access | Phòng đơn điệu — character đứng trên sàn bình thường |
+| 1 | Fan cứng | 500 | - | Xuất hiện stage (bục đứng) + micro; cho phép custom bục và micro |
+| 2 | Fan "guộc" | 2,500 | - | Mở khung tranh — treo ảnh hoặc ảnh idol |
+| 3 | Phú ông/Phú bà | 7,000 | Tạo Fan Project | Stage phát triển; mở thêm placeholder dàn loa |
+| 4 | Đại sứ fandom | 13,000 | - | Bỏ bức tường, thay bằng view city light; mở placeholder guitar + organ |
 
 > **Lưu ý**: Points tích lũy **theo từng Idol riêng biệt**, không phải tổng chung.
 > Points earned through engagement: check-in, daily missions, game play, fan project participation.
+> **Studio progression:** Mỗi level unlock thêm placeholder/item cố định trong canvas. Fan vẫn có thể drag & drop SpaceItem lên các vị trí tự chọn.
 
 ---
 
@@ -124,8 +127,11 @@ User nhấn "Sign in with Google"
       └── Email là Idol             → Trả token (role: IDOL) → Idol Dashboard
 ```
 
+> **MVP1:** Login chỉ qua Google. Apple + Instagram login có thể bổ sung Phase 2.
+> Instagram được hỗ trợ qua **Link Account** (F8.3), không phải login provider.
+
 **Acceptance Criteria:**
-- AC1: Hiển thị Login screen với Google option khi mở app
+- AC1: Hiển thị Login screen với Google Sign-in option
 - AC2: Gọi Google Sign-in API, lấy email làm identifier
 - AC3: Email chưa tồn tại → tạo Fan mới → redirect Onboarding
 - AC4: Email đã tồn tại → check role → redirect đúng interface (Fan app / Idol dashboard)
@@ -273,6 +279,18 @@ Fan nhấn CTA Create → Chọn "Fan Letter" → Chọn Idol → Viết nội d
 - Fan KHÔNG tự chọn theme -> hệ thống set theo Idol
 - Fan thể hiện cá tính qua items trang trí + cách sắp xếp
 
+**Studio Level Progression (Confirmed 2026-05-31):**
+
+| Level | Trạng thái Studio | Placeholder mới được mở |
+|-------|-------------------|------------------------|
+| 0 — Fan Nhí | Phòng trống đơn điệu; character đứng trên sàn bình thường | — |
+| 1 — Fan cứng | Stage (bục đứng) + micro xuất hiện; fan có thể custom bục và micro | Stage, Micro |
+| 2 — Fan "guộc" | Mở khung tranh để treo ảnh fan hoặc ảnh idol | Khung tranh |
+| 3 — Phú ông/Phú bà | Stage tiếp tục phát triển (kích thước/design); thêm placeholder dàn loa | Dàn loa |
+| 4 — Đại sứ fandom | Bức tường biến mất → view city light; mở placeholder guitar + organ | Guitar, Organ |
+
+> **Business Rule:** Studio layout thay đổi khi lên level. Items đã đặt **giữ nguyên vị trí** sau khi level up (AC3). Placeholder mới được mở theo level là vị trí cố định trong canvas design.
+
 **Furniture Panel (bottom panel):**
 - Thanh scroll ngang hiển thị toàn bộ đồ nội thất fan đang sở hữu (Piano, Guitar, Plant, Sofa, Poster...)
 - Đây là danh sách **SpaceItem** — khác với **Inventory** (cards/digital assets/game items)
@@ -320,13 +338,13 @@ Fan nhấn CTA Create → Chọn "Fan Letter" → Chọn Idol → Viết nội d
 > Streak reset nếu miss 1 ngày. Không reset sau 30 ngày. Khi reset: chỉ nhận points theo ngày, không nhận lại quà cột mốc.
 
 **Nhiệm vụ cột mốc (one-time):**
-| Hành động | Thưởng |
-|-----------|--------|
-| Thêm đủ 10 sự kiện vào calendar | +20 points |
-| Lên level 2 | 1 tranh idol |
-| Lên level 3 | 2 star + 1 rèm cửa |
-| Lên level 4 | 2 star + 1 đàn piano |
-| Lên level 5 | 5 star + 1 stage |
+| Hành động | Thưởng | Ghi chú |
+|-----------|--------|---------|
+| Thêm đủ 10 sự kiện vào calendar | +20 points | — |
+| Lên level 2 | 1 tranh idol | — |
+| Lên level 3 | 2 star + 1 rèm cửa | — |
+| Lên level 4 | 2 star + 1 đàn piano | — |
+| ~~Lên level 5~~ | ~~5 star + 1 stage~~ | ❌ **REMOVED** — Level cap confirmed là 4. Level 5 không tồn tại. |
 
 **Business Rules:**
 - Missions reset 00:00 UTC+7 mỗi ngày
@@ -534,6 +552,21 @@ PENDING -> start_date + 2 không duyệt -> REJECTED (auto, rejected_by: system)
 
 ### Epic 8: Account Settings (Fan)
 
+**Settings Menu Structure (từ wireframe):**
+| Nhóm | Mục | Feature |
+|------|-----|---------|
+| **Tài khoản** | Đổi username | F8.1 |
+| | Liên kết trang xã hội | F8.3 |
+| | Thêm số điện thoại | F8.4 |
+| **Thông báo** | Cài đặt thông báo | F8.2 |
+| **Hỗ trợ** | Hỗ trợ Fanclub | F8.5 |
+| | Trung tâm trợ giúp | F8.5 |
+| | Điều khoản sử dụng | F8.5 |
+| | Chính sách bảo mật | F8.5 |
+| **Chung** | Đăng xuất | F8.6 |
+
+> **Lưu ý:** Đổi avatar không nằm trong Settings — được xử lý trực tiếp trên màn Profile.
+
 #### F8.1: Profile Management
 **Đổi avatar:**
 - JPG/PNG, max 5MB, min 200x200px
@@ -547,19 +580,82 @@ PENDING -> start_date + 2 không duyệt -> REJECTED (auto, rejected_by: system)
 - Case-insensitive uniqueness check
 - Không cho phép dấu
 
+**Đổi username — UI (từ wireframe):**
+- Hiển thị username hiện tại (read-only)
+- Input "Username mới" với real-time validation:
+  - ✅ Checkmark xanh khi hợp lệ + chưa trùng
+  - ❌ Text đỏ "Username này đã được sử dụng" khi trùng
+- Cảnh báo: *"Sau khi đổi, username cũ [old_username] bị khoá 6 tháng"*
+- 2 buttons: **"Xác nhận đổi username"** + **"Huỷ"**
+- Hiển thị số lần đổi còn lại: *"Bạn còn X/3 lần đổi username"*
+
 #### F8.2: Notification Settings
-| Loại thông báo | Push | In-app | Tắt được |
-|----------------|------|--------|----------|
-| Bài đăng mới từ idol | Yes | Yes | Yes |
-| Sự kiện sắp diễn ra | Yes | Yes | Yes |
-| Nhắc chơi game, ranking | Yes | Yes | Yes |
-| Fan letter có tương tác mới | Yes | Yes | Yes |
-| Lên cấp | Yes | Yes | Yes |
-| Fan project cập nhật | Yes | Yes | Yes |
-| Hệ thống (bảo mật) | Yes | No | **No** |
+
+**UI Layout (từ wireframe):**
+- Master toggle: **"Tắt tất cả thông báo"** — tắt toàn bộ trừ hệ thống
+- Subtitle: *"Trừ hệ thống bảo mật và tài khoản"*
+- Danh sách toggle đơn (on/off cho từng loại):
+
+| Loại thông báo | Toggle | Ghi chú |
+|----------------|--------|---------|
+| Bài đăng mới từ idol | On/Off | Mặc định: On |
+| Sự kiện sắp tới | On/Off | Mặc định: On |
+| Nhắc game / hạng | On/Off | Mặc định: On |
+| Thư fan được tim | On/Off | Mặc định: On |
+| Lên cấp | On/Off | Mặc định: On |
+| Cập nhật fan project | On/Off | Mặc định: On |
+| Nhận quà | On/Off | Mặc định: On |
+| Hệ thống (bảo mật, tài khoản) | **Luôn On** | Không cho phép tắt |
+
+**Business Rules:**
+- Master toggle Off → tắt tất cả trừ "Hệ thống"
+- Master toggle On → khôi phục trạng thái toggle trước đó cho từng loại
+- Notification list hiển thị trạng thái **Read/Unread** (bold = unread, normal = read)
+- Tap vào notification → mark as read + navigate theo deep_link
+
+**Acceptance Criteria:**
+- AC1: Mở Settings → Cài đặt thông báo → hiển thị master toggle + danh sách 8 loại
+- AC2: Master toggle Off → tất cả toggles (trừ Hệ thống) chuyển Off, ngừng nhận push + in-app
+- AC3: Master toggle On → khôi phục trạng thái toggle trước đó cho từng loại (không bật tất cả)
+- AC4: Toggle từng loại Off → ngừng nhận push + in-app cho loại đó
+- AC5: "Hệ thống (bảo mật, tài khoản)" luôn On, không hiển thị toggle / toggle disabled
+- AC6: Notification list hiển thị trạng thái unread (chi tiết UI theo design — TBD)
+- AC7: Read/Unread distinction rõ ràng trên notification list (chi tiết UI theo design — TBD)
+- AC8: Tap notification → mark as read + navigate đến deep_link tương ứng
+- AC9: Thay đổi settings lưu ngay (không cần nút Save), persist khi đăng xuất/đăng nhập lại
 
 #### F8.3: Social Media Linking
-- OAuth flow -> đăng nhập provider -> cấp quyền -> redirect app
+
+**Providers (từ wireframe):**
+| Provider | Trạng thái | Có thể huỷ |
+|----------|-----------|------------|
+| Google | Luôn linked (login provider) | **Không** — là tài khoản chính |
+| Instagram | Link/Unlink tuỳ chọn | **Có** |
+
+> **Không có Facebook** trong MVP1. Chỉ Google + Instagram.
+
+**Link Flow:**
+```
+Fan vào Liên kết trang xã hội
+  → Hiển thị danh sách: Google ✅ (locked), Instagram (nút "Liên kết")
+  → Nhấn "Liên kết" Instagram → OAuth consent screen
+  → Cấp quyền → Redirect app → Toast "Instagram đã liên kết [username]"
+  → Instagram hiển thị ✅ + nút "Huỷ liên kết"
+```
+
+**Unlink Flow:**
+```
+Fan nhấn "Huỷ liên kết" Instagram
+  → Confirm dialog: "Bạn có chắc muốn huỷ liên kết Instagram?"
+  → Xác nhận → Huỷ liên kết → Toast "Đã huỷ liên kết"
+```
+
+**Acceptance Criteria:**
+- AC1: Google luôn hiển thị "Đã liên kết", không có nút huỷ
+- AC2: Instagram chưa link → hiển thị nút "Liên kết"
+- AC3: Instagram đã link → hiển thị tên IG + nút "Huỷ liên kết"
+- AC4: OAuth consent hiển thị rõ quyền truy cập được yêu cầu
+- AC5: Link/Unlink thành công → toast confirmation
 
 #### F8.4: Phone Number Verification
 | Trường hợp | Xử lý |
@@ -569,6 +665,22 @@ PENDING -> start_date + 2 không duyệt -> REJECTED (auto, rejected_by: system)
 | Sai OTP 5 lần | Lock 15 phút |
 | Đổi số | OTP vào số mới |
 | Số format sai | Disable nút "Gửi mã OTP" ngay |
+
+#### F8.5: Support & Legal (Hỗ trợ)
+| Mục | Nội dung | Loại |
+|-----|----------|------|
+| Hỗ trợ Fanclub | Liên hệ hỗ trợ (email/form) | Link/WebView |
+| Trung tâm trợ giúp | FAQ và hướng dẫn sử dụng | WebView |
+| Điều khoản sử dụng | Terms of Service | WebView (static) |
+| Chính sách bảo mật | Privacy Policy | WebView (static) |
+
+> Tất cả đều là WebView hoặc deep link đến trang web. Không cần BE phức tạp cho MVP1.
+
+#### F8.6: Logout (Đăng xuất)
+- Nút "Đăng xuất" ở cuối Settings
+- Confirm dialog: *"Bạn có chắc chắn muốn đăng xuất?"* → **Đăng xuất** / **Huỷ**
+- Đăng xuất → xoá token local + clear cache → redirect Login screen
+- Không xoá push notification registration (re-register khi login lại)
 
 ---
 
@@ -580,12 +692,11 @@ PENDING -> start_date + 2 không duyệt -> REJECTED (auto, rejected_by: system)
 ```
 Admin (CMS) nhập Gmail của Idol
   → Hệ thống check email:
-      ├── Email chưa tồn tại trong DB     → Gửi invitation email
+      ├── Email chưa tồn tại trong DB     → Gửi invitation email (chứa link xác nhận)
       └── Email đã là Fan account          → Reject + thông báo Admin
                                               "Email này đang được sử dụng bởi Fan"
 
-Idol nhận email → Nhấn accept → Verify OTP
-  → Assign role IDOL cho email
+Idol nhận email → Nhấn link xác nhận → Assign role IDOL cho email (ghi nhận luôn)
   → Idol mở app → Login Google bằng đúng Gmail đó
   → Hệ thống nhận role IDOL → Onboarding Idol (profile setup)
   → Preview & Publish
@@ -593,8 +704,8 @@ Idol nhận email → Nhấn accept → Verify OTP
 
 **Invitation Rules:**
 - Admin chỉ invite bằng Gmail (phải là @gmail.com hoặc Google Workspace)
-- OTP gửi qua email, expiry 24h
-- Sai OTP 5 lần → lock 15 phút
+- Email chứa verification link (token unique, expiry 24h)
+- Idol nhấn link = xác nhận ngay, không cần nhập OTP
 - Invitation chưa accept sau 7 ngày → expired, Admin có thể gửi lại
 - Idol bắt buộc login bằng đúng Gmail đã được invite
 
@@ -710,17 +821,16 @@ Idol nhận email → Nhấn accept → Verify OTP
 
 ## IV. STAR ECONOMY (Virtual Currency)
 
-> Stars là virtual currency nội bộ. Có 2 nguồn: kiếm qua engagement hoặc **mua qua IAP (In-App Purchase)**. Không có quy đổi ngược (rút tiền). Giá trị vật phẩm được cấu hình qua CMS.
-> Chi tiết bundle pricing và balance model sẽ được bổ sung sau.
+> **Confirmed 2026-05-31:** Stars tồn tại nhưng số lượng ít — **chỉ kiếm qua engagement (earn-only)**. **IAP (mua Star bằng tiền thật) đã bị remove** do client không có giấy phép giao dịch tài chính. Không có quy đổi ngược (rút tiền). Giá trị vật phẩm được cấu hình qua CMS.
 
 ### 4.1. Cách kiếm Stars
 | Source | Chi tiết | Loại |
 |--------|----------|------|
-| Check-in streak | Ngày 30: +2 stars | Free |
-| Mission cột mốc | Level 3: +2 stars, Level 4: +2 stars, Level 5: +5 stars | Free |
-| IAP Bundle | Mua Star bằng tiền thật qua App Store / Google Play | Paid |
+| Check-in streak | Ngày 30: +2 stars | Free (earn) |
+| Mission cột mốc | Level 3: +2 stars, Level 4: +2 stars | Free (earn) |
+| ~~IAP Bundle~~ | ~~Mua Star bằng tiền thật~~ | ❌ **REMOVED** |
 
-> Nguồn kiếm Stars free có thể mở rộng qua CMS. IAP bundle tiers (giá + số star) sẽ được define riêng.
+> Stars là khan hiếm — số lượng earn được có giới hạn theo thiết kế. Nguồn earn có thể mở rộng qua CMS (không phải IAP).
 
 ### 4.2. Cách tiêu Stars
 | Action | Range | Cấu hình |
@@ -917,7 +1027,8 @@ Users
 ├── Fan
 │   ├── id, email, username, avatar, bio
 │   ├── phone (verified)
-│   ├── google_id, created_at
+│   ├── google_id, instagram_id (nullable, linked via F8.3), created_at
+│   ├── username_changes_remaining (default: 3), last_username_change
 │   └── FanIdolRelation[] (per idol: level, points, default_space)
 │
 ├── IdolManagement
@@ -1063,8 +1174,8 @@ Notification
 
 IdolInvitation
 ├── id, email, invited_by (admin_id FK)
-├── otp_code, otp_expires_at
-├── status (PENDING | ACCEPTED | REJECTED | EXPIRED)
+├── verification_token (unique), token_expires_at
+├── status (PENDING | ACCEPTED | EXPIRED)
 └── created_at, accepted_at
 
 CMSAuditLog
@@ -1082,10 +1193,10 @@ CMSAuditLog
 
 | # | Câu hỏi | Ảnh hưởng | Độ ưu tiên |
 |---|---------|-----------|------------|
-| 1 | ~~**Star earning balance**~~ — **Đã xác nhận:** IAP (mua Star) được phép. Balance details sẽ bổ sung sau. | Economy | ~~CRITICAL~~ → RESOLVED |
-| 1a | **IAP bundle tiers**: Bao nhiêu tier? (vd: $0.99/50⭐, $4.99/300⭐, $9.99/700⭐). Cần để design pricing + data model | Economy | **CRITICAL** |
-| 1b | **Space Item price range**: Min/max star cost cho item trong kho? Cần để CMS config + balance | Economy | **HIGH** |
-| 1c | **Apple/Google 30% cut**: Ai handle pricing để đảm bảo margin? | Finance/Legal | **HIGH** |
+| 1 | ~~**Star earning balance**~~ → **RESOLVED (2026-05-31):** Stars tồn tại, **earn-only** (không có IAP). Số lượng ít theo thiết kế. | Economy | ~~CRITICAL~~ → RESOLVED |
+| 1a | ~~**IAP bundle tiers**~~ → **RESOLVED (2026-05-31):** IAP bị remove hoàn toàn. Không có gói mua Star. | Economy | ~~CRITICAL~~ → RESOLVED |
+| 1b | **Space Item price range (Stars)**: Stars vẫn tồn tại (earn-only) → min/max star cost cho SpaceItem cần confirm để CMS config | Economy | **HIGH** |
+| 1c | ~~**Apple/Google 30% cut**~~ → **RESOLVED (2026-05-31):** Không còn IAP, không có cut. | Finance/Legal | ~~HIGH~~ → RESOLVED |
 | 2 | **Points mechanism detail**: Exact points cho mỗi action? CMS configurable hay fixed? | Engagement | HIGH |
 | 3 | **Fan Project participation**: "Tham gia" cụ thể là gì? Chỉ đăng ký/pledge hay có cam kết? | Feature | HIGH |
 | 4 | **Fan Letter moderation**: Không duyệt trước -> cần auto-filter cho spam/abuse? | Compliance | HIGH |
@@ -1096,9 +1207,16 @@ CMSAuditLog
 | 9 | **Multi-management account**: Shared credentials hay sub-accounts? | Auth | MEDIUM |
 | 10 | **Content moderation**: Auto-scan criteria cho fan project và fan letter | Compliance | MEDIUM |
 | 11 | **Exclusive content DRM**: "Không thể cap/quay màn hình" - technical feasibility trên RN? | Technical | MEDIUM |
-| 12 | **Your Space Level 5**: Bảng rank chỉ đến Level 4 (13000 pts) nhưng mission có "Lên level 5" | Data inconsistency | HIGH |
+| 12 | ~~**Your Space Level 5**~~ → **FULLY RESOLVED (2026-05-31):** Level cap confirmed là **4 (Đại sứ fandom, 13,000 pts)**. Milestone "Lên level 5" đã xoá. Star reward tại level 3 & 4 **hợp lệ** — Stars vẫn tồn tại (earn-only). | ~~Data inconsistency~~ | ~~HIGH~~ → RESOLVED |
 | 13a | **Inventory item usage**: Cards/Digital Assets/Game items trong Inventory dùng được gì? Chỉ xem/collect, hay có thể dùng trong game, đặt vào phòng, hay share? | Feature scope | **HIGH** |
 | 13b | **"+New" button trong Furniture Panel**: Dẫn đến đâu? Shop mua bằng Star, hay catalog xem/unlock? Flow cụ thể? | Feature scope | **HIGH** |
+| 14 | **Mua SpaceItem bằng Stars:** Stars vẫn tồn tại (earn-only) → SpaceItem vẫn có thể mua bằng Star. Cần confirm giá range (xem OQ-1b). | Economy / Your Space | **HIGH** |
+| 15 | **Character gender chọn ở đâu?** Onboarding hay Settings? Có thể đổi sau không? | UX / Onboarding | MEDIUM |
+| 16 | **Instagram link — data nào lấy về?** Khi link Instagram, app lấy username/avatar/email hay chỉ xác nhận liên kết? | Account Settings | MEDIUM |
+| 17 | **Fix cứng vị trí SpaceItem — bao nhiêu slots?** Mỗi level có bao nhiêu slot? Layout guideline cụ thể? | CMS / Design | **HIGH** |
+| 18 | **Group idol — hiển thị members?** Idol loại Group có list thành viên (sub-artists) không? | Idol Hub UI | MEDIUM |
+| 19 | **Hỗ trợ Fanclub** — nội dung gì? Link ngoài hay in-app form? | Support | MEDIUM |
+| 20 | **YT/Spotify/TikTok** — bỏ hẳn Social Linking hay chuyển Phase 2? Idol Profile vẫn cần social links? | Account Settings | MEDIUM |
 
 ### 7.2. Technical Considerations
 
@@ -1199,4 +1317,6 @@ Onboarding (Profile + Choose Fandom)
 
 ---
 
-*Document generated by BA Agent | Fanation Project | Updated: 2026-05-23*
+*Document generated by BA Agent | Fanation Project | Updated: 2026-05-31*
+*Changes (session 1): Confirmed Fan Level System (0–4) + Studio progression per level; removed Level 5 milestone.*
+*Changes (session 2): Confirmed Stars tồn tại (earn-only, không có IAP). Restore star rewards tại level 3 & 4. Update OQ-1, 1a, 1b, 1c, 12, 14.*
