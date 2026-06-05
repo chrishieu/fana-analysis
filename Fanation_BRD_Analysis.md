@@ -88,16 +88,19 @@
 
 ### 2.3. Fan Level System & Gated Features
 
-| Level | Tên | Points | Gated Features |
-|-------|-----|--------|----------------|
-| 0 | Fan Nhí | 0 | Basic access |
-| 1 | Fan cứng | 500 | - |
-| 2 | Fan "guộc" | 2,500 | - |
-| 3 | Phú ông/Phú bà | 7,000 | Tạo Fan Project |
-| 4 | Đại sứ fandom | 13,000 | - |
+> **Confirmed 2026-05-31:** Level cap là 4 (không có Level 5). Thay đổi Studio được unlock theo level.
+
+| Level | Tên | Points | Gated Features | Thay đổi Studio |
+|-------|-----|--------|----------------|-----------------|
+| 0 | Fan Nhí | 0 | Basic access | Phòng đơn điệu — character đứng trên sàn bình thường |
+| 1 | Fan cứng | 500 | - | Xuất hiện stage (bục đứng) + micro; cho phép custom bục và micro |
+| 2 | Fan "guộc" | 2,500 | - | Mở khung tranh — treo ảnh hoặc ảnh idol |
+| 3 | Phú ông/Phú bà | 7,000 | Tạo Fan Project | Stage phát triển; mở thêm placeholder dàn loa |
+| 4 | Đại sứ fandom | 13,000 | - | Bỏ bức tường, thay bằng view city light; mở placeholder guitar + organ |
 
 > **Lưu ý**: Points tích lũy **theo từng Idol riêng biệt**, không phải tổng chung.
 > Points earned through engagement: check-in, daily missions, game play, fan project participation.
+> **Studio progression:** Mỗi level unlock thêm placeholder/item cố định trong canvas. Fan vẫn có thể drag & drop SpaceItem lên các vị trí tự chọn.
 
 ---
 
@@ -276,6 +279,18 @@ Fan nhấn CTA Create → Chọn "Fan Letter" → Chọn Idol → Viết nội d
 - Fan KHÔNG tự chọn theme -> hệ thống set theo Idol
 - Fan thể hiện cá tính qua items trang trí + cách sắp xếp
 
+**Studio Level Progression (Confirmed 2026-05-31):**
+
+| Level | Trạng thái Studio | Placeholder mới được mở |
+|-------|-------------------|------------------------|
+| 0 — Fan Nhí | Phòng trống đơn điệu; character đứng trên sàn bình thường | — |
+| 1 — Fan cứng | Stage (bục đứng) + micro xuất hiện; fan có thể custom bục và micro | Stage, Micro |
+| 2 — Fan "guộc" | Mở khung tranh để treo ảnh fan hoặc ảnh idol | Khung tranh |
+| 3 — Phú ông/Phú bà | Stage tiếp tục phát triển (kích thước/design); thêm placeholder dàn loa | Dàn loa |
+| 4 — Đại sứ fandom | Bức tường biến mất → view city light; mở placeholder guitar + organ | Guitar, Organ |
+
+> **Business Rule:** Studio layout thay đổi khi lên level. Items đã đặt **giữ nguyên vị trí** sau khi level up (AC3). Placeholder mới được mở theo level là vị trí cố định trong canvas design.
+
 **Furniture Panel (bottom panel):**
 - Thanh scroll ngang hiển thị toàn bộ đồ nội thất fan đang sở hữu (Piano, Guitar, Plant, Sofa, Poster...)
 - Đây là danh sách **SpaceItem** — khác với **Inventory** (cards/digital assets/game items)
@@ -323,13 +338,13 @@ Fan nhấn CTA Create → Chọn "Fan Letter" → Chọn Idol → Viết nội d
 > Streak reset nếu miss 1 ngày. Không reset sau 30 ngày. Khi reset: chỉ nhận points theo ngày, không nhận lại quà cột mốc.
 
 **Nhiệm vụ cột mốc (one-time):**
-| Hành động | Thưởng |
-|-----------|--------|
-| Thêm đủ 10 sự kiện vào calendar | +20 points |
-| Lên level 2 | 1 tranh idol |
-| Lên level 3 | 2 star + 1 rèm cửa |
-| Lên level 4 | 2 star + 1 đàn piano |
-| Lên level 5 | 5 star + 1 stage |
+| Hành động | Thưởng | Ghi chú |
+|-----------|--------|---------|
+| Thêm đủ 10 sự kiện vào calendar | +20 points | — |
+| Lên level 2 | 1 tranh idol | — |
+| Lên level 3 | 2 star + 1 rèm cửa | — |
+| Lên level 4 | 2 star + 1 đàn piano | — |
+| ~~Lên level 5~~ | ~~5 star + 1 stage~~ | ❌ **REMOVED** — Level cap confirmed là 4. Level 5 không tồn tại. |
 
 **Business Rules:**
 - Missions reset 00:00 UTC+7 mỗi ngày
@@ -806,17 +821,16 @@ Idol nhận email → Nhấn link xác nhận → Assign role IDOL cho email (gh
 
 ## IV. STAR ECONOMY (Virtual Currency)
 
-> Stars là virtual currency nội bộ. Có 2 nguồn: kiếm qua engagement hoặc **mua qua IAP (In-App Purchase)**. Không có quy đổi ngược (rút tiền). Giá trị vật phẩm được cấu hình qua CMS.
-> Chi tiết bundle pricing và balance model sẽ được bổ sung sau.
+> **Confirmed 2026-05-31:** Stars tồn tại nhưng số lượng ít — **chỉ kiếm qua engagement (earn-only)**. **IAP (mua Star bằng tiền thật) đã bị remove** do client không có giấy phép giao dịch tài chính. Không có quy đổi ngược (rút tiền). Giá trị vật phẩm được cấu hình qua CMS.
 
 ### 4.1. Cách kiếm Stars
 | Source | Chi tiết | Loại |
 |--------|----------|------|
-| Check-in streak | Ngày 30: +2 stars | Free |
-| Mission cột mốc | Level 3: +2 stars, Level 4: +2 stars, Level 5: +5 stars | Free |
-| IAP Bundle | Mua Star bằng tiền thật qua App Store / Google Play | Paid |
+| Check-in streak | Ngày 30: +2 stars | Free (earn) |
+| Mission cột mốc | Level 3: +2 stars, Level 4: +2 stars | Free (earn) |
+| ~~IAP Bundle~~ | ~~Mua Star bằng tiền thật~~ | ❌ **REMOVED** |
 
-> Nguồn kiếm Stars free có thể mở rộng qua CMS. IAP bundle tiers (giá + số star) sẽ được define riêng.
+> Stars là khan hiếm — số lượng earn được có giới hạn theo thiết kế. Nguồn earn có thể mở rộng qua CMS (không phải IAP).
 
 ### 4.2. Cách tiêu Stars
 | Action | Range | Cấu hình |
@@ -1179,10 +1193,10 @@ CMSAuditLog
 
 | # | Câu hỏi | Ảnh hưởng | Độ ưu tiên |
 |---|---------|-----------|------------|
-| 1 | ~~**Star earning balance**~~ — **Đã xác nhận:** IAP (mua Star) được phép. Balance details sẽ bổ sung sau. | Economy | ~~CRITICAL~~ → RESOLVED |
-| 1a | **IAP bundle tiers**: Bao nhiêu tier? (vd: $0.99/50⭐, $4.99/300⭐, $9.99/700⭐). Cần để design pricing + data model | Economy | **CRITICAL** |
-| 1b | **Space Item price range**: Min/max star cost cho item trong kho? Cần để CMS config + balance | Economy | **HIGH** |
-| 1c | **Apple/Google 30% cut**: Ai handle pricing để đảm bảo margin? | Finance/Legal | **HIGH** |
+| 1 | ~~**Star earning balance**~~ → **RESOLVED (2026-05-31):** Stars tồn tại, **earn-only** (không có IAP). Số lượng ít theo thiết kế. | Economy | ~~CRITICAL~~ → RESOLVED |
+| 1a | ~~**IAP bundle tiers**~~ → **RESOLVED (2026-05-31):** IAP bị remove hoàn toàn. Không có gói mua Star. | Economy | ~~CRITICAL~~ → RESOLVED |
+| 1b | **Space Item price range (Stars)**: Stars vẫn tồn tại (earn-only) → min/max star cost cho SpaceItem cần confirm để CMS config | Economy | **HIGH** |
+| 1c | ~~**Apple/Google 30% cut**~~ → **RESOLVED (2026-05-31):** Không còn IAP, không có cut. | Finance/Legal | ~~HIGH~~ → RESOLVED |
 | 2 | **Points mechanism detail**: Exact points cho mỗi action? CMS configurable hay fixed? | Engagement | HIGH |
 | 3 | **Fan Project participation**: "Tham gia" cụ thể là gì? Chỉ đăng ký/pledge hay có cam kết? | Feature | HIGH |
 | 4 | **Fan Letter moderation**: Không duyệt trước -> cần auto-filter cho spam/abuse? | Compliance | HIGH |
@@ -1193,10 +1207,14 @@ CMSAuditLog
 | 9 | **Multi-management account**: Shared credentials hay sub-accounts? | Auth | MEDIUM |
 | 10 | **Content moderation**: Auto-scan criteria cho fan project và fan letter | Compliance | MEDIUM |
 | 11 | **Exclusive content DRM**: "Không thể cap/quay màn hình" - technical feasibility trên RN? | Technical | MEDIUM |
-| 12 | **Your Space Level 5**: Bảng rank chỉ đến Level 4 (13000 pts) nhưng mission có "Lên level 5" | Data inconsistency | HIGH |
+| 12 | ~~**Your Space Level 5**~~ → **FULLY RESOLVED (2026-05-31):** Level cap confirmed là **4 (Đại sứ fandom, 13,000 pts)**. Milestone "Lên level 5" đã xoá. Star reward tại level 3 & 4 **hợp lệ** — Stars vẫn tồn tại (earn-only). | ~~Data inconsistency~~ | ~~HIGH~~ → RESOLVED |
 | 13a | **Inventory item usage**: Cards/Digital Assets/Game items trong Inventory dùng được gì? Chỉ xem/collect, hay có thể dùng trong game, đặt vào phòng, hay share? | Feature scope | **HIGH** |
 | 13b | **"+New" button trong Furniture Panel**: Dẫn đến đâu? Shop mua bằng Star, hay catalog xem/unlock? Flow cụ thể? | Feature scope | **HIGH** |
+<<<<<<< HEAD
+| 14 | **Mua SpaceItem bằng Stars:** Stars vẫn tồn tại (earn-only) → SpaceItem vẫn có thể mua bằng Star. Cần confirm giá range (xem OQ-1b). | Economy / Your Space | **HIGH** |
+=======
 | 14 | **Mua SpaceItem bằng gì?** Star đã remove — dùng Points? Free unlock by level? Cơ chế mới? | Economy / Your Space | **HIGH** |
+>>>>>>> 839e0493f146bc212434b7a6f0d9dce8bcf3f800
 | 15 | **Character gender chọn ở đâu?** Onboarding hay Settings? Có thể đổi sau không? | UX / Onboarding | MEDIUM |
 | 16 | **Instagram link — data nào lấy về?** Khi link Instagram, app lấy username/avatar/email hay chỉ xác nhận liên kết? | Account Settings | MEDIUM |
 | 17 | **Fix cứng vị trí SpaceItem — bao nhiêu slots?** Mỗi level có bao nhiêu slot? Layout guideline cụ thể? | CMS / Design | **HIGH** |
@@ -1303,4 +1321,10 @@ Onboarding (Profile + Choose Fandom)
 
 ---
 
+<<<<<<< HEAD
+*Document generated by BA Agent | Fanation Project | Updated: 2026-05-31*
+*Changes (session 1): Confirmed Fan Level System (0–4) + Studio progression per level; removed Level 5 milestone.*
+*Changes (session 2): Confirmed Stars tồn tại (earn-only, không có IAP). Restore star rewards tại level 3 & 4. Update OQ-1, 1a, 1b, 1c, 12, 14.*
+=======
 *Document generated by BA Agent | Fanation Project | Updated: 2026-05-28*
+>>>>>>> 839e0493f146bc212434b7a6f0d9dce8bcf3f800
