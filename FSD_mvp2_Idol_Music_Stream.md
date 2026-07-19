@@ -1,8 +1,8 @@
-# FSD — CR1: Idol Music Stream (Stream nhạc trong Profile Idol)
+# FSD — MVP2: Idol Music Stream (Stream nhạc trong Profile Idol)
 
 > **Loại tài liệu:** Functional Specification Document (FSD)
-> **CR liên quan:** CR1
-> **Nguồn tham chiếu:** `CR1_Feature_Breakdown.md` (mục 5), `context.md`, `ba.md` (tech stack)
+> **CR liên quan:** MVP2
+> **Nguồn tham chiếu:** `mvp2_Feature_Breakdown.md` (mục 5), `context.md`, `ba.md` (tech stack)
 > **Tech stack:** React Native (FE) · NestJS (BE) · PostgreSQL (DB)
 > **Trạng thái:** Confirmed — chi tiết Mission (ngưỡng, điểm thưởng) sẽ cập nhật ở tài liệu Mission riêng
 

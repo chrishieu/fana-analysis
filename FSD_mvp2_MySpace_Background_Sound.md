@@ -1,8 +1,8 @@
-# FSD — CR1: Âm Thanh Nền My Space (Kho "Track")
+# FSD — MVP2: Âm Thanh Nền My Space (Kho "Track")
 
 > **Loại tài liệu:** Functional Specification Document (FSD)
-> **CR liên quan:** CR1
-> **Nguồn tham chiếu:** `CR1_Feature_Breakdown.md` (mục 8), `Fanation_BRD_Analysis.md` (Epic 3 — Your Space/Studio), `context.md`, `ba.md`/`pd.md` (tech stack, ranh giới Star Economy)
+> **CR liên quan:** MVP2
+> **Nguồn tham chiếu:** `mvp2_Feature_Breakdown.md` (mục 8), `Fanation_BRD_Analysis.md` (Epic 3 — Your Space/Studio), `context.md`, `ba.md`/`pd.md` (tech stack, ranh giới Star Economy)
 > **Tech stack:** React Native (FE) · NestJS (BE) · PostgreSQL (DB)
 > **Trạng thái:** Đã chốt phần lớn flow — còn 2 điểm treo cần stakeholder xác nhận trước khi lock schema (xem mục 8)
 
@@ -170,7 +170,7 @@ flowchart TD
 | # | Câu hỏi | Ảnh hưởng | Đề xuất PD (tạm thời, chờ confirm) |
 |---|---|---|---|
 | 1 | Số lượng track tối đa được lưu trữ mỗi Idol/mỗi user — chưa có quyết định chính thức | Ảnh hưởng thiết kế bảng lưu trữ, CDN cost, UI Kho Track (có cần phân trang/xoá bớt không) | Cap mềm 10-15 track/idol, cấu hình qua CMS — vì track SSR/UR vốn tỷ lệ ra thẻ thấp và nội dung phát hành còn giới hạn trong 1-2 tháng đầu |
-| 2 | Tỷ lệ/loại E-card cần burn để đổi 1 track thường (voice/nhạc ngắn không đi kèm thẻ) | Chặn code hoá API burn E-card — cùng nhóm vướng mắc với file "Poin Star Card" (xem `CR1_Feature_Breakdown.md` mục 6) | Không có — chờ số liệu chính thức, không tự suy đoán |
+| 2 | Tỷ lệ/loại E-card cần burn để đổi 1 track thường (voice/nhạc ngắn không đi kèm thẻ) | Chặn code hoá API burn E-card — cùng nhóm vướng mắc với file "Poin Star Card" (xem `mvp2_Feature_Breakdown.md` mục 6) | Không có — chờ số liệu chính thức, không tự suy đoán |
 | 3 | Cơ chế chọn/đổi track active có màn hình riêng "đặt làm nhạc nền" tường minh hay tự động lấy track sở hữu gần nhất | Ảnh hưởng UX Kho Track (mục 6.2, Edge case #2) | Đề xuất có nút tường minh "Đặt làm nhạc nền" trên từng track đã sở hữu — cần Design xác nhận |
 
-> **Lưu ý:** Câu hỏi #1 và #2 là 2 điểm treo duy nhất chặn việc code hoá đầy đủ tính năng này theo `CR1_Feature_Breakdown.md` mục 8. Câu hỏi #3 là gap phát hiện thêm trong lúc viết FSD, không nằm trong breakdown gốc — cần bổ sung xác nhận trước khi FE thiết kế màn Kho Track.
+> **Lưu ý:** Câu hỏi #1 và #2 là 2 điểm treo duy nhất chặn việc code hoá đầy đủ tính năng này theo `mvp2_Feature_Breakdown.md` mục 8. Câu hỏi #3 là gap phát hiện thêm trong lúc viết FSD, không nằm trong breakdown gốc — cần bổ sung xác nhận trước khi FE thiết kế màn Kho Track.
