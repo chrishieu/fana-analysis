@@ -17,7 +17,7 @@
 Tính năng gồm 2 nhánh độc lập:
 
 1. **COLLECT (sở hữu thẻ)** — 2 nguồn: (a) thưởng mission (mission thường → thẻ C; mission sự kiện/campaign → SR/SSR/UR — xem `FSD_mvp2_Ranking_Point_System.md` Tier T4), (b) mua trực tiếp thẻ C/R bằng Star (fixed price, chọn đúng idol + card cụ thể). **Riêng SR còn có thêm 1 nguồn thứ 3:** Gộp 10 thẻ R (xem nhánh BURN bên dưới).
-2. **BURN (dùng thẻ đã có)** — dùng thẻ sở hữu để (a) **Gộp** nâng hạng lên rarity cao hơn — theo công thức **đã CHỐT**: burn 10 thẻ **cùng rarity, cùng idol** (không cần cùng 1 card cụ thể — bất kỳ 10 thẻ nào cùng rarity của idol đó đều gộp chung được) → 1 thẻ rarity kế tiếp. C→R: tỷ lệ thành công 100% (chắc chắn). R→SR: tỷ lệ thành công chỉ **20%** — 10 thẻ R đầu vào **bị burn dù thành công hay thất bại** (để tỷ lệ 20% tránh Fan retry vô hạn tới khi trúng). **SR không có đường gộp lên SSR/UR** — 2 hạng này chỉ ra từ mission sự kiện/campaign. Hoặc (b) **Đổi vật phẩm** lấy đồ trang trí Studio (Space Item) — **không chỉ dùng thẻ C**: mỗi Space Item được Admin gán 1 rarity yêu cầu riêng (C, R, hoặc SR) + số lượng cần burn của đúng rarity đó trên CMS (mục 6.4), nguồn chưa có công thức cụ thể cho phần này.
+2. **BURN (dùng thẻ đã có)** — dùng thẻ sở hữu để (a) **Gộp** nâng hạng lên rarity cao hơn — theo công thức **đã CHỐT**: burn 10 thẻ **cùng rarity, cùng idol** (không cần cùng 1 card cụ thể — bất kỳ 10 thẻ nào cùng rarity của idol đó đều gộp chung được) → 1 thẻ rarity kế tiếp. C→R: tỷ lệ thành công 100% (chắc chắn). R→SR: tỷ lệ thành công **100%** (chắc chắn — cập nhật 2026-08-09, bỏ cơ chế roll 20% trước đó). **SR không có đường gộp lên SSR/UR** — 2 hạng này chỉ ra từ mission sự kiện/campaign. Hoặc (b) **Đổi vật phẩm** lấy đồ trang trí Studio (Space Item) — **không chỉ dùng thẻ C**: mỗi Space Item được Admin gán 1 rarity yêu cầu riêng (C, R, hoặc SR) + số lượng cần burn của đúng rarity đó trên CMS (mục 6.4), nguồn chưa có công thức cụ thể cho phần này.
 
 Thẻ rarity **UR** có thêm 1 hiệu ứng phụ: tự động cấp kèm 1 Track âm thanh nền cho My Space khi Fan sở hữu (xem `FSD_mvp2_MySpace_Background_Sound.md` mục 5.2 — hook vào event "nhận thẻ", không thuộc phạm vi build của FSD này, chỉ cross-reference).
 
@@ -33,7 +33,7 @@ Thẻ rarity **UR** có thêm 1 hiệu ứng phụ: tự động cấp kèm 1 Tr
 - Nhận thẻ qua Mission Service (mission thường → C; mission sự kiện/campaign → SR/SSR/UR) — cập nhật reward type = E-card trong Mission Service
 - Popup thông báo khi nhận thẻ mới: "Bạn nhận được thẻ [hạng] – [idol]"
 - Nút "Đặt làm nhạc nền" trên thẻ UR — chỉ **trigger** sang flow của Kho Track, không xử lý logic audio ở đây (thuộc FSD Background Sound)
-- **Gộp:** burn 10 thẻ cùng rarity + cùng idol (không cần cùng card_id, đề xuất PD/BA) để đổi lấy 1 thẻ rarity kế tiếp — C→R 100% thành công, R→SR 20% thành công (thẻ đầu vào bị burn dù thành công hay thất bại, đề xuất PD/BA); SR không gộp lên SSR/UR được (mục 5.3)
+- **Gộp:** burn 10 thẻ cùng rarity + cùng idol (không cần cùng card_id, đề xuất PD/BA) để đổi lấy 1 thẻ rarity kế tiếp — C→R 100% thành công, R→SR 100% thành công (cập nhật 2026-08-09); SR không gộp lên SSR/UR được (mục 5.3)
 - **Đổi vật phẩm:** burn đủ số lượng thẻ theo yêu cầu của từng Space Item — **không cố định 1 rarity**: mỗi item có thể yêu cầu thẻ C, thẻ R, hoặc thẻ SR tuỳ Admin cấu hình trên CMS (nguồn chưa có công thức)
 - **Claim quà rank-up:** nút nhận quà chủ động khi Fan lên Level — cơ chế nhận đã chốt (Fan claim, không tự động cấp); mặc định **1 thẻ R** cho mọi Level (đề xuất PD/BA theo nguồn mục 5.3), Admin có thể sửa riêng từng Level qua CMS nếu cần khác biệt
 - CMS: CRUD catalog thẻ (gán idol, rarity, giá Star nếu bán trực tiếp C/R, upload asset theo định dạng), cấu hình tỷ lệ quy đổi Gộp + giá Đổi vật phẩm + quà rank-up theo Level
@@ -48,7 +48,7 @@ Thẻ rarity **UR** có thêm 1 hiệu ứng phụ: tự động cấp kèm 1 Tr
 | Actor | Vai trò |
 |---|---|
 | **Fan** | Sở hữu thẻ qua mission/mua Star, xem Kho E-card, gộp thẻ, đổi vật phẩm, claim quà rank-up |
-| **Admin (CMS) / RnD (Mission Config)** | Tạo/sửa catalog thẻ: gán idol, rarity, giá Star (nếu bán trực tiếp C/R), upload asset theo định dạng; cấu hình số lượng thẻ + tỷ lệ thành công cho Gộp (mặc định theo nguồn: C→R 10 thẻ/100%, R→SR 10 thẻ/20%); cấu hình rarity yêu cầu (C/R/SR) + số lượng cho từng Space Item ở Đổi vật phẩm; quà rank-up theo Level (mặc định 1 thẻ R/Level, đề xuất PD/BA); gán loại thẻ (C hay SR/SSR/UR) vào reward pool của từng mission/campaign |
+| **Admin (CMS) / RnD (Mission Config)** | Tạo/sửa catalog thẻ: gán idol, rarity, giá Star (nếu bán trực tiếp C/R), upload asset theo định dạng; cấu hình số lượng thẻ + tỷ lệ thành công cho Gộp (mặc định theo nguồn: C→R 10 thẻ/100%, R→SR 10 thẻ/100%); cấu hình rarity yêu cầu (C/R/SR) + số lượng cho từng Space Item ở Đổi vật phẩm; quà rank-up theo Level (mặc định 1 thẻ R/Level, đề xuất PD/BA); gán loại thẻ (C hay SR/SSR/UR) vào reward pool của từng mission/campaign |
 | **BE System (Card/Inventory Engine)** | Cộng dồn số lượng thẻ, xử lý giao dịch mua bằng Star, báo cho các hệ thống liên quan (Kho Track, Point Tier T4) khi Fan vừa nhận thẻ để họ tự xử lý phần của mình |
 | **Idol/Content team** | Cung cấp asset ảnh tĩnh/motion/live photo/video theo đúng rarity cho từng thẻ |
 
@@ -72,7 +72,7 @@ Thẻ rarity **UR** có thêm 1 hiệu ứng phụ: tự động cấp kèm 1 Tr
 > Là một Fan sở hữu thẻ UR, tôi muốn đặt thẻ đó làm nhạc nền My Space, để không gian riêng của tôi gắn liền với khoảnh khắc hiếm tôi sưu tầm được.
 
 **US-6 (Fan)**
-> Là một Fan, tôi muốn gộp 10 thẻ cùng rarity để đổi lấy 1 thẻ cấp cao hơn (C→R chắc chắn thành công, R→SR có 20% cơ hội), để có động lực cày thẻ trùng thay vì chỉ tích trữ vô nghĩa.
+> Là một Fan, tôi muốn gộp 10 thẻ cùng rarity để đổi lấy 1 thẻ cấp cao hơn (C→R và R→SR đều chắc chắn thành công), để có động lực cày thẻ trùng thay vì chỉ tích trữ vô nghĩa.
 
 **US-7 (Fan)**
 > Là một Fan, tôi muốn đổi thẻ dư thừa (C, R, hoặc SR tuỳ item) lấy vật phẩm trang trí Studio (Space Item), để tận dụng thẻ trùng thay vì để không dùng.
@@ -143,9 +143,7 @@ flowchart TD
 
     E --> J{"Đủ 10 thẻ R?"}
     J -- Không đủ --> H
-    J -- Đủ --> K["BE roll tỷ lệ thành công 20%"]
-    K -- "Thành công (20%)" --> L["Burn 10 thẻ R → cấp 1 thẻ SR"]
-    K -- "Thất bại (80%)" --> M["Burn 10 thẻ R — KHÔNG ra thẻ (thẻ vẫn mất, đề xuất PD/BA)"]
+    J -- Đủ --> L["Burn 10 thẻ R → cấp 1 thẻ SR (tỷ lệ thành công 100%)"]
 
     B -- "Đổi vật phẩm" --> N["Fan chọn 1 Space Item trong danh sách đổi được"]
     N --> O["BE: đọc rarity yêu cầu (C/R/SR — tuỳ item) + số lượng cần burn từ CMS"]
@@ -161,15 +159,14 @@ flowchart TD
 | Gộp | Số lượng cần | Tỷ lệ thành công | Ghi chú |
 |---|---|---|---|
 | C → R | 10 thẻ C cùng idol | **100%** (chắc chắn) | Không có rủi ro |
-| R → SR | 10 thẻ R cùng idol | **20%** | **Đề xuất PD/BA: 10 thẻ R bị burn dù thành công hay thất bại** — cần thiết để tỷ lệ 20% có ý nghĩa thực, tránh Fan retry vô hạn cho tới khi trúng bằng đúng 10 thẻ cũ. Chưa phải số liệu PO xác nhận chính thức |
+| R → SR | 10 thẻ R cùng idol | **100%** (chắc chắn) | **Cập nhật 2026-08-09:** bỏ cơ chế roll 20%/burn-dù-thất-bại trước đó — Gộp R→SR giờ chắc chắn thành công như C→R, không còn rủi ro mất thẻ mà không ra kết quả |
 | SR → SSR | — | — | **Không tồn tại đường Gộp** — SSR chỉ ra từ mission sự kiện/campaign |
 | SSR → UR | — | — | **Không tồn tại đường Gộp** — UR chỉ ra từ mission sự kiện/campaign |
 
-Số lượng cần (10) và tỷ lệ thành công (100%/20%) nên lưu dạng **config trên CMS** (không hard-code), dùng đúng giá trị mặc định theo bảng trên — nhất quán với nguyên tắc "mọi hằng số đều cấu hình qua CMS" đã áp dụng xuyên suốt các FSD khác.
+Số lượng cần (10) và tỷ lệ thành công (100%) nên lưu dạng **config trên CMS** (không hard-code), dùng đúng giá trị mặc định theo bảng trên — nhất quán với nguyên tắc "mọi hằng số đều cấu hình qua CMS" đã áp dụng xuyên suốt các FSD khác.
 
-**2 điểm nguồn chưa nói rõ, được PD/BA đề xuất làm giá trị mặc định (cần PO xác nhận chính thức trước go-live):**
+**1 điểm nguồn chưa nói rõ, được PD/BA đề xuất làm giá trị mặc định (cần PO xác nhận chính thức trước go-live):**
 1. **Phạm vi thẻ đầu vào:** 10 thẻ chỉ cần cùng rarity + cùng idol, **không cần cùng 1 card cụ thể (card_id)**. Nếu bắt buộc cùng card_id, Fan gần như không thể gom đủ 10 thẻ giống hệt nhau — đi ngược mục tiêu tạo động lực cày thẻ trùng (US-6).
-2. **Khi Gộp R→SR thất bại:** 10 thẻ R đầu vào vẫn bị burn, không hoàn lại — nếu không mất thẻ, Fan sẽ retry vô hạn lần cho tới khi trúng, khiến tỷ lệ 20% mất ý nghĩa.
 
 **Đổi vật phẩm:** nguồn không có công thức cụ thể — mỗi Space Item cần Admin cấu hình riêng "cần đổi bao nhiêu thẻ, rarity nào" trên CMS (mục 6.4), không có mô hình tính sẵn. **Không giới hạn chỉ dùng thẻ C:** Admin có thể gán bất kỳ Space Item nào yêu cầu thẻ **C, R, hoặc SR** — vd item phổ biến cần X thẻ C, item hiếm hơn cần X thẻ R, item cao cấp cần X thẻ SR. Mỗi item chỉ gắn 1 rarity yêu cầu duy nhất (không phối trộn nhiều rarity trong cùng 1 lượt đổi).
 
@@ -183,7 +180,7 @@ Số lượng cần (10) và tỷ lệ thành công (100%/20%) nên lưu dạng 
 |---|---|---|
 | C | Ảnh tĩnh | Mission thường, mua trực tiếp bằng Star |
 | R | Ảnh tĩnh | Mission thường, mua trực tiếp bằng Star |
-| SR | Motion | Mission sự kiện/campaign, **hoặc Gộp 10 thẻ R (20% xác suất)** |
+| SR | Motion | Mission sự kiện/campaign, **hoặc Gộp 10 thẻ R (100%, chắc chắn — cập nhật 2026-08-09)** |
 | SSR | Live photo 2s | Chỉ mission sự kiện/campaign — **không có đường Gộp** |
 | UR | Video 5-10s, có âm thanh | Chỉ mission sự kiện/campaign — **không có đường Gộp** — **kèm tự động cấp Track** (xem `FSD_mvp2_MySpace_Background_Sound.md`) |
 
@@ -192,7 +189,7 @@ SR/SSR/UR **không bán trực tiếp** bằng Star — chỉ ra từ reward poo
 ### 6.2 FE
 - Kho "E-card" (nút mở riêng trong My Space, cùng nhóm UI với các Kho vật phẩm khác — Track/Loa/Stage/Skin, **không** nằm trong tab Bộ Sưu Tập): lưới thẻ theo level hoặc trạng thái mua, mỗi ô hiển thị ảnh đại diện + số lượng sở hữu; thẻ chưa sở hữu hiển thị mờ/khoá
 - Màn chi tiết thẻ: render đúng định dạng theo rarity (ảnh tĩnh/motion/live photo/video có âm thanh) + 3 nút Gộp / Đổi vật phẩm / Đặt làm nhạc nền (UR only)
-- Nút Gộp: chỉ hiện cho thẻ rarity C hoặc R (SR/SSR/UR ẩn/disable vì không có đường Gộp); màn chọn đủ 10 thẻ cùng rarity cùng idol (Fan có thể chọn lẫn nhiều card khác nhau, không cần cùng 1 card cụ thể), hiển thị rõ tỷ lệ thành công trước khi Fan xác nhận (100% cho C→R, 20% cho R→SR) — **R→SR phải hiện cảnh báo rõ ràng: "10 thẻ sẽ mất kể cả khi không ra được thẻ SR" trước khi Fan xác nhận burn**
+- Nút Gộp: chỉ hiện cho thẻ rarity C hoặc R (SR/SSR/UR ẩn/disable vì không có đường Gộp); màn chọn đủ 10 thẻ cùng rarity cùng idol (Fan có thể chọn lẫn nhiều card khác nhau, không cần cùng 1 card cụ thể), hiển thị rõ tỷ lệ thành công trước khi Fan xác nhận (100% cho cả C→R và R→SR — cập nhật 2026-08-09, không còn cảnh báo mất thẻ vì không còn khả năng thất bại)
 - Màn Đổi vật phẩm: danh sách Space Item đổi được, mỗi item hiển thị rõ rarity yêu cầu (C/R/SR) + số lượng thẻ cần burn đọc từ CMS, disable item nếu Fan không đủ thẻ đúng rarity
 - Nút "Nhận quà" (claim) hiển thị khi Fan có quà rank-up đang chờ nhận sau khi lên Level — Fan bấm để nhận thẻ E-card, mặc định **1 thẻ R** (đọc từ cấu hình CMS theo từng Level, có thể khác 1 thẻ R nếu Admin đổi)
 - Popup nhận thẻ mới, hiển thị ngay sau khi hành động (mission hoàn thành / mua thành công / gộp / đổi vật phẩm / claim quà rank-up)
@@ -207,14 +204,14 @@ SR/SSR/UR **không bán trực tiếp** bằng Star — chỉ ra từ reward poo
 - Khi Fan thu thập đủ số thẻ theo mốc của catalog Tier T4 (FSD Ranking/Point): cần có cách báo cho hệ thống Point biết để cộng điểm tương ứng — mốc đề xuất **mỗi 10 thẻ C/R thu thập được** (đề xuất PD/BA, tái dùng đúng con số 10 đã CHỐT ở công thức Gộp để nhất quán, thay vì phát sinh tham số cân bằng mới; số liệu chính thức "xxx" vẫn cần PO xác nhận qua `FSD_mvp2_Ranking_Point_System.md` mục 8 OQ-4)
 - Gộp: input 10 thẻ chỉ cần cùng rarity + cùng idol, không yêu cầu cùng card_id cụ thể (đề xuất PD/BA)
 - Gộp / Đổi vật phẩm / Claim quà rank-up: số lượng thẻ cần + tỷ lệ thành công luôn phải lấy từ cấu hình mới nhất trên CMS tại đúng thời điểm Fan thực hiện, không hard-code trong code hoặc dùng giá trị cũ đã lưu tạm
-- Gộp R→SR: việc roll tỷ lệ thành công (20%) phải xử lý ở BE, không được để FE tự tính hay hiển thị trước kết quả — tránh gian lận. 10 thẻ đầu vào bị burn dù thành công hay thất bại (đề xuất PD/BA)
+- Gộp R→SR: tỷ lệ thành công **100%** (chắc chắn, cập nhật 2026-08-09) — không còn cơ chế roll ở BE; 10 thẻ đầu vào burn để đổi lấy 1 thẻ SR
 - Quà rank-up "đang chờ nhận" phải được giữ nguyên cho tới khi Fan chủ động claim — không tự mất, không bị ghi đè nếu Fan lên nhiều Level liên tiếp trước khi claim (xem Edge case #7). Mặc định cấp **1 thẻ R** (đề xuất PD/BA)
 
 ### 6.4 CMS — Quản lý catalog thẻ & quy đổi Burn
 - CRUD thẻ: gán idol, rarity, upload/gán asset đúng định dạng theo rarity
 - Cấu hình giá Star cho thẻ rarity C/R (chỉ áp dụng rarity bán trực tiếp)
 - Gán card_id vào reward pool của từng mission/campaign (phối hợp RnD Mission Config)
-- **Cấu hình Gộp:** số lượng thẻ cần + tỷ lệ thành công cho từng cặp rarity — mặc định theo nguồn: C→R (10 thẻ, 100%), R→SR (10 thẻ, 20%); SR/SSR/UR không có dòng cấu hình Gộp vì không tồn tại đường này. Input chỉ cần đúng rarity + đúng idol (không cần cùng card_id); hệ thống luôn burn thẻ input dù kết quả thành công hay thất bại (đề xuất PD/BA, xem mục 5.3)
+- **Cấu hình Gộp:** số lượng thẻ cần + tỷ lệ thành công cho từng cặp rarity — mặc định theo nguồn: C→R (10 thẻ, 100%), R→SR (10 thẻ, 100% — cập nhật 2026-08-09); SR/SSR/UR không có dòng cấu hình Gộp vì không tồn tại đường này. Input chỉ cần đúng rarity + đúng idol (không cần cùng card_id); hệ thống burn thẻ input khi Gộp thành công (luôn thành công, xem mục 5.3)
 - **Cấu hình Đổi vật phẩm:** với mỗi Space Item tham gia cơ chế đổi, Admin chọn **1 rarity yêu cầu (C, R, hoặc SR)** + số lượng thẻ cần burn của đúng rarity đó — không cố định phải luôn là thẻ C; item khác nhau có thể yêu cầu rarity khác nhau tuỳ độ hiếm của item. Cần định nghĩa danh sách Space Item nào tham gia cơ chế đổi (nguồn chưa có số liệu, Admin/Content tự cân bằng)
 - **Cấu hình quà rank-up theo từng Level** — gán loại/rarity thẻ E-card cấp khi Fan claim ở mỗi Level, mặc định **1 thẻ R** cho mọi Level (đề xuất PD/BA theo nguồn mục 5.3), Admin có thể sửa riêng từng Level nếu cần khác biệt
 - **Cấu hình mốc thưởng "thu thập đủ thẻ"** cho Tier T4 (FSD Ranking/Point): mặc định **mỗi 10 thẻ C** và **mỗi 10 thẻ R** (đề xuất PD/BA, khớp con số Gộp), điểm thưởng cụ thể vẫn chờ PO điền theo `FSD_mvp2_Ranking_Point_System.md` mục 8 OQ-4
@@ -233,8 +230,9 @@ SR/SSR/UR **không bán trực tiếp** bằng Star — chỉ ra từ reward poo
 | 5 | Fan bấm "Đặt làm nhạc nền" trên thẻ UR nhưng chưa có Track liên kết được cấu hình (thiếu đồng bộ CMS giữa Sổ E-card và Kho Track) | Disable nút, hiển thị trạng thái "Đang cập nhật" — nhất quán với edge case #4 của `FSD_mvp2_MySpace_Background_Sound.md` |
 | 6 | Fan thao tác Gộp/Đổi vật phẩm cho thẻ/item mà Admin chưa cấu hình trên CMS | FE disable, hiển thị "Đang cập nhật" (xem mục 6.2); BE cũng validate lại, chặn burn nếu thiếu config |
 | 7 | Fan lên nhiều Level liên tiếp mà chưa claim quà rank-up của (các) Level trước | Giữ lại toàn bộ quà đang chờ theo từng Level, không ghi đè/mất — Fan claim lần lượt hoặc claim dồn (UX cụ thể do Design quyết định) |
-| 8 | Fan Gộp R→SR nhưng roll trúng 80% (thất bại) | Burn 10 thẻ R (mất), không hoàn lại, đúng bản chất "rủi ro" của tỷ lệ 20% (đề xuất PD/BA — cần thiết để tỷ lệ có ý nghĩa thực; PO xác nhận chính thức trước go-live) |
 | 9 | Fan có ≥10 thẻ C nhưng thuộc nhiều card khác nhau (card_id khác nhau) của cùng 1 idol | Vẫn gộp chung được — chỉ cần cùng rarity + cùng idol, không cần cùng card_id cụ thể (đề xuất PD/BA) |
+
+> Edge case #8 (Gộp R→SR roll thất bại) đã bị loại bỏ — cập nhật 2026-08-09, Gộp R→SR giờ tỷ lệ thành công 100%, không còn tồn tại nhánh thất bại.
 
 ---
 
@@ -244,4 +242,4 @@ SR/SSR/UR **không bán trực tiếp** bằng Star — chỉ ra từ reward poo
 |---|---|---|---|
 | ~~1~~ | ~~Kho "E-card" có giới hạn dung lượng (cap) không, hay lưu vô hạn~~ | — | **✅ Đã chốt 2026-07-20: KHÔNG giới hạn** — số lượng thẻ phát hành + tốc độ sưu tầm thực tế khiến Fan khó lấp đầy kho, không cần đặt cap nhân tạo |
 
-**Lưu ý:** Các điểm nguồn chưa nói rõ (quà rank-up, Gộp R→SR thất bại, phạm vi cùng idol/card_id, mốc thu thập thẻ Tier T4) đã được **PD/BA đề xuất giá trị làm việc (working default)** trực tiếp trong nội dung tài liệu (mục 1, 5.3, 6.2-6.4, Edge Cases) thay vì để riêng ở đây — tất cả đều gắn nhãn **"đề xuất PD/BA"** và vẫn cần **PO/Content xác nhận chính thức trước go-live**, đặc biệt là số liệu "xxx" ở `FSD_mvp2_Ranking_Point_System.md` mục 8 OQ-4.
+**Lưu ý:** Các điểm nguồn chưa nói rõ (quà rank-up, phạm vi cùng idol/card_id, mốc thu thập thẻ Tier T4) đã được **PD/BA đề xuất giá trị làm việc (working default)** trực tiếp trong nội dung tài liệu (mục 1, 5.3, 6.2-6.4, Edge Cases) thay vì để riêng ở đây — tất cả đều gắn nhãn **"đề xuất PD/BA"** và vẫn cần **PO/Content xác nhận chính thức trước go-live**, đặc biệt là số liệu "xxx" ở `FSD_mvp2_Ranking_Point_System.md` mục 8 OQ-4.
