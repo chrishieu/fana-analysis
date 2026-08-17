@@ -26,7 +26,7 @@ Cơ chế gồm 2 phần không tách rời:
 - Bảng 6 cấp Level (0→5): tên gọi + ngưỡng điểm tích luỹ tương ứng
 - Cơ chế **auto level-up**: hệ thống tự kiểm tra và nâng Level khi điểm tích luỹ chạm ngưỡng, không cần Fan thao tác, nhưng có gửi thông báo (noti) cho Fan khi họ lên Level
 - Catalog Tier T1-T5 (danh sách hành động & phân nhóm Tier) — cấu trúc catalog cố định, nhưng Admin có quyền thay đổi các tham số của từng hành động (điểm/lượt, giới hạn tần suất, tổng tối đa/tháng) qua CMS
-- **EXP tích luỹ chung cho toàn app theo từng Fan** — hành động với bất kỳ idol nào Fan đang follow đều cộng vào cùng 1 sổ EXP duy nhất. Giới hạn tần suất/tháng của mỗi hành động (Tier T1-T4) cũng tính chung theo Fan, **không nhân theo số idol** Fan đang tương tác trong ngày/tháng đó — đề xuất PD, cần PO xác nhận chính thức trước khi RnD cân bằng lại `G` (xem OQ mục 8)
+- **EXP tích luỹ chung cho toàn app theo từng Fan** — hành động với bất kỳ idol nào Fan đang follow đều cộng vào cùng 1 sổ EXP duy nhất. Giới hạn tần suất/tháng của mỗi hành động (Tier T1-T4) cũng tính chung theo Fan, **không nhân theo số idol** Fan đang tương tác trong ngày/tháng đó
 - Tier T5 — **Gộp E-card:** mỗi lần Fan gộp đủ 10 thẻ E-card cùng rarity/idol thành công (cơ chế Gộp thuộc `FSD_mvp2_Ecard_Collect_Burn.md`) cộng thêm 1 EXP, không giới hạn tần suất
 
 ### Ngoài phạm vi
@@ -83,7 +83,7 @@ flowchart TD
         G --> H{"Tổng EXP tích luỹ mới có vượt ngưỡng Level kế tiếp?"}
         H -- Có --> I["Auto tăng Level (không cần Fan xác nhận)"]
         I --> J["Emit event 'fan.level_up' (user_id, new_level)"]
-        J --> K["Unlock Your Space theo Level mới (phạm vi áp dụng cho từng My Space cụ thể hay toàn bộ — xem OQ mục 8)"]
+        J --> K["Unlock đồng loạt cho mọi My Space Fan đang có (Level là con số chung toàn app, không tách theo idol — nên áp cùng 1 ngưỡng bất kể My Space của idol nào)"]
         J --> L["Trigger downstream: reward Milestone (nếu có), Mission progress (hệ thống riêng)"]
     end
 
@@ -159,7 +159,7 @@ Nguyên tắc: hành động cùng độ phức tạp → cùng mức điểm, b
 
 > **"Thả tim" xuất hiện ở cả T1 (tương tác nhẹ, 2đ) và T2 (thả tim bài đăng của idol, 5đ)** — theo đúng nguồn, có thể là 2 bề mặt khác nhau (feed chung vs bài đăng idol cụ thể). Giữ nguyên như nguồn, chưa cần làm rõ thêm trừ khi Design phát hiện trùng UI.
 
-**Quà rank-up khi lên Level:** Level tự động tăng không cộng thêm điểm (0đ, không phải dòng trong catalog Tier) — đi kèm quà Idol E-card, cơ chế claim thuộc `FSD_mvp2_Ecard_Collect_Burn.md` mục 6.2-6.3. Idol nào cấp quà khi EXP đã global: xem OQ mục 8.
+**Quà rank-up khi lên Level:** Level tự động tăng không cộng thêm điểm (0đ, không phải dòng trong catalog Tier) — đi kèm quà thuộc 3 loại **Space Item / Sticker / Avatar Frame** (đã chốt 2026-08-17, thay cho E-card — xem `FSD_mvp2_Ecard_Collect_Burn.md` mục 8). Admin cấu hình 1 pool vật phẩm khả dụng cho từng Level trên CMS (gồm cả 3 loại, không giới hạn chỉ 1 loại); khi Fan lên Level, hệ thống **random** 1 vật phẩm trong pool đó và cấp thẳng cho Fan (nhất quán với cơ chế auto level-up ở mục 2 — không cần Fan thao tác thêm).
 
 **Cấu hình qua CMS:** mỗi dòng hành động trong catalog trên đều được cấu hình qua CMS — Admin có quyền chỉnh sửa điểm/lượt, giới hạn tần suất, và tổng tối đa/tháng của từng hành động. Thay đổi chỉ áp dụng cho giao dịch điểm phát sinh **sau** thời điểm lưu, **không hồi tố** điểm đã cộng trước đó (xem Edge case #5).
 
@@ -184,13 +184,3 @@ Mobile app **không tự tính điểm hay tự xác định lên Level** — s�
 | 4 | Fan gộp đủ 10 thẻ E-card (Tier T5) — vừa nhận thẻ rarity cao hơn (Ecard FSD) vừa được cộng EXP | 2 hiệu ứng phải xảy ra cùng lúc trong 1 transaction, không được chỉ thực hiện 1 trong 2 nếu giao dịch thất bại giữa chừng |
 | 5 | Admin sửa ngưỡng Level hoặc đơn giá Tier khi Fan đang có điểm tích luỹ gần ngưỡng cũ | Không hồi tố — Fan giữ nguyên điểm đã tích, chỉ áp ngưỡng/đơn giá mới cho giao dịch phát sinh sau khi lưu cấu hình |
 | 6 | Fan Letter bị Idol report vi phạm sau khi điểm "Viết thư cho idol" đã được cộng | Điểm của letter đó bị **huỷ bỏ** — trừ khỏi tổng điểm tích luỹ ngay khi report được xử lý. **Level giữ nguyên, không hạ cấp** kể cả khi tổng điểm sau khi trừ tụt dưới ngưỡng Level hiện tại — vì Level giảm ảnh hưởng lớn tới phạm vi mua Space Item đã unlock |
-
----
-
-## 8. Open Questions (chưa có câu trả lời từ stakeholder)
-
-| # | Câu hỏi | Ảnh hưởng | Ghi chú |
-|---|---|---|---|
-| 1 | EXP giờ tính global (2026-08-15) — quà rank-up khi lên Level (Idol E-card) cấp cho idol nào? Unlock Your Space theo Level mới áp dụng đồng loạt cho mọi My Space Fan đang có, hay cần logic riêng theo từng idol? | Chặn thiết kế chi tiết UX "lên Level" và CMS cấu hình quà rank-up ở `FSD_mvp2_Ecard_Collect_Burn.md` | User chủ động defer câu này (2026-08-15) — không tự default |
-| 2 | Giới hạn tần suất Tier T1-T4 tính chung theo Fan (đề xuất trong mục 2/6.3) có đúng ý đồ cân bằng game không, hay cần cho phép nhân theo số idol Fan tương tác để khuyến khích multi-fandom engagement? | Ảnh hưởng trực tiếp tới việc `G` = 1.250 điểm/tháng còn đúng không, và thiết kế bộ đếm cap ở BE | Đề xuất PD: tính chung theo Fan (an toàn hơn cho cân bằng game) — cần PO xác nhận chính thức |
-| 3 | Bản catalog T1-T4 cũ (trước `mvp2_revise_1.docx`) từng có thêm 3 dòng: "Nạp mốc 100/200 Star", "Lên hạng" (0đ), "Thu thập đủ thẻ C/R" — cả 3 đều **không còn xuất hiện** trong bảng Tier mới. "Thu thập đủ thẻ" nhiều khả năng đã chuyển hẳn sang cơ chế FPP (đã có bảng earn theo rarity ở `FSD_mvp2_FPP_Leaderboard.md`, không cần cộng thêm EXP song song) — nhưng đây là suy luận, chưa phải xác nhận từ PO | Ảnh hưởng `FSD_mvp2_Ecard_Collect_Burn.md` mục 6.3 (đã sửa theo hướng suy luận này) và bất kỳ mission nào từng gán thưởng "nạp Star" | Cần PO xác nhận: 3 mục này bị bỏ hẳn có chủ đích, hay chỉ không nhắc lại trong bản brief mới |
