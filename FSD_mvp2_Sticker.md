@@ -1,19 +1,19 @@
 # FSD — MVP2: Sticker (Gửi thư)
 
-> **Nguồn tham chiếu:** `mvp2_revise_1.docx` — Star chỉ dùng để Donate, Sticker trả phí chuyển sang mua bằng tiền qua IAP (15/08/2026)
-
 ---
 
 ## 1. Tổng quan
 
 Sticker là tính năng bổ sung cho màn **Gửi thư** hiện có — chèn thêm sticker vào nội dung thư khi soạn, **song song** với Fan Letter hiện tại (không thay thế, không mâu thuẫn). Sticker được tổ chức và bán theo **bộ (set)**, không bán/mua lẻ từng sticker.
 
+**⚠️ Pivot 2026-08-17 (lý do: compliance giấy phép game):** Bộ Paid chuyển từ mua bằng Star sang mua bằng **tiền thật (IAP Apple/Google hoặc MoMo)** tại tab **"Cửa hàng"** chung (cùng E-card, Space Item, Avatar Frame) — Star chỉ còn dùng cho tặng quà Idol (Digital Gift), không còn dùng để mua vật phẩm.
+
 Mỗi bộ do Admin tạo trên CMS, gắn 1 trong 2 loại sở hữu:
 
 | Loại bộ | Cách sở hữu | Giá |
 |---|---|---|
-| **Free** | Cấp miễn phí cho Fan | Không tốn gì |
-| **Paid** | Fan phải mua | Trả bằng **tiền qua IAP**, mua nguyên cả bộ (không mua lẻ sticker trong bộ) |
+| **Free** | Cấp miễn phí cho Fan | Miễn phí |
+| **Paid** | Fan phải mua tại Cửa hàng | Trả bằng **tiền thật (IAP/MoMo)**, mua nguyên cả bộ (không mua lẻ sticker trong bộ) |
 
 Fan không giới hạn số lượng sticker chèn trong 1 lần soạn thư, và có thể trộn sticker từ nhiều bộ đã sở hữu khác nhau trong cùng 1 thư.
 
@@ -22,10 +22,10 @@ Fan không giới hạn số lượng sticker chèn trong 1 lần soạn thư, v
 ## 2. Phạm vi (Scope)
 
 ### Trong phạm vi
-- CMS: Admin tạo/sửa/xoá **bộ sticker** — đặt tên bộ, upload danh sách sticker trong bộ, gán loại **Free/Paid**, nếu Paid thì nhập **giá tiền** của cả bộ
+- CMS: Admin tạo/sửa/xoá **bộ sticker** — đặt tên bộ, upload danh sách sticker trong bộ, gán loại **Free/Paid**, nếu Paid thì nhập **giá tiền thật** của cả bộ
 - CMS: gán mốc thời gian phát hành để hệ thống tự tính tag "new"
-- Fan xem danh sách bộ sticker đã sở hữu + bộ Paid chưa sở hữu (màn Bộ sưu tập Sticker)
-- Fan mua nguyên 1 bộ Paid bằng tiền qua IAP (không mua lẻ sticker)
+- Fan xem danh sách bộ sticker đã sở hữu + bộ Paid chưa sở hữu (màn Bộ sưu tập Sticker, hoặc tab Cửa hàng)
+- Fan mua nguyên 1 bộ Paid bằng tiền thật (IAP/MoMo) tại tab Cửa hàng (không mua lẻ sticker)
 - Fan chèn sticker (từ bất kỳ bộ nào đã sở hữu) vào nội dung thư khi soạn, không giới hạn số lượng/thư
 - Lưu reference sticker đã chèn vào nội dung thư (để hiển thị lại đúng khi xem thư)
 - Tag "new" / popup thông báo khi có bộ sticker mới phát hành
@@ -36,9 +36,9 @@ Fan không giới hạn số lượng sticker chèn trong 1 lần soạn thư, v
 
 | Actor | Vai trò |
 |---|---|
-| **Fan** | Xem bộ sticker sở hữu, mua bộ Paid bằng tiền qua IAP, chèn sticker vào thư |
-| **Admin (CMS)** | Tạo/sửa bộ sticker (tên, danh sách sticker, loại Free/Paid, giá tiền nếu Paid, mốc phát hành) |
-| **BE System (Sticker/Inventory Engine)** | Quản lý ownership bộ theo user, xử lý giao dịch mua qua IAP, lưu reference sticker trong nội dung thư |
+| **Fan** | Xem bộ sticker sở hữu, mua bộ Paid bằng tiền thật (IAP/MoMo), chèn sticker vào thư |
+| **Admin (CMS)** | Tạo/sửa bộ sticker (tên, danh sách sticker, loại Free/Paid, giá tiền thật nếu Paid, mốc phát hành) |
+| **BE System (Sticker/Inventory Engine)** | Quản lý ownership bộ theo user, xử lý giao dịch mua qua IAP/MoMo (hệ thống thanh toán chung của Cửa hàng), lưu reference sticker trong nội dung thư |
 
 ---
 
@@ -51,13 +51,13 @@ Fan không giới hạn số lượng sticker chèn trong 1 lần soạn thư, v
 > Là một Fan, tôi muốn biết bộ sticker nào mới phát hành (qua tag "new"/popup), để không bỏ lỡ nội dung mới.
 
 **US-3 (Fan)**
-> Là một Fan, tôi muốn mua nguyên 1 bộ sticker Paid bằng tiền qua IAP khi thấy bộ đó hấp dẫn, để mở khoá dùng toàn bộ sticker trong bộ đó.
+> Là một Fan, tôi muốn mua nguyên 1 bộ sticker Paid bằng tiền thật (IAP/MoMo) tại Cửa hàng khi thấy bộ đó hấp dẫn, để mở khoá dùng toàn bộ sticker trong bộ đó.
 
 **US-4 (Fan)**
 > Là một Fan, tôi muốn chèn không giới hạn số lượng sticker (từ nhiều bộ khác nhau) vào 1 thư đang soạn, để thư trông sinh động theo ý mình.
 
 **US-5 (Admin)**
-> Là Admin, tôi muốn tạo bộ sticker mới trên CMS — đặt tên, upload sticker, chọn Free hoặc Paid, nhập giá tiền nếu Paid — để phát hành nội dung mới mà không cần Tech deploy lại code.
+> Là Admin, tôi muốn tạo bộ sticker mới trên CMS — đặt tên, upload sticker, chọn Free hoặc Paid, nhập giá tiền thật nếu Paid — để phát hành nội dung mới mà không cần Tech deploy lại code.
 
 ---
 
@@ -71,7 +71,7 @@ flowchart TD
     B --> C["Upload danh sách sticker (ảnh) vào bộ"]
     C --> D{"Chọn loại bộ?"}
     D -->|Free| E["Không cần nhập giá — bộ sẽ cấp miễn phí cho Fan"]
-    D -->|Paid| F["Nhập giá tiền cho cả bộ (không định giá theo từng sticker)"]
+    D -->|Paid| F["Nhập giá tiền thật (IAP/MoMo) cho cả bộ (không định giá theo từng sticker)"]
     E --> G["Nhập/chọn mốc thời gian phát hành (dùng để tính tag 'new')"]
     F --> G
     G --> H["Publish bộ sticker"]
@@ -90,12 +90,13 @@ flowchart TD
     C -->|Không| E
     D --> E{"Fan chọn 1 bộ sticker"}
     E -->|Bộ đã sở hữu Free/Paid| F["Mở bộ, hiển thị danh sách sticker trong bộ"]
-    E -->|Bộ Paid chưa sở hữu| G["Vào màn Bộ sưu tập Sticker"]
-    G --> H["Fan xác nhận mua → hệ thống mở luồng thanh toán IAP (Apple/Google)"]
-    H --> I{"Thanh toán IAP thành công?"}
-    I -->|Có| J["BE: atomic transaction — xác nhận giao dịch IAP, cấp ownership cả bộ cho user"]
-    I -->|Không| K["Báo lỗi/huỷ, không cấp ownership"]
-    J --> F
+    E -->|Bộ Paid chưa sở hữu| G["Vào tab Cửa hàng > mục Sticker"]
+    G --> H["Fan xác nhận mua, hiển thị giá tiền thật"]
+    H --> I2["Thanh toán qua IAP (Apple/Google) hoặc MoMo<br/>(luồng thanh toán chung của Cửa hàng, ngoài phạm vi build ở đây)"]
+    I2 --> J2{"Thanh toán thành công?"}
+    J2 -->|Có| I["BE: cấp ownership cả bộ cho user"]
+    J2 -->|Không| J["Báo lỗi, không cấp ownership"]
+    I --> F
     F --> L["Chèn sticker vào nội dung thư<br/>(không giới hạn số lượng/thư, có thể trộn nhiều bộ)"]
     L --> M["BE lưu reference sticker đã chèn trong nội dung thư"]
     M --> N["Tiếp tục soạn thư → Gửi"]
@@ -107,22 +108,21 @@ flowchart TD
 
 ### 6.1 CMS
 - CRUD **bộ sticker**: tên bộ, danh sách ảnh sticker trong bộ, loại **Free/Paid**
-- Nếu Paid: bắt buộc nhập giá tiền của cả bộ (1 giá duy nhất áp cho toàn bộ, không có giá riêng từng sticker)
+- Nếu Paid: bắt buộc nhập giá tiền thật (IAP/MoMo) của cả bộ (1 giá duy nhất áp cho toàn bộ, không có giá riêng từng sticker)
 - Gán mốc thời gian phát hành — dùng để hệ thống tự tính khoảng thời gian hiển thị tag "new" (độ dài khoảng thời gian "new" nên để cấu hình chung)
 - Đổi 1 bộ từ Free sang Paid hoặc ngược lại sau khi đã publish: **cần chặn hoặc cảnh báo rõ ràng** vì ảnh hưởng trực tiếp Fan đã/chưa sở hữu
 
 ### 6.2 FE
 - Bottom sheet chọn sticker trong màn Gửi thư — hiển thị các bộ đã sở hữu (Free đã cấp + Paid đã mua)
 - Tag "new" hoặc popup khi có bộ sticker mới phát hành, theo mốc thời gian Admin cấu hình
-- Màn Bộ sưu tập Sticker: tách rõ bộ đã sở hữu vs bộ Paid chưa sở hữu (hiển thị giá tiền)
-- Màn mua bộ Paid: hiển thị giá tiền hiện hành, xác nhận mua → mở luồng thanh toán IAP, xử lý kết quả thành công/thất bại
+- Màn Bộ sưu tập Sticker: tách rõ bộ đã sở hữu vs bộ Paid chưa sở hữu (hiển thị giá tiền thật)
+- Bộ Paid chưa sở hữu: điều hướng sang tab Cửa hàng để mua — hiển thị giá hiện hành, xác nhận mua, thanh toán qua IAP/MoMo (thuộc luồng thanh toán chung của Cửa hàng)
 - Chèn sticker trực tiếp vào nội dung thư khi soạn — không giới hạn số lượng, cho phép trộn sticker từ nhiều bộ khác nhau trong cùng 1 thư
 
 ### 6.3 BE
 - API danh sách bộ sticker (Free/Paid) kèm trạng thái sở hữu theo user
-- API mua cả bộ sticker Paid qua IAP — atomic transaction: xác nhận giao dịch IAP và cấp ownership bộ phải xảy ra trọn vẹn cùng lúc, không được để xảy ra trường hợp chỉ 1 trong 2 việc thành công
-- Chặn xử lý trùng lặp cùng 1 giao dịch IAP (idempotency theo transaction/receipt ID)
-- Giá tiền áp dụng đúng theo cấu hình tại thời điểm Fan xác nhận mua — nếu Admin vừa đổi giá, không dùng giá cũ đã hiển thị trước đó trên máy Fan
+- API cấp ownership bộ sticker Paid sau khi Cửa hàng xác nhận thanh toán IAP/MoMo thành công — atomic transaction: xác nhận thanh toán và cấp ownership bộ phải xảy ra trọn vẹn cùng lúc, không được để xảy ra trường hợp mất tiền mà không có bộ sticker
+- Giá áp dụng đúng theo cấu hình tại thời điểm Fan xác nhận mua — nếu Admin vừa đổi giá, không dùng giá cũ đã hiển thị trước đó trên máy Fan
 - Cơ chế cấp ownership bộ Free cho Fan: mặc định **tự động cấp cho mọi Fan** ngay khi bộ được publish, không cần Fan thao tác gì thêm (đề xuất PD/BA, nguồn "scheme mission để sở hữu free" chưa có nội dung cụ thể)
 - Lưu reference sticker đã chèn trong nội dung thư (để render lại đúng khi Fan/người khác xem lại thư)
-- CMS: CRUD bộ sticker, gán Free/Paid + giá tiền, gán mốc thời gian phát hành
+- CMS: CRUD bộ sticker, gán Free/Paid + giá tiền thật, gán mốc thời gian phát hành
