@@ -120,7 +120,7 @@ flowchart TD
 |---|---|---|
 | **EXP (điểm)** | Tích luỹ để tự động nâng Rank/Level, tính chung toàn app | Đối tượng chính của FSD này — chỉ earn qua catalog Tier T1-T5 |
 | **Star** | Chỉ dùng để Donate — tặng quà cho idol, donate Fan Project | **Không cộng EXP** — donate chỉ cộng FPP theo idol, xem `FSD_mvp2_FPP_Leaderboard.md` |
-| **Idol E-card / Space Item / Sticker** | Mua trực tiếp bằng tiền qua IAP | **Không cộng EXP** khi mua — riêng hành động **Gộp E-card** cộng EXP theo Tier T5 (mục 6.3); mua/sở hữu E-card cộng FPP, xem `FSD_mvp2_FPP_Leaderboard.md` |
+| **Vật phẩm (E-card, Space Item, Sticker, Avatar Frame)** | Mua trực tiếp bằng tiền qua IAP tại Cửa hàng — cùng 1 nhóm tính chất, không còn phân biệt riêng E-card | **Không cộng EXP** khi mua — riêng hành động **Gộp E-card** cộng EXP theo Tier T5 (mục 6.3); mua/sở hữu vật phẩm cộng FPP, xem `FSD_mvp2_FPP_Leaderboard.md` |
 
 ### 6.2 Bảng ngưỡng Level (Rank)
 
@@ -150,7 +150,7 @@ Nguyên tắc: hành động cùng độ phức tạp → cùng mức điểm, b
 | | | Thêm sự kiện vào My Calendar | 2đ/sự kiện | Tối đa 2 lượt/ngày | 120 |
 | **T3 — Medium** (2-5 phút) | Trung bình | Viết thư cho idol | 20đ/thư | Tối đa 4 thư/tháng | 80 |
 | | | Hoàn thành đủ nhiệm vụ trong ngày (Daily Complete — `FSD_mvp2_Daily_Mission.md`) | 5đ/ngày | 1 lần/ngày | 150 |
-| **T4 — Milestone** (cột mốc) | Trung bình-cao | Giữ streak 7/14/30 ngày | 20/25/30đ (+item mốc 14, 30) | 1 lần/mốc/tháng | 75 |
+| **T4 — Milestone** (cột mốc) | Trung bình-cao | Giữ streak 7/14/30 ngày | 20/25/30đ | 1 lần/mốc/tháng | 75 |
 | | | Thêm đủ 10 sự kiện/tháng | 20đ | 1 lần/tháng | 20 |
 | | | Tương tác đủ 20 lượt/tháng | 25đ | 1 lần/tháng | 25 |
 | **T5 — Convert** (quy đổi) | Quy đổi | Gộp đủ 10 thẻ E-card (`FSD_mvp2_Ecard_Collect_Burn.md` mục 5.3) | 1đ/lần | Không giới hạn | ∞ |
@@ -159,7 +159,7 @@ Nguyên tắc: hành động cùng độ phức tạp → cùng mức điểm, b
 
 > **"Thả tim" xuất hiện ở cả T1 (tương tác nhẹ, 2đ) và T2 (thả tim bài đăng của idol, 5đ)** — theo đúng nguồn, có thể là 2 bề mặt khác nhau (feed chung vs bài đăng idol cụ thể). Giữ nguyên như nguồn, chưa cần làm rõ thêm trừ khi Design phát hiện trùng UI.
 
-**Quà rank-up khi lên Level:** Level tự động tăng không cộng thêm điểm (0đ, không phải dòng trong catalog Tier) — đi kèm quà thuộc 3 loại **Space Item / Sticker / Avatar Frame** (đã chốt 2026-08-17, thay cho E-card — xem `FSD_mvp2_Ecard_Collect_Burn.md` mục 8). Admin cấu hình 1 pool vật phẩm khả dụng cho từng Level trên CMS (gồm cả 3 loại, không giới hạn chỉ 1 loại); khi Fan lên Level, hệ thống **random** 1 vật phẩm trong pool đó và cấp thẳng cho Fan (nhất quán với cơ chế auto level-up ở mục 2 — không cần Fan thao tác thêm).
+**Quà rank-up khi lên Level:** Level tự động tăng không cộng thêm điểm (0đ, không phải dòng trong catalog Tier) — đi kèm quà là 1 **vật phẩm** (E-card, Space Item, Sticker, Avatar Frame — cùng 1 nhóm tính chất, không phân biệt riêng E-card). Admin cấu hình 1 pool vật phẩm khả dụng cho từng Level trên CMS, tự do chọn từ bất kỳ loại nào trong nhóm trên; khi Fan lên Level, hệ thống **random** 1 vật phẩm trong pool đó và cấp thẳng cho Fan (nhất quán với cơ chế auto level-up ở mục 2 — không cần Fan thao tác thêm).
 
 **Cấu hình qua CMS:** mỗi dòng hành động trong catalog trên đều được cấu hình qua CMS — Admin có quyền chỉnh sửa điểm/lượt, giới hạn tần suất, và tổng tối đa/tháng của từng hành động. Thay đổi chỉ áp dụng cho giao dịch điểm phát sinh **sau** thời điểm lưu, **không hồi tố** điểm đã cộng trước đó (xem Edge case #5).
 

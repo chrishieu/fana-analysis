@@ -16,11 +16,13 @@ Milestone Mission **chính là Tier T4** trong catalog Tier ở `FSD_mvp2_Rankin
 | Nhiệm vụ | Điểm | Giới hạn | Quà kèm theo |
 |---|---|---|---|
 | Giữ streak check-in 7 ngày | 20đ | 1 lần/mốc/tháng | — |
-| Giữ streak check-in 14 ngày | 25đ | 1 lần/mốc/tháng | + 1 item trang trí (đã có ở Tier T4) |
-| Giữ streak check-in 30 ngày | 30đ | 1 lần/mốc/tháng | + 1 item trang trí (đã có ở Tier T4) |
+| Giữ streak check-in 14 ngày | 25đ | 1 lần/mốc/tháng | — |
+| Giữ streak check-in 30 ngày | 30đ | 1 lần/mốc/tháng | — |
 | Thêm đủ 10 sự kiện vào Calendar/tháng | 20đ | 1 lần/tháng | + 1 thẻ C, **random idol Fan đang follow** |
 | Tương tác đủ 20 lượt/tháng | 25đ | 1 lần/tháng | + 1 thẻ C, **random idol Fan đang follow** |
 | Lên hạng (Level up) | 0đ | — | **1 thẻ R** (theo nguồn mục 5.3, khớp đúng idol có Level vừa tăng — Level tính riêng theo từng cặp Fan-Idol) |
+
+**3 mốc streak check-in (7/14/30 ngày) chỉ thưởng EXP, không kèm vật phẩm** — lý do: nhiệm vụ (Mission) thuộc phạm vi giấy phép Mạng xã hội, trong khi vật phẩm (item trang trí, thẻ E-card...) thuộc phạm vi giấy phép Game; gắn quà vật phẩm vào 1 nhiệm vụ MXH gây xung đột giữa 2 loại giấy phép khi duyệt hồ sơ.
 
 Riêng 2 mốc Calendar và Tương tác không gắn với 1 idol cụ thể (hành động có thể đến từ nhiều idol khác nhau Fan đang theo dõi), nên thẻ C thưởng được chọn **ngẫu nhiên trong số các idol Fan đang follow** — khác với "Lên hạng" vốn đã có sẵn ngữ cảnh 1 idol cụ thể.
 
@@ -31,6 +33,6 @@ Ngoài 6 dòng trên, Tier T4 còn 2 nhóm mốc khác (Nạp mốc Star 100/200
 ## 3. Yêu cầu chức năng
 
 - **Mobile app:** màn "Thành tựu" (vị trí/thiết kế cụ thể do Design quyết định) hiển thị danh sách Milestone kèm trạng thái đã đạt/chưa đạt — badge dạng mở khoá, không phải progress bar liên tục như Daily Mission
-- **CMS:** không cấu hình logic tính điểm mới — dùng chung catalog Tier T4 (`FSD_mvp2_Ranking_Point_System.md` mục 6.3). Chỉ bổ sung field "quà kèm theo" (item trang trí hoặc thẻ E-card) cho từng dòng Milestone, để trống nếu Admin chưa gán quà
+- **CMS:** không cấu hình logic tính điểm mới — dùng chung catalog Tier T4 (`FSD_mvp2_Ranking_Point_System.md` mục 6.3). Chỉ bổ sung field "quà kèm theo" (thẻ E-card) cho dòng Calendar/Tương tác/Lên hạng, để trống nếu Admin chưa gán quà — **3 mốc streak không có field này, chỉ tính điểm**
 - Engine tính điểm/giới hạn/reset dùng chung 100% với `FSD_mvp2_Ranking_Point_System.md` — Milestone không có logic tính điểm riêng
-- Quà kèm theo (item trang trí, thẻ E-card): cấp cùng lúc với điểm ngay khi Fan đạt mốc — **khác với quà rank-up ở `FSD_mvp2_Ecard_Collect_Burn.md` (đã chốt Fan phải chủ động claim)**
+- Quà kèm theo (thẻ E-card, áp dụng cho Calendar/Tương tác/Lên hạng): cấp cùng lúc với điểm ngay khi Fan đạt mốc — **khác với quà rank-up ở `FSD_mvp2_Ecard_Collect_Burn.md` (đã chốt Fan phải chủ động claim)**
