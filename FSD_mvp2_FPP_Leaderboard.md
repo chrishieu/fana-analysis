@@ -1,12 +1,5 @@
 # FSD — MVP2: Fan Power Point (FPP) & Leaderboard theo Idol
 
-> **Loại tài liệu:** Functional Specification Document (FSD)
-> **CR liên quan:** MVP2
-> **Nguồn tham chiếu:** `mvp2_revise_1.docx` (mục I — Fan Power Point, 15/08/2026), `FSD_mvp2_Ranking_Point_System.md` (EXP — hệ điểm song song, dùng chung 1 số nguồn earn), `FSD_mvp2_Ecard_Collect_Burn.md` (rarity C/R/SR đang active, SSR/UR tạm deactive trong MVP2 — nguồn xác nhận bảng quy đổi FPP theo rarity mục 6.1)
-> **Trạng thái:** Draft — cấu trúc BXH, nguồn earn, cơ chế claim quà và phạm vi áp dụng bảng bậc đã được PO chốt; còn 1 điểm treo về quy trình duyệt sự kiện (mục 8)
-
----
-
 ## 1. Tổng quan
 
 **Fan Power Point (FPP)** đo mức độ đầu tư (trả phí) của 1 Fan đối với **từng idol cụ thể** — khác hẳn `EXP` (`FSD_mvp2_Ranking_Point_System.md`), vốn là 1 con số duy nhất tính chung toàn app, earn cả qua engagement miễn phí lẫn trả phí. FPP:
