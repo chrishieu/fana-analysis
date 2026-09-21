@@ -31,10 +31,10 @@ Mỗi Fan sở hữu 1 cuốn Sổ hành trình riêng, có thể chứa Stamp c
 
 ### Ngoài phạm vi (thuộc giai đoạn sau, FSD khác, hoặc chưa đủ dữ kiện để build)
 - **Customize trang cá nhân trong Sổ hành trình** (Long-term theo mục 1) — chưa build ở giai đoạn này
-- **Chi tiết cơ chế bên trong "Phòng tám / Locket chat"** (đã xác nhận: nút "Vào Phòng tám" ở modal quét trùng và nút "Vào locket chat" ở modal Thông tin Stamp cùng dẫn tới **1 tính năng duy nhất**) — FSD này chỉ nêu điểm chạm điều hướng, **không** định nghĩa lại cơ chế nhắn tin/nội dung bên trong; xem Open Question OQ-2
+- **Chi tiết cơ chế bên trong "Phòng tám / Locket chat"** (đã xác nhận: nút "Vào Phòng tám" ở modal quét trùng và nút "Vào locket chat" ở modal Thông tin Stamp cùng dẫn tới **1 tính năng duy nhất**, và đã xác nhận là **hệ thống chat thật** — real-time, không phải nội dung kịch bản/preset) — FSD này chỉ nêu điểm chạm điều hướng, **không** định nghĩa lại cơ chế nhắn tin/hạ tầng chat bên trong (nhiều khả năng cần tách FSD riêng cho "Phòng tám/Locket chat")
 - **Trạng thái sự kiện (Đang diễn ra/Đã đóng) và số liệu "số người tham gia"** — tạm bỏ khỏi phạm vi FSD này theo yêu cầu PD, sẽ bổ sung lại ở giai đoạn sau nếu cần
 - **Màn "Chi tiết sự kiện"** (khi Fan bấm nút từ modal Thông tin Stamp) — nếu đã có FSD Event/Calendar riêng thì tham chiếu, FSD này không định nghĩa lại
-- **Tích hợp EXP/FPP khi earn Stamp** — hiện **không** có dòng nào trong catalog Tier T1-T5 (`FSD_mvp2_Ranking_Point_System.md` mục 6.3) tương ứng với hành động quét Stamp offline; mặc định earn Stamp **không** cộng EXP/FPP cho tới khi có xác nhận bổ sung — xem Open Question OQ-6
+- **Tích hợp EXP/FPP khi earn Stamp** — hiện **không** có dòng nào trong catalog Tier T1-T5 (`FSD_mvp2_Ranking_Point_System.md` mục 6.3) tương ứng với hành động quét Stamp offline; mặc định earn Stamp **không** cộng EXP/FPP cho tới khi có xác nhận bổ sung — xem Open Question OQ-1
 
 ---
 
@@ -145,7 +145,7 @@ flowchart TD
   - **Ngày giờ, địa điểm**
   - **Khung Stamp của sự kiện** — nếu sự kiện chỉ gắn 1 idol, mặc định dùng Khung Stamp của idol đó (mục 6.1); nếu gắn **nhiều idol**, CMS yêu cầu Admin **cấu hình 1 Khung Stamp riêng cho chính sự kiện này** (đã chốt — xem edge case #5)
   - **Ảnh sự kiện** — upload 1 ảnh, hệ thống tự động vẽ vào khung đã xác định ở trên
-  - **Mã QR sự kiện** — generate **1 mã dùng chung** cho toàn bộ Fan tham gia sự kiện đó (khác với Digital Merch — mỗi merch có nhiều mã unique riêng từng đơn vị, xem Open Question OQ-1 để xác nhận lại lựa chọn này)
+  - **Mã QR sự kiện** — generate **1 mã dùng chung** cho toàn bộ Fan tham gia sự kiện đó (**đã chốt** — khác với Digital Merch, nơi mỗi merch có nhiều mã unique riêng từng đơn vị; do Stamp hiện chưa gắn EXP/FPP/mission nên rủi ro gian lận từ việc chia sẻ mã chưa được xem là ưu tiên cao ở giai đoạn này — có thể cân nhắc bổ sung lớp xác thực (thời gian hiệu lực, GPS...) nếu sau này Stamp gắn thêm giá trị tiến trình)
 - Bắt buộc chọn ít nhất 1 idol và đã xác định được Khung Stamp (mặc định hoặc riêng cho sự kiện) mới cho phép Publish sự kiện
 
 ### 6.3 Mobile (FE) — Quét mã QR nhận Stamp
@@ -167,7 +167,7 @@ flowchart TD
 
 - Bấm vào 1 Stamp trong lưới mở modal "Thông tin Stamp": ảnh Stamp, tên sự kiện, ngày, địa điểm
 - 2 nút hành động:
-  - **"Vào locket chat"** — **cùng 1 tính năng** với "Vào Phòng tám" ở modal quét trùng (mục 6.3), chỉ khác nhãn hiển thị theo ngữ cảnh (từ modal Thông tin Stamp thì gắn theo tên sự kiện, vd "Orange Fanmeeting"); cơ chế bên trong ngoài phạm vi FSD này, xem OQ-2
+  - **"Vào locket chat"** — **cùng 1 tính năng** với "Vào Phòng tám" ở modal quét trùng (mục 6.3), chỉ khác nhãn hiển thị theo ngữ cảnh (từ modal Thông tin Stamp thì gắn theo tên sự kiện, vd "Orange Fanmeeting"); đã xác nhận là **hệ thống chat thật** (real-time) — cơ chế/hạ tầng bên trong ngoài phạm vi FSD này
   - **"Chi tiết sự kiện"** — điều hướng sang màn chi tiết sự kiện (ngoài phạm vi FSD này nếu đã có FSD Event riêng)
 
 > Trạng thái sự kiện (Đang diễn ra/Đã đóng) và số liệu "số người tham gia" xuất hiện trong ảnh mockup gốc nhưng **tạm bỏ khỏi phạm vi FSD này** theo yêu cầu PD — 2 nút hành động trên luôn hiển thị active, không có logic khoá/disabled theo trạng thái sự kiện ở giai đoạn này.
@@ -188,7 +188,7 @@ flowchart TD
 | 1 | Admin tạo sự kiện **chỉ gắn 1 idol** nhưng idol đó chưa cấu hình Khung Stamp mặc định | Chặn Publish sự kiện — báo lỗi yêu cầu cấu hình Khung Stamp cho idol đó trước |
 | 2 | Fan quét lại mã QR của sự kiện đã có Stamp (chính mình) | Không tạo thêm bản ghi Stamp — hiển thị modal "đã sở hữu" + shortcut vào Phòng tám (mục 6.3) |
 | 3 | Fan quét mã QR không thuộc hệ thống Fanation hoặc mã lỗi | Báo lỗi rõ ràng, không tạo Stamp, không đổi trạng thái gì |
-| 4 | Nhiều Fan quét cùng 1 mã QR sự kiện gần như đồng thời | BE xử lý atomic transaction riêng theo từng `user_id`, không ảnh hưởng lẫn nhau (khác Digital Merch — mã sự kiện không đổi trạng thái Available→Claimed vì dùng chung cho nhiều Fan) |
+| 4 | Nhiều Fan quét cùng 1 mã QR sự kiện gần như đồng thời (**đã chốt dùng 1 mã QR chung cho mọi Fan**, mục 6.2) | BE xử lý atomic transaction riêng theo từng `user_id`, không ảnh hưởng lẫn nhau (khác Digital Merch — mã sự kiện không đổi trạng thái Available→Claimed vì dùng chung cho nhiều Fan) |
 | 5 | Sự kiện gắn **nhiều idol** (vd sự kiện nhóm dạng Genfest) | **Đã chốt:** CMS bắt buộc Admin cấu hình 1 Khung Stamp riêng cho chính sự kiện đó (không dùng khung mặc định của từng idol) — Stamp hiển thị trong kết quả lọc của mọi idol được gắn, dùng chung 1 ảnh/1 khung duy nhất (mục 6.2) |
 | 6 | Fan chưa quét Stamp nào — Sổ hành trình trống | Hiển thị empty state, hướng dẫn Fan quét mã tại sự kiện offline gần nhất |
 | 7 | Admin sửa Mô tả/thông tin sự kiện sau khi nhiều Fan đã có Stamp | Cập nhật áp dụng ngay cho mọi Fan đã sở hữu Stamp đó (không phải dữ liệu snapshot tại thời điểm quét) — do đây là thông tin tham chiếu sự kiện dùng chung, không phải giao dịch điểm/thưởng |
@@ -199,6 +199,4 @@ flowchart TD
 
 | # | Câu hỏi | Ảnh hưởng | Ghi chú |
 |---|---|---|---|
-| **OQ-1** | Mã QR sự kiện dùng **chung 1 mã cho mọi Fan** (như đề xuất ở mục 6.2) hay theo **từng vé/Fan riêng biệt** như QR Digital Merch (`FSD_mvp2_Digital_Merch_QR_Gift.md` — mỗi mã unique, đổi trạng thái Available→Claimed)? | Rất lớn — quyết định toàn bộ kiến trúc chống gian lận. Nếu dùng chung 1 mã: rủi ro mã bị chụp ảnh/chia sẻ ra ngoài sau khi rời sự kiện, Fan không có mặt thật vẫn claim được Stamp, phá vỡ nguyên tắc "chỉ earn qua offline" | **Điểm nghẽn (stuck) lớn nhất của luồng** — cần chốt trước khi build. Nếu giữ 1 mã dùng chung, cần thêm lớp xác thực khác (giới hạn thời gian hiệu lực theo khung giờ sự kiện, giới hạn GPS tại địa điểm, giới hạn số lần quét/thiết bị...) |
-| **OQ-2** | "Phòng tám / Locket chat" (đã xác nhận là 1 tính năng duy nhất, mục 6.3/6.5) là hệ thống **chat thật (real-time, nhiều Fan tham gia)** hay chỉ là **nội dung kịch bản/preset** hiển thị theo idol/sự kiện (không phải chat sống)? | Effort rất khác nhau — chat thật cần hạ tầng riêng (moderation, real-time infra), nội dung kịch bản chỉ cần asset tĩnh | Nếu là chat thật, khả năng cao cần tách thành 1 FSD riêng, không gộp vào Sổ hành trình. FSD này hiện chỉ coi đây là 1 **điểm điều hướng**, không định nghĩa cơ chế bên trong |
-| **OQ-3** | Earn Stamp có cộng EXP (`FSD_mvp2_Ranking_Point_System.md`) hay FPP (`FSD_mvp2_FPP_Leaderboard.md`) không? | Hiện catalog Tier T1-T5 không có dòng nào cho hành động này — nếu cần bổ sung, ảnh hưởng cả 2 FSD đó | FSD này tạm coi là **không** cộng EXP/FPP cho tới khi có xác nhận ngược lại |
+| **OQ-1** | Earn Stamp có cộng EXP (`FSD_mvp2_Ranking_Point_System.md`) hay FPP (`FSD_mvp2_FPP_Leaderboard.md`) không? | Hiện catalog Tier T1-T5 không có dòng nào cho hành động này — nếu cần bổ sung, ảnh hưởng cả 2 FSD đó | FSD này tạm coi là **không** cộng EXP/FPP cho tới khi có xác nhận ngược lại |
