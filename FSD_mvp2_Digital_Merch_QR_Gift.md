@@ -1,16 +1,17 @@
-# FSD — MVP2: Digital Merch — Quét QR & Quà Tặng Ngẫu Nhiên
+# FSD — MVP2: Digital Merch — Quét QR, tích FPP & Kỷ vật số
 
 ---
 
 ## 1. Tổng quan
 
-**Digital Merch** là cơ chế "Quét vật phẩm offline → online" (BRD F4.1): Fan sở hữu 1 merch vật lý có in mã QR (mua qua kênh bán hàng ngoài app — vzone.bandina.vn, hoặc nhận kèm vé/sự kiện) → quét mã trong app → mở khoá nội dung số gắn với đúng sản phẩm đó.
+**Digital Merch** là cơ chế "Quét vật phẩm offline → online" (BRD F4.1). **App không bán merch** — merch vật lý do **team nghệ sĩ bán trước đó** qua kênh riêng của họ (vd vzone.bandina.vn, bán tại sự kiện, tặng kèm vé...). Sau khi mua/nhận merch, Fan dùng app quét mã QR in trên merch → hệ thống ghi nhận Fan sở hữu merch đó.
 
-Bổ sung cho luồng quét QR hiện có: ngoài việc mở khoá **Exclusive Content** (nếu sản phẩm có cấu hình), Fan quét thành công còn nhận thêm **1 Quà tặng ngẫu nhiên** (Space Item / E-card / Sticker) — cấp **miễn phí**, không thu tiền, không trừ Star. Đây là 1 quyền lợi đi kèm khi sở hữu merch vật lý, **tách biệt hoàn toàn** với luồng mua Space Item/E-card/Sticker bằng tiền thật qua tab "Cửa hàng" (IAP/MoMo) — Fan không trả thêm gì để nhận quà này, quà đến từ việc đã mua/sở hữu merch thật ngoài đời.
+Quét thành công mang lại cho Fan 3 thứ:
+1. **Điểm FPP** với đúng Idol của sản phẩm — mức điểm cố định Admin cấu hình cho từng sản phẩm. **Đây là loại điểm duy nhất nhận được khi quét**: không cộng EXP, không cộng Star.
+2. **Kỷ vật số**: hình ảnh thực tế của merch (lấy từ trường **Image** ở tab Details trên CMS) tự động xuất hiện trong **Kho vật phẩm → tab "Kỷ vật số"**, như 1 "bằng chứng sở hữu" hiển thị trong app. Đây chỉ là hình ảnh, **không phải** vật phẩm ảo dùng được (không trang trí, không gộp, không tặng).
+3. **Exclusive Content** (nếu sản phẩm có cấu hình).
 
-Loại quà tặng ngẫu nhiên phụ thuộc **loại merch vật lý (category)** của sản phẩm vừa quét, theo bảng ánh xạ ở mục 6.1.
-
-**Skin làm tạm hoãn:** merch loại Trang phục vốn dự kiến trả thưởng bằng Skin, nhưng **Skin sẽ làm ở giai đoạn sau** — chưa thuộc phạm vi build của FSD này. Tạm thời category Trang phục dùng chung cơ chế quà tặng như các category khác (Space Item/E-card/Sticker), xem mục 6.1.
+Quét merch **không cấp vật phẩm ảo** nào (Space Item / E-card / Sticker / Avatar Frame / Skin). Các vật phẩm này chỉ có được qua kênh riêng của từng loại (Cửa hàng, Mission, quà rank-up...).
 
 ---
 
@@ -18,22 +19,20 @@ Loại quà tặng ngẫu nhiên phụ thuộc **loại merch vật lý (categor
 
 ### Trong phạm vi
 - CMS — Digital Merch, tạo/sửa 1 sản phẩm gắn 1 Idol cụ thể, gồm các tab:
-  - **Details** — tên, ảnh, Idol, Category (Album/TShirt/Lightstick/Photocard/Merch nhỏ/Limited edition/Vé concert...), giá VNĐ tham chiếu, link sản phẩm gốc ngoài app
-  - **QR Codes** — generate hàng loạt mã unique hoặc import CSV, mỗi mã ứng 1 đơn vị merch vật lý sẽ in ra, trạng thái **Available/Claimed**. **Đã chốt: mọi loại merch đều bắt buộc gắn mã QR, kể cả Merch nhỏ (keyring, badge...) — không có ngoại lệ**
-  - **Sales & Pre-orders** — cấu hình giá sale/pre-order + khung thời gian on/off (lớp thương mại hoá riêng, không thuộc chi tiết build ở FSD này, chỉ note để đủ bức tranh màn hình)
+  - **Details** — Idol, tên, SKU, Category, mô tả, **Image** (bắt buộc — dùng làm ảnh Kỷ vật số), Price (₫) (giá bán tham chiếu tại kênh của team nghệ sĩ — chỉ để hiển thị), Product URL, Featured/Limited/Active, **FPP khi quét**, **Giới hạn lượt cộng FPP / Fan / tháng** (mục 6.3)
+  - **QR Codes** — generate hàng loạt mã unique hoặc import CSV, mỗi mã ứng 1 đơn vị merch vật lý, trạng thái **Available/Claimed**. Mọi loại merch đều bắt buộc gắn mã QR, kể cả Merch nhỏ (keyring, badge...)
+  - **Sales & Pre-orders** — thông tin sale/pre-order tại kênh bán của team nghệ sĩ (không phát sinh giao dịch trong app)
   - **Exclusive Content** — nội dung độc quyền (ảnh/video) mở khoá khi Fan claim
-  - **MỚI — Quà tặng ngẫu nhiên** — cấu hình pool vật phẩm (Space Item/E-card/Sticker) sẽ random cấp cho Fan khi quét thành công sản phẩm này
-- Fan quét QR trên mobile (icon Quét mã trong Bộ sưu tập/YourSpace) → validate mã → đổi trạng thái Available→Claimed → cấp Exclusive Content (nếu có) + random và cấp thẳng 1 Quà tặng ngẫu nhiên từ pool
-- Modal/thông báo cho Fan biết rõ vừa nhận được gì (cả Exclusive Content lẫn Quà tặng ngẫu nhiên)
-- BE: cơ chế random chọn 1 vật phẩm trong pool đúng sản phẩm vừa quét, cấp thẳng vào đúng kho tương ứng loại vật phẩm (Kho Space Item, Sổ E-card, Kho Sticker)
+- Fan quét QR trên mobile → validate mã → đổi trạng thái Available→Claimed → cộng FPP + lưu Kỷ vật số + mở khoá Exclusive Content (nếu có)
+- FE: tab **"Kỷ vật số"** trong màn **Kho vật phẩm** (cùng hàng với E-card / Vật phẩm / Quà Donate)
+- Modal kết quả quét cho Fan biết rõ: số FPP vừa nhận + Kỷ vật số vừa lưu (+ Exclusive Content nếu có)
+- BE: phát event "merch claimed" kèm số FPP cấu hình của sản phẩm để FPP Engine cộng điểm
 
-### Ngoài phạm vi (thuộc FSD khác, giai đoạn sau, hoặc ngoài app)
-- **Skin làm quà tặng ngẫu nhiên (cho merch loại Trang phục)** — tạm hoãn, sẽ làm ở giai đoạn sau; không thuộc phạm vi build của FSD này (xem mục 6.1)
-- Luồng mua merch vật lý qua vzone.bandina.vn — ngoài app, chỉ redirect
-- Chi tiết cấu hình giá sale/pre-order (Sales & Pre-orders tab) — lớp thương mại riêng
-- Luồng mua Space Item/E-card/Sticker bằng tiền thật qua tab Cửa hàng (IAP/MoMo) — thuộc FSD riêng từng loại vật phẩm (`FSD_mvp2_Ecard_Collect_Burn.md`, `FSD_mvp2_Sticker.md`); FSD này chỉ **tiêu thụ** các kho đó làm nơi cấp quà, không định nghĩa lại cơ chế mua
-- Hệ thống "Nhân vật" (character mặc Skin) — còn là câu hỏi mở, xem mục 8 OQ-1; không chặn phạm vi FSD này vì Skin đã tạm hoãn
-- Tính điểm EXP/FPP khi nhận quà — thuộc `FSD_mvp2_Ranking_Point_System.md` / `FSD_mvp2_FPP_Leaderboard.md`, FSD này chỉ nêu tác động liên quan ở mục 6.4
+### Ngoài phạm vi
+- Cấp vật phẩm ảo khi quét merch (Space Item/E-card/Sticker/Avatar Frame/Skin)
+- **Bán merch trong app** — việc bán/thanh toán merch do team nghệ sĩ thực hiện ngoài app, app chỉ redirect qua Product URL (nếu có)
+- Công thức luỹ tiến & bảng bậc FPP (`FSD_mvp2_FPP_Leaderboard.md` mục 6.2) — **không áp dụng** cho nguồn merch
+- EXP / Level — quét merch **không** cộng EXP (`FSD_mvp2_Ranking_Point_System.md`)
 
 ---
 
@@ -41,122 +40,143 @@ Loại quà tặng ngẫu nhiên phụ thuộc **loại merch vật lý (categor
 
 | Actor | Vai trò |
 |---|---|
-| **Fan** | Quét QR trên merch vật lý, nhận Exclusive Content + Quà tặng ngẫu nhiên |
-| **Admin (CMS)** | Tạo/sửa sản phẩm Digital Merch (Details/QR Codes/Sales & Pre-orders/Exclusive Content), cấu hình pool Quà tặng ngẫu nhiên theo từng sản phẩm |
-| **BE System (Merch/QR Engine)** | Validate mã QR, đổi trạng thái Available→Claimed, gắn vĩnh viễn vào tài khoản Fan |
-| **BE System (Reward Engine)** | Random 1 vật phẩm trong pool, cấp thẳng vào đúng kho tương ứng (Kho Space Item/Sổ E-card/Kho Sticker) |
-| **Idol/Content team** | Cung cấp asset vật phẩm trang trí/E-card/Sticker dùng làm quà (asset Skin sẽ bổ sung khi tính năng Skin triển khai ở giai đoạn sau) |
+| **Fan** | Mua/nhận merch từ team nghệ sĩ (ngoài app), quét QR trong app, nhận FPP + Kỷ vật số (+ Exclusive Content nếu có) |
+| **Team nghệ sĩ** | Bán/phát hành merch vật lý có in mã QR qua kênh riêng (ngoài app) |
+| **Admin (CMS)** | Tạo/sửa sản phẩm Digital Merch; upload ảnh thực tế của merch, cấu hình FPP khi quét và giới hạn lượt cộng FPP |
+| **BE System (Merch/QR Engine)** | Validate mã QR, đổi trạng thái Available→Claimed, gắn vĩnh viễn vào tài khoản Fan, tạo bản ghi Kỷ vật số, kiểm tra giới hạn, phát event cho FPP Engine |
+| **BE System (FPP Engine)** | Nhận event merch claimed, cộng FPP cho `(Fan, Idol)` |
 
 ---
 
 ## 4. User Stories
 
 **US-1 (Fan)**
-> Là một Fan, tôi muốn quét mã QR in trên merch vật lý tôi đã mua/nhận, để mở khoá nội dung số gắn với đúng sản phẩm đó.
+> Là một Fan, tôi muốn quét mã QR in trên merch vật lý tôi đã mua/nhận từ team nghệ sĩ, để app ghi nhận tôi sở hữu merch đó.
 
 **US-2 (Fan)**
-> Là một Fan, sau khi quét thành công, tôi muốn nhận thêm 1 quà tặng ngẫu nhiên miễn phí trên nền tảng, để cảm thấy việc sở hữu merch vật lý có thêm giá trị trong app.
+> Là một Fan, khi quét merch thành công, tôi muốn được cộng FPP với đúng Idol đó, để việc ủng hộ merch của Idol được phản ánh trên BXH FPP.
 
 **US-3 (Fan)**
-> Là một Fan, tôi muốn thấy rõ ràng mình vừa nhận được quà gì (loại vật phẩm, tên) qua modal/thông báo riêng, để không bỏ lỡ hoặc nhầm lẫn với nội dung Exclusive Content của merch.
+> Là một Fan, tôi muốn thấy hình ảnh thực tế của những merch tôi đã quét trong tab "Kỷ vật số" của Kho vật phẩm, để xem lại bộ sưu tập merch thật của mình ngay trong app.
 
 **US-4 (Admin)**
-> Là Admin, tôi muốn cấu hình pool Quà tặng ngẫu nhiên (chọn Space Item/E-card/Sticker cụ thể của đúng Idol) ngay trên CMS khi tạo sản phẩm Digital Merch, để không cần Tech deploy lại code mỗi khi ra mắt merch mới.
-
-> **Skin làm sau:** US riêng cho việc cấu hình Skin (mặc định + theo chủ đề trang phục) làm quà tặng ngẫu nhiên sẽ bổ sung khi tính năng Skin triển khai ở giai đoạn sau — không thuộc phạm vi FSD này.
+> Là Admin, tôi chỉ cần upload ảnh merch, nhập số FPP khi quét và giới hạn lượt ở tab Details, để hệ thống tự hiển thị Kỷ vật số và tự cộng FPP.
 
 ---
 
 ## 5. Sơ đồ luồng (Diagrams)
 
-### 5.1 Luồng Admin — Tạo sản phẩm Digital Merch + cấu hình Quà tặng ngẫu nhiên
+### 5.1 Luồng Admin — Tạo sản phẩm Digital Merch
 
 ```mermaid
 flowchart TD
-    A["Admin mở CMS > Digital Merch > + New product"] --> B["Tab Details: tên, ảnh, gán Idol, Category, giá VNĐ tham chiếu, link sản phẩm gốc"]
+    A["Admin mở CMS > Digital Merch > + New product"] --> B["Tab Details: Idol, tên, SKU, Category, mô tả,<br/>Image (ảnh thực tế merch), Price tham chiếu, Product URL,<br/>FPP khi quét, Giới hạn lượt cộng FPP / Fan / tháng"]
     B --> C["Tab QR Codes: generate hàng loạt mã unique (hoặc import CSV)<br/>mỗi mã = 1 đơn vị merch vật lý, trạng thái mặc định Available"]
-    C --> D["Tab Sales & Pre-orders: cấu hình giá sale/pre-order + khung thời gian (ngoài phạm vi chi tiết FSD này)"]
-    D --> E["Tab Exclusive Content: upload nội dung độc quyền mở khoá khi claim (tuỳ chọn)"]
-    E --> F["Tab MỚI — Quà tặng ngẫu nhiên:<br/>chọn danh sách Space Item/E-card/Sticker của đúng Idol làm pool (Skin sẽ bổ sung sau)"]
-    F --> G{"Pool có ít nhất 1 vật phẩm?"}
-    G -- Không --> H["Chặn Publish sản phẩm — báo lỗi thiếu cấu hình quà tặng"]
-    G -- Có --> I["Publish sản phẩm Digital Merch"]
+    C --> D["Tab Sales & Pre-orders"]
+    D --> E["Tab Exclusive Content: upload nội dung độc quyền (tuỳ chọn)"]
+    E --> F{"Đã có Image, FPP khi quét và Giới hạn lượt?"}
+    F -- Không --> G["Chặn bật Active — báo lỗi thiếu trường bắt buộc"]
+    F -- Có --> H["Bật Active — sản phẩm sẵn sàng cho Fan quét"]
 ```
 
-### 5.2 Luồng Fan — Quét QR nhận merch + Quà tặng ngẫu nhiên
+### 5.2 Luồng Fan — Quét QR nhận FPP + Kỷ vật số
 
 ```mermaid
 flowchart TD
-    A["Fan mở Bộ sưu tập (YourSpace) > bấm icon Quét mã"] --> B["Camera quét QR trên merch vật lý (hoặc nhập mã tay)"]
+    A["Fan mua/nhận merch từ team nghệ sĩ (ngoài app)"] --> A2["Fan mở Kho vật phẩm > bấm icon Quét mã (góc dưới phải)"]
+    A2 --> B["Camera quét QR trên merch vật lý (hoặc nhập mã tay)"]
     B --> C{"Mã hợp lệ & đang Available?"}
     C -- "Không hợp lệ / đã Claimed" --> D["Báo lỗi: mã không hợp lệ / mã đã được sử dụng"]
-    C -- Hợp lệ --> E["BE: đổi trạng thái mã Available→Claimed, gắn vĩnh viễn vào tài khoản Fan"]
-    E --> F["BE: random 1 vật phẩm trong pool Quà tặng ngẫu nhiên của đúng sản phẩm này"]
-    F --> G["BE: cấp thẳng vật phẩm vào đúng kho tương ứng<br/>(Kho Space Item / Sổ E-card / Kho Sticker)"]
-    G --> H["Hiện modal 'Chi tiết thẻ' — preview Exclusive Content (nếu sản phẩm có cấu hình)"]
-    H --> I["Fan bấm 'Thêm vào bộ sưu tập'"]
-    I --> J["Hiện modal/animation 'Quà tặng ngẫu nhiên' — 'Bạn nhận được [tên vật phẩm]'"]
-    J --> K["Merch đã claim + Quà tặng đều đã nằm trong kho tương ứng của Fan"]
+    C -- Hợp lệ --> E["BE (1 transaction): đổi mã Available→Claimed, gắn vào tài khoản Fan,<br/>tạo bản ghi Kỷ vật số"]
+    E --> L{"Số lượt đã cộng FPP của Fan cho sản phẩm này trong tháng < giới hạn?"}
+    L -- Có --> F["Ghi event 'merch claimed' (Idol, FPP khi quét)<br/>→ FPP Engine cộng FPP cho (Fan, Idol)"]
+    L -- "Không (đã đạt giới hạn)" --> M["Không cộng FPP — vẫn giữ claim + Kỷ vật số"]
+    F --> G["Hiện modal kết quả: ảnh merch + '+X FPP với [Idol]' hoặc thông báo đã đạt giới hạn<br/>+ preview Exclusive Content (nếu có)"]
+    M --> G
+    G --> H["Fan bấm 'Xem Kỷ vật số' → mở Kho vật phẩm tab Kỷ vật số"]
 ```
 
 ---
 
 ## 6. Yêu cầu chức năng chi tiết
 
-### 6.1 Bảng ánh xạ — Loại merch → Loại quà tặng ngẫu nhiên
+### 6.1 Tích điểm FPP khi quét merch
 
-| Loại merch (offline) | Loại quà tặng gợi ý | Ghi chú |
-|---|---|---|
-| **Trang phục** (hoodie, tee...) | ~~Skin~~ → tạm dùng Vật phẩm trang trí (Space Item) hoặc E-card | **Skin tạm hoãn, sẽ làm ở giai đoạn sau** — đích đến cuối cùng của category này vẫn là Skin (mặc định + theo chủ đề trang phục), nhưng trong giai đoạn hiện tại dùng chung cơ chế với các category khác cho tới khi Skin sẵn sàng |
-| **Album** | Vật phẩm trang trí (Space Item) hoặc E-card | |
-| **Lightstick** | Vật phẩm trang trí (Space Item) hoặc E-card | |
-| **Photocard** | Vật phẩm trang trí (Space Item) hoặc E-card | |
-| **Merch nhỏ** (keyring, badge...) | Vật phẩm trang trí (Space Item) hoặc E-card | |
-| **Merch giới hạn / Limited edition** | Vật phẩm trang trí (Space Item) hoặc E-card | |
-| **Vé concert / fanmeeting** | Vật phẩm trang trí (Space Item) hoặc E-card | |
+- Quét merch vật lý là 1 **nguồn FPP**: "Sở hữu merch vật lý (quét QR)" — cần có trong bảng nguồn earn FPP ở `FSD_mvp2_FPP_Leaderboard.md` mục 6.1.
+- **Chỉ cộng FPP** — không cộng EXP, không cộng Star, không cấp vật phẩm ảo.
+- FPP gán cho đúng Idol của sản phẩm (trường **Idol Profile** ở tab Details).
+- **Cách tính:** mỗi lượt quét hợp lệ cộng **đúng số "FPP khi quét"** Admin cấu hình cho sản phẩm đó (mục 6.3).
+  - Vì app không bán merch (không có giao dịch/thanh toán trong app), nguồn này **không** đi qua công thức luỹ tiến ở `FSD_mvp2_FPP_Leaderboard.md` mục 6.2 và **không** cộng vào tổng luỹ kế Donate + mua vật phẩm. FPP merch được cộng thẳng vào FPP của `(Fan, Idol)` trong kỳ.
+  - Price (₫) trên Details chỉ là giá tham chiếu để hiển thị, **không** dùng làm căn cứ tính FPP.
+  - Ví dụ: Album "Thinker Tell" cấu hình FPP khi quét = 450 → mỗi lượt quét hợp lệ +450 FPP với Chi Xê.
+- Kỳ tính FPP = **thời điểm quét thành công** (không phải lúc mua merch ngoài app). Nếu có BXH sự kiện đang chạy của Idol đó thì cộng song song vào cả BXH tháng lẫn BXH sự kiện, giống các nguồn FPP khác.
+- FPP từ merch là **cộng 1 lần theo lượt quét**, **không** tính lại theo tồn kho như E-card — Kỷ vật số không bị mất nên không có kịch bản trừ điểm.
+- Mỗi mã QR chỉ cộng FPP đúng 1 lần (mã đã Claimed không quét lại được).
+- **Giới hạn lượt cộng FPP** (chống gom mã QR để leo BXH): mỗi Fan chỉ được cộng FPP tối đa **N lượt quét / 1 sản phẩm / 1 kỳ BXH tháng**, N cấu hình trên CMS theo từng sản phẩm (mục 6.3).
+  - Đếm theo `(user_id, product_id, kỳ tháng)`; sang tháng mới đếm lại từ 0.
+  - Vượt giới hạn **vẫn cho claim** mã QR, vẫn lưu Kỷ vật số (tăng ×N) và mở Exclusive Content — **chỉ không cộng FPP** cho lượt đó, để Fan mua nhiều đơn vị thật vẫn được ghi nhận đủ sở hữu.
+  - BXH sự kiện dùng chung bộ đếm của kỳ tháng (không có hạn mức riêng cho sự kiện).
 
-Bảng trên là **gợi ý loại quà mặc định theo Category** để giữ nhất quán trải nghiệm, không phải giới hạn cứng ở tầng hệ thống — Admin vẫn tự do chọn bất kỳ loại vật phẩm nào (Space Item/E-card/Sticker) vào pool của 1 sản phẩm cụ thể khi cần linh hoạt hơn. Khi Skin triển khai ở giai đoạn sau, category Trang phục sẽ chuyển sang dùng Skin theo đúng thiết kế gốc.
+### 6.2 Kỷ vật số (Kho vật phẩm → tab "Kỷ vật số")
 
-### 6.2 CMS
-- Tab mới **"Quà tặng ngẫu nhiên"** trong màn tạo/sửa sản phẩm Digital Merch (cùng cấp Details/QR Codes/Sales & Pre-orders/Exclusive Content). **Đã chốt: mỗi sản phẩm merch có 1 pool riêng** — không dùng chung 1 pool cho nhiều sản phẩm cùng Category/Idol
-- Admin chọn danh sách vật phẩm cụ thể (Space Item/E-card/Sticker) thuộc đúng Idol của sản phẩm merch đó, làm pool random — **Skin chưa khả dụng trong pool ở giai đoạn này**, sẽ bổ sung khi tính năng Skin triển khai
-- Category của sản phẩm (Details tab) gợi ý sẵn loại vật phẩm phù hợp (mục 6.1) khi Admin thao tác ở tab Quà tặng ngẫu nhiên, giúp thao tác nhanh hơn
-- Bắt buộc pool có ít nhất 1 vật phẩm mới cho phép Publish sản phẩm (edge case #1) — áp dụng cho mọi category, kể cả Trang phục (tạm dùng Space Item/E-card thay Skin)
-- Sửa pool sau khi đã publish và đã có Fan quét: chỉ áp dụng cho lượt quét **sau** thời điểm lưu, không hồi tố các lượt đã random trước đó
+**Bản chất:** Kỷ vật số **chỉ là hình ảnh** thực tế của merch Fan đã quét (lấy từ trường Image của sản phẩm trên CMS). **Không phải vật phẩm ảo** — không dùng để trang trí My Space, không gộp, không tặng, không bán, không tính vào tồn kho E-card/Space Item/Sticker.
 
-### 6.3 FE (Mobile)
-- Icon "Quét mã" trong Bộ sưu tập (YourSpace): mở camera quét QR, có tuỳ chọn nhập mã tay
-- Popup trạng thái: đang xử lý / thành công / thất bại (mã không hợp lệ, đã được sử dụng)
-- Khi thành công: modal "Chi tiết thẻ" preview Exclusive Content (nếu sản phẩm có) → Fan bấm "Thêm vào bộ sưu tập" → tiếp nối modal/animation riêng "Quà tặng ngẫu nhiên" công bố vật phẩm vừa nhận, có nút điều hướng thẳng tới kho chứa vật phẩm đó (Kho Space Item/Sổ E-card/Kho Sticker)
-- Tách 2 modal (Exclusive Content trước, Quà tặng ngẫu nhiên sau) thay vì gộp chung 1 màn — đề xuất PD/BA nhằm tránh dồn quá nhiều thông tin cùng lúc, **cần Design xác nhận** trước khi triển khai chi tiết UI/animation
+**Cách lưu:**
+- Quét thành công → BE tự tạo 1 bản ghi Kỷ vật số `(user_id, product_id, qr_code, claimed_at)` — Fan không cần thao tác thêm.
+- Ảnh hiển thị = **ảnh của sản phẩm trên CMS**, lấy tại thời điểm hiển thị (tham chiếu theo `product_id`, không copy file). Admin sửa ảnh sản phẩm thì Kỷ vật số của mọi Fan cập nhật theo.
+- Fan quét nhiều đơn vị của cùng 1 sản phẩm (vd mua 2 album giống nhau): hiển thị **gộp 1 ô theo sản phẩm, kèm số lượng ×N**; màn chi tiết liệt kê từng lần quét (thời gian claim). Mỗi lần quét cộng FPP riêng, trong phạm vi giới hạn lượt (mục 6.1).
 
-### 6.4 Yêu cầu nghiệp vụ cần đảm bảo
-- Random vật phẩm trong pool + cấp thẳng vào kho tương ứng phải nằm cùng 1 atomic transaction với việc đổi trạng thái mã QR Available→Claimed — không được để xảy ra trường hợp mã đã Claimed nhưng Fan không nhận được quà, hoặc ngược lại
-- Random chọn 1 vật phẩm trong pool theo tỷ lệ **đồng đều (uniform)** cho mọi vật phẩm — không có tỷ lệ/weight riêng theo từng vật phẩm (đã chốt, nhất quán với cơ chế quà rank-up ở `FSD_mvp2_Ranking_Point_System.md` mục 6.3)
-- Vật phẩm đã sở hữu (dạng sở hữu 1 lần — Space Item/Sticker) bị loại trừ khỏi tập random cho đúng Fan đó, tránh cấp trùng lãng phí 1 lượt quà (đã chốt, xem edge case #4)
-- Quà tặng ngẫu nhiên **miễn phí hoàn toàn** — không trừ tiền, không trừ Star, không đi qua luồng thanh toán IAP/MoMo của tab Cửa hàng
-- Vật phẩm nhận được ghi nhận đúng theo cơ chế sở hữu vốn có của loại kho đó (không định nghĩa lại ở đây): E-card cộng dồn số lượng theo `FSD_mvp2_Ecard_Collect_Burn.md`; Space Item/Sticker theo cơ chế ownership của kho tương ứng
-- Nếu quà tặng ngẫu nhiên là **E-card**: tồn kho E-card của Fan thay đổi → FPP theo đúng Idol đó cũng thay đổi tương ứng, tự động theo `FSD_mvp2_FPP_Leaderboard.md` mục 6.1 (engine FPP lắng nghe thay đổi tồn kho, không cần xử lý gì thêm ở FSD này); nhận quà **không** cộng EXP (không phải hành động "Gộp E-card")
-- Pool tại thời điểm Fan quét thành công phải lấy đúng cấu hình mới nhất trên CMS ngay lúc BE xử lý, không dùng cấu hình cache cũ
+**UI tab "Kỷ vật số" (Kho vật phẩm):**
+- Tab thứ 4 **"Kỷ vật số"** cạnh các tab E-card / Vật phẩm / Quà Donate.
+- Dạng lưới, mỗi ô: ảnh merch + tên sản phẩm + tên Idol + badge ×N (nếu N > 1).
+- Lọc theo Idol (khi Fan follow nhiều Idol); sắp xếp mặc định theo thời gian quét mới nhất.
+- Bấm vào 1 ô → màn chi tiết: ảnh lớn, tên, Category, Idol, ngày quét (các lần quét nếu ×N), link mở Exclusive Content (nếu sản phẩm có), link Product URL tới kênh bán của team nghệ sĩ (tuỳ chọn).
+- Empty state: "Chưa có kỷ vật số — quét mã QR trên merch chính hãng để lưu kỷ vật" + nút mở Quét mã.
+
+### 6.3 CMS
+
+Tab Details:
+- **Image**: bắt buộc trước khi bật **Active**. Đây là ảnh thực tế của merch hiển thị làm Kỷ vật số → Admin dùng ảnh chụp sản phẩm thật, nền sạch, tỉ lệ vuông (≥ 800×800).
+- **Price (₫)**: giá bán tham chiếu tại kênh của team nghệ sĩ, chỉ để hiển thị — **không bắt buộc**, **không** dùng tính FPP.
+- **FPP khi quét** (số nguyên ≥ 0, bắt buộc): số FPP cộng cho Fan mỗi lượt quét hợp lệ.
+  - Nhập 0 = sản phẩm chỉ lưu Kỷ vật số, không cộng FPP (vd merch tặng kèm vé/sự kiện nếu không muốn tính FPP).
+  - Gợi ý cho Admin: tham chiếu baseline "1.000đ = 1 FPP" theo giá bán thực tế để cân bằng với các nguồn FPP khác; Admin toàn quyền điều chỉnh.
+- **Giới hạn lượt cộng FPP / Fan / tháng** (số nguyên ≥ 1, bắt buộc, mặc định **2**): số lượt quét tối đa của 1 Fan với sản phẩm này được cộng FPP trong 1 kỳ tháng. Album/Photocard có thể nâng lên cho Fan mua nhiều bản; Limited edition/Lightstick nên để 1.
+
+Sửa "FPP khi quét" hoặc giới hạn lượt sau khi đã có Fan quét: chỉ áp dụng cho các lượt quét **sau** thời điểm lưu, không tính lại FPP đã cộng.
+
+### 6.4 FE (Mobile)
+
+- Icon "Quét mã" (nút QR góc dưới phải màn Kho vật phẩm): mở camera quét QR, có tuỳ chọn nhập mã tay.
+- Popup trạng thái: đang xử lý / thành công / thất bại (mã không hợp lệ, đã được sử dụng).
+- Khi thành công: **1 modal kết quả** gồm:
+  - Ảnh merch (Kỷ vật số vừa lưu) + tên sản phẩm
+  - "+X FPP với [Tên Idol]" — nếu đã vượt giới hạn: "Đã lưu kỷ vật. Bạn đã đạt tối đa lượt cộng FPP cho sản phẩm này trong tháng"; nếu sản phẩm cấu hình FPP = 0: chỉ hiện "Đã lưu kỷ vật"
+  - Preview Exclusive Content (nếu sản phẩm có)
+  - Nút **"Xem Kỷ vật số"** (điều hướng tới tab Kỷ vật số) và nút **Đóng**
+
+### 6.5 Yêu cầu nghiệp vụ cần đảm bảo
+
+- Đổi trạng thái mã Available→Claimed + tạo bản ghi Kỷ vật số + kiểm tra/tăng bộ đếm giới hạn + ghi event FPP phải nằm **cùng 1 transaction** (event FPP ghi dạng outbox để FPP Engine xử lý). Không được xảy ra trường hợp mã đã Claimed mà Fan không có Kỷ vật số / không được cộng FPP (khi còn lượt), hoặc ngược lại.
+- FPP Engine xử lý event merch claimed **idempotent** theo `qr_code` — retry không cộng trùng.
+- Số "FPP khi quét" dùng để cộng là giá trị **tại thời điểm BE xử lý claim** (snapshot vào event), không dùng giá trị cache trên FE.
+- Quét merch **miễn phí** — không trừ tiền/Star, không phát sinh giao dịch thanh toán trong app.
 
 ---
 
 ## 7. Edge Cases
 
-| # | Tình huống | Xử lý đề xuất |
+| # | Tình huống | Xử lý |
 |---|---|---|
-| 1 | Sản phẩm Digital Merch chưa cấu hình pool Quà tặng ngẫu nhiên (pool rỗng) | Chặn Publish sản phẩm — validate ngay ở bước Admin tạo/sửa sản phẩm |
-| 2 | Sản phẩm không có Exclusive Content (tab để trống) | Vẫn cấp Quà tặng ngẫu nhiên bình thường — 2 luồng độc lập, Exclusive Content là tuỳ chọn |
-| 3 | Fan quét 2 mã QR gần như đồng thời (race condition) | BE xử lý atomic transaction cho từng mã, khoá theo `qr_code` và `user_id` |
-| 4 | Random trúng vật phẩm dạng sở hữu-1-lần (Space Item/Sticker) mà Fan đã sở hữu sẵn | **Đã chốt:** loại trừ vật phẩm đã sở hữu khỏi tập random cho đúng Fan đó, tránh lãng phí 1 lượt quà |
-| 5 | Sản phẩm Digital Merch category Trang phục được tạo/publish trước khi tính năng Skin triển khai | Admin cấu hình pool tạm thời bằng Space Item/E-card như các category khác (mục 6.1) — không chặn việc ra mắt merch Trang phục chỉ vì Skin chưa sẵn sàng; khi Skin triển khai, Admin cập nhật lại pool sang Skin cho các sản phẩm Trang phục |
-| 6 | Admin sửa pool giữa lúc nhiều Fan đang quét mã cùng sản phẩm | Áp dụng cấu hình tại đúng thời điểm BE xử lý random, không dùng cấu hình đã cache trên FE trước đó |
-| 7 | Mã QR không hợp lệ hoặc đã ở trạng thái Claimed | Báo lỗi rõ ràng, không trigger random, không đổi trạng thái mã |
-
----
-
-## 8. Open Questions (chưa có câu trả lời từ stakeholder)
-
-| # | Câu hỏi | Ảnh hưởng | Ghi chú |
-|---|---|---|---|
-| **OQ-1** | Hệ thống "Nhân vật" (character mặc Skin) — là sub-system mới hoàn toàn hay dùng lại avatar sẵn có? | Ảnh hưởng scope/effort khi triển khai Skin ở giai đoạn sau | **Không chặn phạm vi FSD này** (Skin đã tạm hoãn khỏi mục 6.1) — cần trả lời trước khi bắt tay triển khai Skin ở giai đoạn sau. Kế thừa từ `mvp2_Feature_Breakdown.md` mục 7 |
+| 1 | Sản phẩm chưa có Image / chưa nhập "FPP khi quét" / chưa nhập giới hạn lượt | Chặn bật Active trên CMS; mã QR của sản phẩm Inactive trả lỗi "sản phẩm chưa phát hành" khi quét |
+| 2 | Sản phẩm không có Exclusive Content | Vẫn cộng FPP + lưu Kỷ vật số bình thường — Exclusive Content là tuỳ chọn |
+| 3 | Fan quét 2 mã QR gần như đồng thời / bấm quét 2 lần 1 mã (race condition) | BE khoá theo `qr_code`; chỉ 1 request claim thành công, request còn lại nhận lỗi "mã đã được sử dụng"; FPP idempotent theo `qr_code` |
+| 4 | Fan quét merch của Idol mình chưa follow | Vẫn cho claim + lưu Kỷ vật số; FPP vẫn ghi nhận cho `(Fan, Idol)` nhưng ẩn khỏi BXH công khai cho tới khi Fan follow — nhất quán edge case #1 của `FSD_mvp2_FPP_Leaderboard.md` |
+| 5 | Admin đổi ảnh sản phẩm sau khi Fan đã quét | Kỷ vật số của mọi Fan hiển thị ảnh mới (tham chiếu theo product) |
+| 6 | Admin xoá / tắt Active sản phẩm sau khi Fan đã quét | Kỷ vật số **vẫn giữ** trong kho của Fan (soft-delete sản phẩm, không xoá ảnh); FPP đã cộng không bị trừ |
+| 7 | Admin sửa "FPP khi quét" / giới hạn lượt sau khi đã có Fan quét | Chỉ áp dụng cho lượt quét sau; không hồi tố FPP |
+| 8 | Mã QR không hợp lệ hoặc đã Claimed | Báo lỗi rõ ràng, không đổi trạng thái mã, không cộng FPP, không tạo Kỷ vật số |
+| 9 | Quét merch đúng lúc chuyển tháng (BXH reset) | FPP và bộ đếm giới hạn tính vào kỳ theo `claimed_at` do BE ghi nhận |
+| 10 | Fan quét vượt giới hạn lượt cộng FPP của 1 sản phẩm trong tháng | Vẫn claim thành công + lưu Kỷ vật số (×N) + mở Exclusive Content; không cộng FPP; modal báo rõ đã đạt giới hạn |
+| 11 | Fan quét đồng thời nhiều mã của cùng 1 sản phẩm khi chỉ còn 1 lượt cộng FPP | Kiểm tra + tăng bộ đếm trong cùng transaction claim (khoá theo `user_id + product_id`), đảm bảo không vượt giới hạn |
+| 12 | Sản phẩm cấu hình "FPP khi quét" = 0 | Vẫn claim + lưu Kỷ vật số + mở Exclusive Content; không ghi event FPP, không tăng bộ đếm giới hạn |
