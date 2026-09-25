@@ -1,0 +1,1398 @@
+key,value
+app.name,Fanation
+app.tagline,Fandom playground chính thức
+app.welcome,Xin chào {{name}}!
+app.welcomeBack,Xin chào {{name}}!
+common.share,Chia sẻ
+common.copy,Sao chép
+common.copyLink,Sao chép liên kết
+common.linkCopied,Đã sao chép liên kết
+common.back,Quay lại
+common.close,Đóng
+common.continue,Tiếp tục
+common.selectAll,Chọn tất cả
+common.cancel,Hủy
+common.sendReport,Gửi báo cáo
+common.clear,Xóa
+common.done,Xong
+common.selectDate,Chọn ngày
+common.save,Lưu
+common.edit,Chỉnh sửa
+common.delete,Xóa
+common.loading,Đang tải...
+common.retry,Thử lại
+common.comingSoon,Sắp ra mắt
+common.error.title,Lỗi
+common.error.message,Đã xảy ra lỗi. Vui lòng thử lại.
+common.error.unableCaptureCharacter,Không thể chụp ảnh nhân vật. Vui lòng thử lại.
+common.error.unableSaveCharacter,Không thể lưu ảnh nhân vật. Vui lòng thử lại.
+common.errors.loadFailed,Không tải được {{resource}}. Vui lòng thử lại.
+common.errors.uploadFailed,Không tải được {{resource}}. Vui lòng thử lại.
+common.errors.saveFailed,Không lưu được {{resource}}. Vui lòng thử lại.
+common.errors.invalidPhone,Nhập số điện thoại hợp lệ
+common.resources.account,thông tin tài khoản
+common.resources.artistProfile,hồ sơ nghệ sĩ
+common.resources.artists,danh sách nghệ sĩ
+common.resources.posts,bài viết
+common.resources.merchandise,vật phẩm
+common.resources.fanProjects,dự án fan
+common.resources.fanLetters,thư fan
+common.resources.idolProfile,hồ sơ idol
+common.resources.events,sự kiện
+common.resources.calendar,lịch sự kiện
+common.resources.giftCampaign,chiến dịch tặng quà
+common.resources.gifts,quà
+common.resources.missions,nhiệm vụ
+common.resources.questChains,nhiệm vụ chuỗi
+common.resources.page,trang này
+common.resources.image,ảnh
+common.resources.profile,hồ sơ
+common.resources.musicLinks,link nhạc
+common.resources.avatarFrames,khung ảnh đại diện
+common.resources.stickerPacks,các gói sticker
+common.resources.comments,bình luận
+common.resources.replies,câu trả lời
+common.resources.ecards,E-Card
+common.resources.transactions,giao dịch
+common.resources.decorItems,vật phẩm trang trí
+common.resources.fanPowerPoints,điểm hâm mộ
+common.resources.leaderboard,bảng xếp hạng
+common.resources.rankRewards,phần thưởng xếp hạng
+common.resources.itemHistory,lịch sử vật phẩm
+common.resources.chat,trò chuyện
+common.resources.blockedUsers,danh sách chặn
+common.fpp.title,Điểm FPP
+common.fpp.monthBadge,Tháng: #{{month}}
+common.fpp.eventActive,Đang có sự kiện
+common.fpp.periodEndsLabel,Kết thúc kỳ : 
+common.fpp.viewLeaderboard,Xem BXH
+common.fpp.unit,FPP
+common.empty.noEventsDay,Không có sự kiện trong ngày này
+common.calendar.eventOnDate,Sự kiện ngày {{date}}
+common.calendar.eventsOnDate,Sự kiện ngày {{date}}
+common.calendar.months.jan,Tháng 1
+common.calendar.months.feb,Tháng 2
+common.calendar.months.mar,Tháng 3
+common.calendar.months.apr,Tháng 4
+common.calendar.months.may,Tháng 5
+common.calendar.months.jun,Tháng 6
+common.calendar.months.jul,Tháng 7
+common.calendar.months.aug,Tháng 8
+common.calendar.months.sep,Tháng 9
+common.calendar.months.oct,Tháng 10
+common.calendar.months.nov,Tháng 11
+common.calendar.months.dec,Tháng 12
+common.calendar.weekdays.sun,CN
+common.calendar.weekdays.mon,T2
+common.calendar.weekdays.tue,T3
+common.calendar.weekdays.wed,T4
+common.calendar.weekdays.thu,T5
+common.calendar.weekdays.fri,T6
+common.calendar.weekdays.sat,T7
+common.tabs.all,Tất cả
+common.tabs.earned,Nhận
+common.tabs.spent,Chi
+common.platforms.facebook,Facebook
+common.platforms.tiktok,TikTok
+common.platforms.youtube,YouTube
+common.platforms.spotify,Spotify
+common.platforms.instagram,Instagram
+common.platforms.google,Google
+common.platforms.threads,Thread
+common.imageCrop.ratio.original,Gốc
+common.imageCrop.ratio.square,1:1
+common.imageCrop.ratio.portrait,4:5
+common.imageCrop.ratio.wide,16:9
+collect.item.packs,Gói nạp
+collect.item.merch,Merchandise
+auth.loginTitle,FANATION
+auth.loginSubtitle,Chào mừng đến với thế giới FANATION
+auth.loginWithGoogle,Đăng nhập bằng Google
+auth.loginWithApple,Đăng nhập bằng Apple
+auth.signInWithEmail,Đăng nhập bằng email
+auth.emailSignInTitle,ĐĂNG NHẬP
+auth.emailSignInSubtitle,Nhập email và mật khẩu của bạn
+auth.registerTitle,TẠO TÀI KHOẢN
+auth.registerSubtitle,Đăng ký bằng email và mật khẩu
+auth.emailLabel,Email
+auth.emailPlaceholder,you@example.com
+auth.passwordLabel,Mật khẩu
+auth.passwordPlaceholder,
+auth.confirmPasswordLabel,Xác nhận mật khẩu
+auth.confirmPasswordPlaceholder,
+auth.displayNameLabel,Tên hiển thị
+auth.displayNamePlaceholder,Tên hiển thị của bạn
+auth.phoneLabel,Số điện thoại
+auth.phonePlaceholder,+84…
+auth.dateOfBirthLabel,Ngày sinh
+auth.errorDisplayNameRequired,Vui lòng nhập tên hiển thị.
+auth.errorDisplayNameMax,Tên hiển thị tối đa 50 ký tự.
+auth.errorPhoneRequired,Vui lòng nhập số điện thoại.
+auth.errorDateOfBirthRequired,Vui lòng chọn ngày sinh.
+auth.errorDateOfBirthMinAge,Bạn phải từ 16 tuổi trở lên.
+auth.showPassword,Hiện mật khẩu
+auth.hidePassword,Ẩn mật khẩu
+auth.emailSignInSubmit,Đăng nhập
+auth.registerSubmit,Tạo tài khoản
+auth.dontHaveAccount,Chưa có tài khoản?
+auth.createAccountLink,Tạo tài khoản
+auth.alreadyHaveAccount,Đã có tài khoản?
+auth.errorSignInFailed,Đăng nhập thất bại. Vui lòng thử lại.
+auth.errorNotAuthorized,Tài khoản Google này chưa được cấp quyền sử dụng Fanation.
+auth.errorNetwork,Không thể kết nối máy chủ. Kiểm tra mạng và thử lại.
+auth.errorInvalidCredentials,Email hoặc mật khẩu không đúng.
+auth.errorInvalidEmail,Vui lòng nhập email hợp lệ.
+auth.errorEmailInUse,Email này đã được đăng ký.
+auth.errorWeakPassword,Mật khẩu phải có ít nhất 6 ký tự.
+auth.errorTooManyRequests,Quá nhiều lần thử. Vui lòng thử lại sau.
+auth.errorEmailRequired,Vui lòng nhập email.
+auth.errorEmailFormat,Vui lòng nhập email hợp lệ.
+auth.errorPasswordRequired,Vui lòng nhập mật khẩu.
+auth.errorPasswordMin,Mật khẩu phải có ít nhất 6 ký tự.
+auth.errorConfirmPasswordRequired,Vui lòng xác nhận mật khẩu.
+auth.errorConfirmPasswordMismatch,Mật khẩu không khớp.
+auth.consentAge,Tôi đã đủ 16 tuổi trở lên.
+auth.consentTermsPrefix,Tôi đã đọc và đồng ý với
+auth.consentTermsLink,Thoả thuận cung cấp và sử dụng mạng xã hội
+auth.consentPrivacyPrefix,Tôi đã đọc và đồng ý với
+auth.consentPrivacyLink,Chính sách thu thập và sử dụng dữ liệu cá nhân trên Fanation
+auth.errorConsentRequired,Vui lòng đồng ý tất cả các điều khoản để tiếp tục.
+auth.otpTitle,Xác minh tài khoản
+auth.otpHeadline,Nhập mã xác minh
+auth.otpBodyBefore,Vui lòng nhập mã OTP bao gồm 6 chữ số được gửi qua SMS của số điện thoại 
+auth.otpBodyAfter,
+auth.otpResendPrompt,Bạn chưa nhận được mã ?
+auth.otpResendAction,Gửi lại OTP
+auth.otpConfirm,Xác nhận
+idolPortal.welcome.logoTitle,FANATION
+idolPortal.welcome.logoSubtitle,Chào mừng đến với thế giới FANATION
+idolPortal.welcome.platformLabel,Tài khoản được cấp bởi FANATION PLATFORM
+idolPortal.welcome.accountType,Management Account
+idolPortal.welcome.unitLabel,Đơn vị: {{unit}}
+idolPortal.welcome.artistLabel,Nghệ sĩ: {{artist}}
+idolPortal.welcome.subtitle,Tài khoản đã được tạo sẵn bởi Admin. Thiết lập profile nghệ sĩ bắt đầu
+idolPortal.welcome.setupProfile,Thiết lập hồ sơ
+idolPortal.profileSetup.title,Thiết lập hồ sơ
+idolPortal.profileSetup.avatarLabel,Ảnh đại diện nghệ sĩ *
+idolPortal.profileSetup.avatarA11y,Chọn ảnh đại diện nghệ sĩ
+idolPortal.profileSetup.addCover,Thêm ảnh bìa
+idolPortal.profileSetup.changeCover,Đổi ảnh bìa
+idolPortal.profileSetup.stageNameLabel,Tên nghệ danh *
+idolPortal.profileSetup.stageNamePlaceholder,
+idolPortal.profileSetup.fandomNameLabel,Tên Fandom
+idolPortal.profileSetup.fandomNamePlaceholder,
+idolPortal.profileSetup.bioLabel,BIO *
+idolPortal.profileSetup.bioPlaceholder,Mô tả ngắn về nghệ sĩ....
+idolPortal.profileSetup.debutLabel,Debut
+idolPortal.profileSetup.facebookPlaceholder,https://facebook.com/yourpage
+idolPortal.profileSetup.tiktokPlaceholder,https://tiktok.com/@yourname
+idolPortal.profileSetup.youtubePlaceholder,Chanel link
+idolPortal.profileSetup.spotifyPlaceholder,Chanel link
+idolPortal.profileSetup.submit,Hoàn tất
+idolPortal.profileSetup.sections.basicInfo,Thông tin cơ bản
+idolPortal.profileSetup.sections.socialLinks,Mạng xã hội
+idolPortal.profileSetup.errorStageNameRequired,*Vui lòng nhập tên nghệ danh
+idolPortal.profileSetup.errorBioRequired,*Vui lòng nhập BIO
+idolPortal.profileSetup.errorBioMaxLength,*BIO tối đa 300 ký tự
+idolPortal.profileSetup.errorAvatarRequired,*Vui lòng chọn ảnh đại diện
+idolPortal.profileSetup.errorInvalidUrl,*Liên kết không hợp lệ
+idolPortal.dashboard.title,Thống kê
+idolPortal.dashboard.fandomData,Thống kê tài khoản
+idolPortal.dashboard.overview,Tổng quan
+idolPortal.dashboard.quickAccess,Truy cập nhanh
+idolPortal.dashboard.filterDaily,Hôm nay
+idolPortal.dashboard.filterWeekly,1 Tuần qua
+idolPortal.dashboard.filterMonthly,1 Tháng qua
+idolPortal.dashboard.filterYearly,1 Năm qua
+idolPortal.dashboard.filterCustom,Chọn ngày
+idolPortal.dashboard.loadError,Không tải được bảng điều khiển. Vui lòng thử lại.
+idolPortal.dashboard.pendingProjectsTitle,{{count}} Chiến dịch chờ duyệt
+idolPortal.dashboard.todoView,Xem
+idolPortal.dashboard.metrics.newFollowers.label,Người theo dõi
+idolPortal.dashboard.metrics.unfollowers.label,Người bỏ theo dõi
+idolPortal.dashboard.metrics.posts.label,Bài đăng
+idolPortal.dashboard.metrics.events.label,Sự kiện
+idolPortal.dashboard.metrics.giftStars.label,Quà tặng
+idolPortal.dashboard.metrics.pendingProjects.label,Dự án
+idolPortal.dashboard.metrics.pendingProjects.footer,Dự án chờ duyệt
+idolPortal.dashboard.metrics.total,Tổng: {{count}}
+idolPortal.dashboard.metrics.giftStarsValue,{{count}} stars
+idolPortal.dashboard.metrics.giftStarsTotal,Tổng số: {{count}} stars
+idolPortal.dashboard.gifts.title,Tặng quà
+idolPortal.dashboard.gifts.eventTitle,Sự kiện tặng quà
+idolPortal.dashboard.gifts.defaultTitle,Góc quà mặc định
+idolPortal.dashboard.gifts.giftsCount,Lượt tặng: {{count}}
+idolPortal.dashboard.gifts.fanCount,Fan tặng: {{count}}
+idolPortal.dashboard.gifts.starsReceived,Sao nhận: {{count}}
+idolPortal.tabs.dashboard,Thống kê
+idolPortal.tabs.projects,Chiến dịch
+idolPortal.tabs.gamehub,Kho game
+idolPortal.tabs.profile,Cá nhân
+idolPortal.hub.editProfile,Chỉnh sửa
+idolPortal.hub.postStatus.published,Đã đăng
+idolPortal.hub.postStatus.draft,Nháp
+idolPortal.hub.postStatus.scheduled,Bài đăng đã lên lịch
+idolPortal.hub.scheduledFor,Hẹn đăng {{datetime}}
+idolPortal.createPost.title,Bài viết mới
+idolPortal.createPost.sectionTitle,Đăng bài
+idolPortal.createPost.prompt,Bạn đang nghĩ gì ....
+idolPortal.createPost.inputPlaceholder,Bạn đang nghĩ gì?
+idolPortal.createPost.addMediaA11y,Thêm ảnh
+idolPortal.createPost.addMediaLoadingA11y,Đang thêm ảnh
+idolPortal.createPost.changeCover,Đổi ảnh bìa
+idolPortal.createPost.schedule,Hẹn giờ
+idolPortal.createPost.publish,Đăng
+idolPortal.createPost.previewTitle,Xem trước bài đăng
+idolPortal.createPost.previewPublish,Hoàn tất
+idolPortal.createPost.previewSaveDraft,Lưu nháp
+idolPortal.createPost.errorContentRequired,Vui lòng nhập nội dung bài đăng.
+idolPortal.createPost.errorMaxImages,Bạn chỉ có thể đính kèm tối đa 10 ảnh.
+idolPortal.createPost.errorSubmitFailed,Không thể tạo bài đăng. Vui lòng thử lại.
+idolPortal.createPost.removeImageA11y,Xóa ảnh
+idolPortal.createPost.editTitle,Chỉnh sửa bài đăng
+idolPortal.createPost.save,Lưu
+idolPortal.createPost.errorUpdateFailed,Không thể cập nhật bài đăng. Vui lòng thử lại.
+idolPortal.createPost.unsavedNewPostTitle,Lưu nháp?
+idolPortal.createPost.unsavedNewPostMessage,Bạn có thay đổi chưa lưu. Lưu nháp hay bỏ các thay đổi?
+idolPortal.createPost.unsavedKeepEditing,Tiếp tục chỉnh sửa
+idolPortal.createPost.unsavedSaveDraft,Lưu nháp
+idolPortal.createPost.unsavedDiscard,Bỏ
+idolPortal.createPost.unsavedEditTitle,Bỏ thay đổi?
+idolPortal.createPost.unsavedEditMessage,Các thay đổi chưa lưu sẽ bị mất.
+idolPortal.createEvent.title,Tạo sự kiện
+idolPortal.createEvent.editTitle,Sửa sự kiện
+idolPortal.createEvent.sectionTitle,Mô tả sự kiện
+idolPortal.createEvent.nameLabel,Tên Sự Kiện
+idolPortal.createEvent.namePlaceholder,VD: Fan meeting Hà Nội
+idolPortal.createEvent.timeLabel,Thời gian
+idolPortal.createEvent.timePlaceholder,HH:MM
+idolPortal.createEvent.descriptionPlaceholder,Mô tả sự kiện...
+idolPortal.createEvent.linkLabel,Liên kết sự kiện
+idolPortal.createEvent.linkPlaceholder,https://
+idolPortal.createEvent.featuredLabel,Lưu thành sự kiện nổi bật
+idolPortal.createEvent.featuredInfoBanner,Chỉ có thể thêm 1 sự kiện nổi bật trên hub. Sự kiện mới thêm sẽ tự động thay thế sự kiện cũ
+idolPortal.createEvent.save,Lưu sự kiện
+idolPortal.createEvent.cancel,Hủy
+idolPortal.createEvent.createButton,Tạo sự kiện
+idolPortal.createEvent.bannerCropTitle,Xem trước ảnh
+idolPortal.createEvent.bannerCropHint,Chụm và kéo để căn chỉnh ảnh
+idolPortal.createEvent.editAction,Sửa
+idolPortal.createEvent.deleteAction,Xóa
+idolPortal.createEvent.deleteConfirmTitle,Xóa sự kiện?
+idolPortal.createEvent.deleteConfirmMessage,Sự kiện này sẽ bị xóa và không thể khôi phục.
+idolPortal.createEvent.errorNameRequired,Vui lòng nhập tên sự kiện
+idolPortal.createEvent.errorTimeRequired,Vui lòng chọn thời gian
+idolPortal.createEvent.errorDateRequired,Vui lòng chọn ngày
+idolPortal.createEvent.errorStartDateFuture,Ngày bắt đầu phải sau ngày hôm nay
+idolPortal.createEvent.errorInvalidLink,Nhập URL https:// hợp lệ
+idolPortal.createEvent.errorSubmitFailed,Không thể lưu sự kiện. Vui lòng thử lại.
+idolPortal.createEvent.errorDeleteFailed,Không thể xóa sự kiện. Vui lòng thử lại.
+idolPortal.schedulePost.title,Hẹn giờ bài đăng
+idolPortal.schedulePost.selectDateTime,Chọn ngày giờ
+idolPortal.schedulePost.next,Tiếp theo
+idolPortal.schedulePost.errorPastDateTime,Chọn ngày giờ sau ít nhất 1 phút nữa
+idolPortal.postMore.moreButton,Thêm
+idolPortal.postMore.pinPost,Ghim bài đăng
+idolPortal.postMore.pin,Ghim
+idolPortal.postMore.unpinPost,Bỏ ghim bài đăng
+idolPortal.postMore.unpin,Bỏ ghim
+idolPortal.postMore.editPost,Chỉnh sửa bài đăng
+idolPortal.postMore.edit,Chỉnh sửa
+idolPortal.postMore.deletePost,Xóa bài đăng
+idolPortal.postMore.delete,Xóa
+idolPortal.postMore.deleteConfirmTitle,Xóa bài đăng này?
+idolPortal.postMore.deleteConfirmBody,Bài đăng sẽ bị xóa vĩnh viễn.
+idolPortal.postMore.deleteConfirmAction,Xóa
+idolPortal.postMore.errorPinFailed,Không thể cập nhật trạng thái ghim. Vui lòng thử lại.
+idolPortal.postMore.errorPinLimitReached,Tối đa 3 bài ghim. Hãy bỏ ghim một bài để ghim bài khác.
+idolPortal.postMore.pinnedA11y,Bài đăng đã ghim
+idolPortal.postMore.errorDeleteFailed,Không thể xóa bài đăng. Vui lòng thử lại.
+idolPortal.postStatistics.statisticButton,Thống kê
+idolPortal.postStatistics.views,Lượt xem
+idolPortal.postStatistics.interactions,Lượt tương tác
+idolPortal.postStatistics.loadError,Không tải được thống kê bài viết. Vui lòng thử lại.
+idolPortal.projects.infoBanner,Dự án đã được scan tự động. Bạn cần duyệt cuối trước khi Go Live
+idolPortal.projects.viewDetails,Chi tiết dự án
+idolPortal.projects.tabs.PENDING,Chờ duyệt
+idolPortal.projects.tabs.APPROVED,Đã duyệt
+idolPortal.projects.tabs.ONLIVE,Đang diễn ra
+idolPortal.projects.tabs.REJECTED,Từ chối
+idolPortal.projects.tabs.FINISHED,Hoàn thành
+idolPortal.projects.status.PENDING,Chiến dịch đang chờ duyệt
+idolPortal.projects.status.APPROVED,Chiến dịch đã duyệt
+idolPortal.projects.status.ONLIVE,Chiến dịch đang diễn ra
+idolPortal.projects.status.REJECTED,Chiến dịch bị từ chối
+idolPortal.projects.status.FINISHED,Chiến dịch đã hoàn thành
+idolPortal.projects.empty.PENDING,Chưa có dự án chờ duyệt.
+idolPortal.projects.empty.APPROVED,Chưa có dự án đã duyệt.
+idolPortal.projects.empty.ONLIVE,Chưa có dự án đang diễn ra.
+idolPortal.projects.empty.REJECTED,Chưa có dự án bị từ chối.
+idolPortal.projects.empty.FINISHED,Chưa có dự án đã hoàn thành.
+idolPortal.projects.actions.approve,Duyệt
+idolPortal.projects.actions.reject,Từ chối
+idolPortal.projects.rejectForm.reasonTitle,Lý do từ chối
+idolPortal.projects.rejectForm.reasons.schedule,Không phù hợp lịch trình hoạt động
+idolPortal.projects.rejectForm.reasons.budget,Mục tiêu tài chính chưa khả thi
+idolPortal.projects.rejectForm.reasons.other,Lý do khác
+idolPortal.projects.rejectForm.otherPlaceholder,Nhập nội dung...
+idolPortal.projects.rejectForm.noteTitle,Ghi chú gửi fan
+idolPortal.projects.rejectForm.notePlaceholder,Nhập nội dung...
+idolPortal.projects.rejectForm.fanNotice,Fan sẽ nhận thông báo từ chối kèm lý do này.
+idolPortal.projects.moderationSheet.approve.title,Duyệt dự án này?
+idolPortal.projects.moderationSheet.approve.description,"""{{title}}"" sẽ được go live cho fan sau khi duyệt."
+idolPortal.projects.moderationSheet.approve.confirm,Duyệt
+idolPortal.projects.moderationSheet.reject.title,Từ chối dự án này?
+idolPortal.projects.moderationSheet.reject.description,"""{{title}}"" sẽ được đánh dấu là đã từ chối."
+idolPortal.projects.moderationSheet.reject.confirm,Từ chối
+idolPortal.projects.moderationSheet.rejectInput.title,Nhập lý do từ chối
+idolPortal.projects.moderationSheet.rejectInput.description,Vui lòng nhập lý do trước khi từ chối dự án fan này.
+idolPortal.projects.moderationSheet.rejectInput.confirm,Gửi từ chối
+idolPortal.projects.moderationSheet.rejectReason.label,Lý do từ chối
+idolPortal.projects.moderationSheet.rejectReason.placeholder,Nhập lý do từ chối
+idolPortal.projects.moderationSheet.rejectNote.label,Ghi chú thêm (không bắt buộc)
+idolPortal.projects.moderationSheet.rejectNote.placeholder,Thêm ghi chú cho ban tổ chức
+idolPortal.projects.moderationSheet.success.approveTitle,Xác nhận duyệt dự án
+idolPortal.projects.moderationSheet.success.approveDescription,Dự án này sẽ được go live cho fan.
+idolPortal.projects.moderationSheet.success.approveAwaitingAdminDescription,Phê duyệt của bạn đã được ghi nhận. Dự án đang chờ quản trị viên phê duyệt trước khi go live.
+idolPortal.projects.moderationSheet.success.awaitingAdminStatusLabel,Đang chờ phê duyệt từ
+idolPortal.projects.moderationSheet.success.awaitingAdminStatusValue,Quản trị viên
+idolPortal.projects.moderationSheet.success.rejectTitle,Đã từ chối dự án
+idolPortal.projects.moderationSheet.success.rejectDescription,Dự án này đã được đánh dấu từ chối.
+idolPortal.projects.moderationSheet.success.statusLabel,Trạng thái
+idolPortal.projects.moderationSheet.success.done,Xong
+onboarding.profileTitle,Tạo tài khoản
+onboarding.profileSubtitle,Chọn ảnh đại diện và tên hiển thị
+onboarding.fandomTitle,Tham gia cùng thần tượng bạn yêu
+onboarding.fandomSubtitle,Chọn ít nhất 1 fandom để feed của bạn được cá nhân hoá
+onboarding.fandomSearchTitle,Tìm fandom
+onboarding.follow,Theo dõi
+onboarding.usernameLabel,Nhập tên của bạn
+onboarding.usernamePlaceholder,Tên tài khoản
+onboarding.errorLength,*Tên cần có 5 đến 15 ký tự
+onboarding.errorCharset,"*Chỉ dùng chữ, số, dấu gạch dưới và dấu gạch ngang"
+onboarding.errorNoLetter,*Tên cần có ít nhất 1 chữ cái
+onboarding.errorUsernameTaken,*Tên này đã được sử dụng
+onboarding.errorFollowFailed,Không cập nhật được theo dõi. Vui lòng thử lại.
+onboarding.errorCompleteFailed,Không hoàn tất được thiết lập. Vui lòng thử lại.
+onboarding.errorAvatarUploadContinue,Bạn vẫn có thể tiếp tục thiết lập và thêm ảnh sau trong trang cá nhân.
+onboarding.avatarPickerTitle,Chọn ảnh đại diện
+onboarding.avatarFromGallery,Chọn từ thư viện
+onboarding.avatarFromCamera,Chụp ảnh mới
+onboarding.avatarChange,Đổi ảnh
+onboarding.avatarEmptyA11y,Thêm ảnh đại diện
+onboarding.avatarPickFailed,Không chọn được ảnh
+onboarding.avatarPickTryAgain,Hãy thử lại hoặc kiểm tra quyền truy cập ảnh và camera trong Cài đặt.
+onboarding.cameraPermissionDenied,Ứng dụng cần quyền camera để chụp ảnh đại diện.
+onboarding.chooseFandomHint,Chọn ít nhất 1 fandom
+onboarding.searchPlaceholder,Nhập tên nghệ sĩ
+onboarding.searchEmpty,Không tìm thấy fandom phù hợp
+onboarding.selected,Đã chọn
+onboarding.idolsSelected,Đã chọn {{count}} thần tượng
+onboarding.skipDev,Bỏ qua onboarding (dev)
+tabs.home,Trang chủ
+tabs.projects,Chiến dịch
+tabs.chat,Phòng tám
+tabs.merch,Cửa hàng
+tabs.profile,Cá nhân
+chatLobby.title,Phòng tám
+chatLobby.searchPlaceholder,Nhập tên nghệ sĩ
+chatLobby.enterRoom,Vào phòng
+chatLobby.activeNow,Đang hoạt động
+chatLobby.upcoming,Mở khi sự kiện bắt đầu
+chatLobby.empty,Chưa có phòng chat.
+chatLobby.emptySearch,Không tìm thấy phòng phù hợp.
+journeyBook.title,Sổ hành trình
+journeyBook.bookTitle,Nhật ký đu idol
+journeyBook.subtitle,Những khoảnh khắc đưa tôi đi xa hơn
+journeyBook.empty,Chưa có stamp. Quét QR sự kiện để bắt đầu.
+journeyBook.filter,Lọc
+journeyBook.scanFab,Quét QR sự kiện
+journeyBook.scanTitle,Quét mã QR sự kiện
+journeyBook.scanHint,Hướng camera vào mã QR tại sự kiện để nhận stamp
+journeyBook.enterCodePlaceholder,Mã sự kiện
+journeyBook.receivedStamp.title,Chúc Mừng !
+journeyBook.receivedStamp.message,Bạn đã nhận được
+journeyBook.receivedStamp.goToBook,Đến Sổ hành trình
+journeyBook.detailsTitle,Thông tin Stamp
+journeyBook.joinEventChat,Vào locket chat
+journeyBook.chatClosed,Chat đã đóng
+journeyBook.viewEventDetails,Chi tiết sự kiện
+journeyBook.statusLabel,Trạng thái
+journeyBook.liveBadge,Đang diễn ra
+journeyBook.upcomingBadge,Sắp diễn ra
+journeyBook.endedBadge,Đã kết thúc
+journeyBook.verified,Đã xác thực
+journeyBook.eventIsActive,Sự kiện đang diễn ra
+journeyBook.eventUpcoming,Sự kiện sắp diễn ra
+journeyBook.eventEnded,Sự kiện đã kết thúc
+journeyBook.attendeeCount,{{count}} người tham gia
+journeyBook.pageProgress,{{current}} / {{total}}
+journeyBook.ownedStamp.title,Chúc Mừng !
+journeyBook.ownedStamp.message,Bạn đã sở hữu Stamp này rồi !
+journeyBook.ownedStamp.goToBook,Đến Sổ hành trình
+journeyBook.ownedStamp.enterChat,Vào Phòng tám
+journeyBook.errors.emptyPayload,Không đọc được mã. Thử lại.
+journeyBook.errors.emptyPool,Hiện không còn stamp để nhận.
+journeyBook.errors.claimMissing,Không mở được stamp này.
+journeyBook.errors.invalidCode,Mã sự kiện không hợp lệ.
+journeyBook.errors.notStarted,Sự kiện chưa bắt đầu.
+journeyBook.errors.ended,Sự kiện đã kết thúc.
+digitalMerch.title,Cửa hàng
+digitalMerch.empty,Chưa có vật phẩm từ các nghệ sĩ bạn theo dõi.
+store.hero.title,Mua sắm ngay
+store.empty,Chưa có sản phẩm.
+store.categories.ecard,E-Card
+store.categories.sticker,Nhãn dán
+store.categories.decoration,Vật phẩm Trang trí
+store.categories.gift,Quà tặng
+store.sale,SALE
+store.salePercent,SALE {{percent}}%
+store.owned,Đã sở hữu
+store.purchaseSuccess,Thanh toán thành công
+store.purchaseFailed,Không thể hoàn tất giao dịch. Vui lòng thử lại.
+idol.follow,Theo dõi
+idol.following,Đang theo dõi
+feed.title,Bảng tin
+feed.heartPostA11y,Tim bài viết
+feed.heartError,Không thể cập nhật tim. Thử lại.
+feed.removeReactionA11y,Bỏ {{type}}
+feed.reactions.heart,Tym
+feed.reactions.love,Yêu
+feed.reactions.wow,Wow
+feed.reactions.smile,Cười
+feed.reactions.dismissA11y,Đóng cảm xúc
+feed.empty,Chưa có bài đăng nào. Hãy đón chờ!
+feed.sendGift,Tặng quà
+feed.showMore,Xem thêm
+feed.showLess,Thu gọn
+search.clear,Xóa tìm kiếm
+search.globalTitle,Tìm kiếm
+search.globalPlaceholder,"Tìm idol, fan, bài đăng…"
+search.globalEmpty,Chưa có kết quả. Thử từ khóa khác.
+idolFilter.title,Lọc theo nghệ sĩ
+idolFilter.searchPlaceholder,Nhập tên nghệ sĩ
+idolFilter.empty,Chưa có nghệ sĩ
+idolFilter.searchEmpty,Không tìm thấy nghệ sĩ
+home.openProfileA11y,Mở hồ sơ
+home.openNotificationsA11y,Mở thông báo
+home.openSettingsA11y,Mở cài đặt
+home.openSearchA11y,Tìm kiếm
+home.stripAddA11y,Thêm fandom
+home.likeCount,{{count}} lượt thích
+home.exploreYourIdolHub,Khám phá thần tượng của bạn
+home.campaigns.typeEvent,Sự kiện
+home.campaigns.typeDefault,Mặc định
+home.campaigns.giveAnytime,Tặng bất cứ lúc nào
+fanProjects.title,Chiến dịch
+fanProjects.create.title,Tạo chiến dịch
+fanProjects.create.subtitle,Hãy khởi động một dự án của người hâm mộ dành cho thần tượng của bạn
+fanProjects.create.a11y,Tạo chiến dịch
+fanProjects.edit.title,Chỉnh sửa dự án
+fanProjects.tabs.PENDING,Chờ duyệt
+fanProjects.tabs.APPROVED,Đã duyệt
+fanProjects.tabs.ONLIVE,Đang diễn ra
+fanProjects.tabs.REJECTED,Từ chối
+fanProjects.tabs.FINISHED,Hoàn thành
+fanProjects.join,Tham gia
+fanProjects.leave,Rời
+fanProjects.joinError,Không thể cập nhật trạng thái tham gia. Vui lòng thử lại.
+fanProjects.target,Mục tiêu: {{count}}
+fanProjects.participants,{{count}} tham gia
+fanProjects.empty,Chưa có dự án fan ở trạng thái này.
+fanProjects.detail.status.PENDING,Chờ duyệt
+fanProjects.detail.status.APPROVED,Đã duyệt
+fanProjects.detail.status.ONLIVE,Đang diễn ra
+fanProjects.detail.status.REJECTED,Từ chối
+fanProjects.detail.status.FINISHED,Hoàn thành
+fanProjects.detail.verified,Đã xác thực
+fanProjects.detail.organizer,Người tổ chức:
+fanProjects.detail.timelineMeta,Thời gian:
+fanProjects.detail.statsTarget,Mục tiêu
+fanProjects.detail.statsDaysLeft,Thời gian còn lại
+fanProjects.detail.statsDaysLeftValue,{{count}} ngày
+fanProjects.detail.statsParticipants,Người tham gia
+fanProjects.detail.aboutTitle,Về chiến dịch này
+fanProjects.detail.purposeTitle,Mục đích chiến dịch
+fanProjects.detail.timelineTitle,Timeline
+fanProjects.detail.timelineStart,Ngày bắt đầu
+fanProjects.detail.timelineEnd,Ngày kết thúc
+fanProjects.detail.contactTitle,Liên hệ ban tổ chức
+fanProjects.detail.contactIntro,Liên hệ với {{name}} để tham gia chiến dịch này
+fanProjects.detail.attachmentsTitle,Tệp đính kèm
+fanProjects.detail.noteTitle,Lưu ý quan trọng
+fanProjects.detail.contactCta,Liên hệ
+fanProjects.detail.awaitingAdminApproval,Đang chờ quản trị viên phê duyệt
+fanProjects.detail.awaitingIdolApproval,Đang chờ idol phê duyệt
+fanProjects.detail.channels.facebook,Facebook
+fanProjects.detail.channels.phone,Điện thoại
+fanProjects.detail.channels.zalo,Zalo
+fanProjects.detail.channels.instagram,Instagram
+fanProjects.detail.channels.telegram,Telegram
+fanProjects.createFlow.submit,Gửi
+fanProjects.createFlow.fillSample,Điền dữ liệu mẫu
+fanProjects.createFlow.fillSampleA11y,Bật/tắt dữ liệu chiến dịch mẫu
+fanProjects.createFlow.successTitle,Đã lưu dự án
+fanProjects.createFlow.successMessage,Dự án fan của bạn đã được lưu thành công.
+fanProjects.createFlow.pickImage,Chọn hình ảnh
+fanProjects.createFlow.pickDocument,Chọn tệp
+fanProjects.createFlow.sections.generalInfo,Thông tin chiến dịch
+fanProjects.createFlow.sections.idolSelect,Ủng hộ nghệ sĩ nào?
+fanProjects.createFlow.sections.contactInfo,Thông tin liên lạc
+fanProjects.createFlow.sections.duration,Thời gian chiến dịch
+fanProjects.createFlow.sections.details,Chi tiết chiến dịch
+fanProjects.createFlow.sections.documents,Đăng tải tài liệu
+fanProjects.createFlow.fields.bannerUpload,Tải lên hình banner
+fanProjects.createFlow.fields.bannerHint,"Định dạng PNG, JPG, HEIC tối đa 10MB"
+fanProjects.createFlow.fields.title,Tên chiến dịch
+fanProjects.createFlow.fields.titlePlaceholder,Nhập tên chiến dịch
+fanProjects.createFlow.fields.description,Mô tả dự án
+fanProjects.createFlow.fields.descriptionPlaceholder,Mô tả chi tiết chiến dịch của bạn...
+fanProjects.createFlow.fields.organizerName,Tên đầy đủ của người tổ chức
+fanProjects.createFlow.fields.organizerNamePlaceholder,Tên đầy đủ của bạn
+fanProjects.createFlow.fields.phoneNumber,Số điện thoại
+fanProjects.createFlow.fields.phoneNumberPlaceholder,+84 90-123-4567
+fanProjects.createFlow.fields.facebookUrl,Liên kết Facebook
+fanProjects.createFlow.fields.facebookUrlPlaceholder,facebook.com/yourprofile
+fanProjects.createFlow.fields.zaloUrl,Liên hệ Zalo
+fanProjects.createFlow.fields.zaloUrlPlaceholder,zalo.me/yourcontact
+fanProjects.createFlow.fields.instagramUrl,Instagram (Không bắt buộc)
+fanProjects.createFlow.fields.instagramUrlPlaceholder,@yourinstagram
+fanProjects.createFlow.fields.telegramUrl,Telegram (Không bắt buộc)
+fanProjects.createFlow.fields.telegramUrlPlaceholder,t.me/yourgroup
+fanProjects.createFlow.fields.startDate,Ngày bắt đầu
+fanProjects.createFlow.fields.endDate,Ngày kết thúc
+fanProjects.createFlow.fields.target,Mục tiêu chiến dịch
+fanProjects.createFlow.fields.targetPlaceholder,VD: 5000
+fanProjects.createFlow.fields.purpose,Mục đích chiến dịch
+fanProjects.createFlow.fields.purposePlaceholder,Bạn muốn đạt được gì thông qua chiến dịch này?
+fanProjects.createFlow.fields.planFile,Kế hoạch chi tiêu
+fanProjects.createFlow.fields.proposalFile,Tài liệu đề xuất
+fanProjects.createFlow.fields.designFile,Tệp thiết kế
+fanProjects.createFlow.fields.documentHint,"Định dạng PNG, JPG, HEIC, PDF tối đa 10MB"
+fanProjects.createFlow.errors.bannerRequired,Hình banner là bắt buộc
+fanProjects.createFlow.errors.titleMin,Tên chiến dịch phải có ít nhất 3 ký tự
+fanProjects.createFlow.errors.descriptionMin,Mô tả phải có ít nhất 10 ký tự
+fanProjects.createFlow.errors.idolRequired,Vui lòng chọn nghệ sĩ
+fanProjects.createFlow.errors.nameMin,Tên phải có ít nhất 2 ký tự
+fanProjects.createFlow.errors.phoneInvalid,Nhập số điện thoại Việt Nam hợp lệ
+fanProjects.createFlow.errors.facebookInvalid,Nhập liên kết Facebook hợp lệ
+fanProjects.createFlow.errors.zaloInvalid,Nhập liên kết Zalo hợp lệ
+fanProjects.createFlow.errors.startDateRequired,Ngày bắt đầu là bắt buộc
+fanProjects.createFlow.errors.endDateRequired,Ngày kết thúc là bắt buộc
+fanProjects.createFlow.errors.startDatePast,Ngày bắt đầu không thể ở quá khứ
+fanProjects.createFlow.errors.endDateBeforeStart,Ngày kết thúc phải sau ngày bắt đầu
+fanProjects.createFlow.errors.targetRequired,Mục tiêu chiến dịch là bắt buộc
+fanProjects.createFlow.errors.purposeMin,Mục đích chiến dịch phải có ít nhất 10 ký tự
+fanProjects.createFlow.errors.fileTooLarge,Tệp phải nhỏ hơn hoặc bằng 10MB
+fanProjects.createFlow.errors.fileTypeInvalid,"Chỉ chấp nhận PNG, JPG, HEIC hoặc PDF"
+fanProjects.createFlow.errors.submitFailed,Không thể tạo dự án fan. Vui lòng thử lại.
+fanProjects.createFlow.errors.levelRequired,Cần Cấp 3 trở lên với nghệ sĩ này để tạo dự án fan.
+fanProjects.createFlow.errors.pendingProject,Bạn đã có dự án fan đang chờ duyệt cho nghệ sĩ này.
+fanProjects.createFlow.errors.uploadFailed,Không thể tải tệp lên. Kiểm tra kết nối và thử lại.
+fanProjects.createFlow.idolEmpty,Hãy theo dõi nghệ sĩ để tạo dự án fan.
+fanProjects.resultSheet.title,Kết quả phê duyệt
+fanProjects.resultSheet.statusLabel,Trạng thái
+fanProjects.resultSheet.approvedStatus,Chiến dịch đã được phê duyệt
+fanProjects.resultSheet.rejectedStatus,Đã bị từ chối
+fanProjects.resultSheet.rejectedBadge,Đã bị từ chối
+fanProjects.resultSheet.rejectReasonTitle,Lý do từ chối
+fanProjects.resultSheet.artistMessageTitle,Thông điệp của ekip nghệ sĩ
+fanProjects.resultSheet.editCampaign,Chỉnh sửa chiến dịch
+fanProjects.resultSheet.deleteCampaign,Xóa chiến dịch
+fanProjects.resultSheet.deleteConfirmBody,Xóa chiến dịch này? Thao tác này không thể hoàn tác.
+fanProjects.resultSheet.deleteUnavailable,Chưa thể xóa chiến dịch.
+fanProjects.editFlow.notEditable,Dự án này không thể chỉnh sửa nữa.
+idolHub.tabs.general,Nổi bật
+idolHub.tabs.profile,Nghệ Sĩ
+idolHub.tabs.digitalGift,Tặng quà
+idolHub.tabs.leaderboard,Bảng xếp hạng
+idolHub.tabs.events,Sự kiện
+idolHub.tabs.posts,Bài viết
+idolHub.tabs.sendLetter,Gửi thư
+idolHub.tabs.merchandise,Vật phẩm
+idolHub.actions.menuA11y,Mở menu hành động
+idolHub.profileTab.social.sectionTitle,Mạng xã hội
+idolHub.profileTab.social.empty,Chưa có liên kết mạng xã hội
+idolHub.profileTab.introduction.sectionTitle,Thông tin nghệ sĩ
+idolHub.profileTab.introduction.empty,Chưa có thông tin giới thiệu
+idolHub.hero.joiningFandom,Đang tham gia fandom
+idolHub.hero.goToYourSpace,Đến Space của bạn
+idolHub.moreSheet.currentStatus,Status hiện tại
+idolHub.moreSheet.shareProfile,Chia sẻ trang cá nhân
+idolHub.moreSheet.openA11y,Tùy chọn khác
+idolHub.leaderboard.title,Bảng xếp hạng
+idolHub.leaderboard.monthly,BXH Tháng
+idolHub.leaderboard.event,BXH Sự kiện
+idolHub.leaderboard.details,Chi tiết
+idolHub.leaderboard.empty,Chưa có bảng xếp hạng
+idolHub.leaderboard.emptyTitle,Chưa có bảng xếp hạng
+idolHub.leaderboard.emptySubtitle,"Khi có sự kiện, bảng xếp hạng đua top sự kiện sẽ hiện ở đây"
+idolHub.leaderboard.fppUnit,Fpp
+idolHub.leaderboard.endsAfter,Kết thúc sau :
+idolHub.leaderboard.you,Bạn
+idolHub.leaderboard.topRewardsTitle,Quà Top 3
+idolHub.leaderboard.rankLabel,Hạng {{rank}}
+idolHub.latestMusic.title,Nghe nhạc mới nhất
+idolHub.latestMusic.emptyTitle,Idol đang trong phòng thu....
+idolHub.latestMusic.emptySubtitle,"Khi Ca sĩ thêm link, danh sách nhạc sẽ nằm tại đây"
+idolHub.latestMusic.access,Truy cập
+idolHub.latestMusic.openWith,Mở bằng
+idolHub.latestMusic.open,Mở
+idolHub.latestMusic.openYoutubeApp,Ứng dụng Youtube
+idolHub.latestMusic.openSpotifyApp,Ứng dụng Spotify
+idolHub.latestMusic.openBrowser,Trình duyệt của bạn
+idolHub.latestMusic.openFailed,Không mở được liên kết này
+idolHub.latestMusic.manageEmptyTitle,Chưa có nhạc cho fan nghe
+idolHub.latestMusic.manageEmptySubtitle,Nhấn vào thêm link để cập nhật nhạc
+idolHub.latestMusic.addLink,Thêm link
+idolHub.latestMusic.options,Tùy chọn
+idolHub.latestMusic.addRowTitle,Thêm link nhạc cho fan
+idolHub.latestMusic.addRowSubtitle,Bấm Thêm link để cập nhật nhạc hằng ngày cho fan
+idolHub.latestMusic.formTitle,Thêm link nhạc
+idolHub.latestMusic.formBanner,Chỉ chấp nhận định dạng link {{youtube}} và {{spotify}}
+idolHub.latestMusic.formUrlLabel,Dán link Youtube/Spotify
+idolHub.latestMusic.formUrlInvalid,"Link không hợp lệ, chỉ nhận link {{youtube}} và {{spotify}}"
+idolHub.latestMusic.formTitleLabel,Tiêu đề hiển thị và ảnh đại diện
+idolHub.latestMusic.formTitleRequired,Vui lòng nhập tiêu đề
+idolHub.latestMusic.formTitlePlaceholder,Nhập tên bài hát
+idolHub.latestMusic.formAvatarRequired,Vui lòng tải lên ảnh đại diện
+idolHub.latestMusic.formUploadTitle,Tải lên hình ảnh
+idolHub.latestMusic.formUploadHint,"Định dạng PNG, JPG tối đa 10MB"
+idolHub.latestMusic.deleteConfirmTitle,Xóa link nhạc?
+idolHub.latestMusic.deleteConfirmBody,Link sẽ bị xóa khỏi hub của bạn. Fan sẽ không còn thấy link này nữa.
+idolHub.latestMusic.deleteConfirmAction,Xóa
+idolHub.latestMusic.moreEditLink,Chỉnh sửa link nhạc
+idolHub.latestMusic.moreEdit,Chỉnh sửa
+idolHub.latestMusic.moreDeleteLink,Xóa link nhạc
+idolHub.latestMusic.moreDelete,Xóa
+idolHub.latestMusic.deleteSuccess,Đã xóa link nhạc
+idolHub.latestMusic.errorDeleteFailed,Không thể xóa link nhạc này. Vui lòng thử lại.
+idolHub.events.detailTitle,Chi tiết sự kiện
+idolHub.events.sectionTitle,Sự kiện sắp diễn ra
+idolHub.events.join,Tham gia
+idolHub.events.eventLink,Liên kết sự kiện
+idolHub.events.view,Xem
+idolHub.events.viewSchedule,Xem lịch trình nghệ sĩ
+idolHub.events.daysLeft,Còn {{count}} ngày
+idolHub.events.dayLeft,Còn 1 ngày
+idolHub.events.lastDay,Ngày cuối
+idolHub.events.dateShort,{{day}} Tháng {{month}}
+idolHub.events.countdownDays,{{count}} ngày
+idolHub.events.countdownHours,{{count}} giờ
+idolHub.events.countdownMinutes,{{count}} phút
+idolHub.events.joinA11y,Tham gia
+idolHub.events.detail.sectionTitle,Thông tin sự kiện
+idolHub.events.detail.countdown.day,Ngày
+idolHub.events.detail.countdown.hour,Giờ
+idolHub.events.detail.countdown.minute,Phút
+idolHub.events.detail.notFound,Không tìm thấy sự kiện này
+idolHub.events.detail.interested,Người quan tâm
+idolHub.events.detail.openChatA11y,Mở chat trực tiếp
+idolHub.merch.sectionTitle,Vật phẩm nổi bật
+idolHub.merch.empty,Chưa có vật phẩm nào
+idolHub.merchandise.membership.title,Hội viên Fan Club
+idolHub.merchandise.membership.subtitle,Quyền lợi & phần thưởng độc quyền
+idolHub.merchandise.membership.shopNow,Mua ngay
+idolHub.merchandise.freeShipping.title,Sự kiện miễn phí vận chuyển
+idolHub.merchandise.freeShipping.subtitle,Đơn hàng trên {{amount}} được miễn phí vận chuyển toàn cầu
+idolHub.merchandise.freeShipping.validUntil,Có hiệu lực đến {{date}}
+idolHub.merchandise.categories.album,Album
+idolHub.merchandise.categories.merch,Merch
+idolHub.merchandise.categories.globalMembership,Hội viên toàn cầu
+idolHub.merchandise.categories.tourMerch,Merch tour
+idolHub.calendar.title,Lịch
+idolHub.calendar.saveToCalendar,Lưu vào lịch
+idolHub.calendar.saved,Đã lưu
+idolHub.calendar.removeFromCalendar,Gỡ khỏi lịch
+idolHub.fanLetters.myLettersTitle,Thư của tôi
+idolHub.fanLetters.empty,Chưa có thư fan nào
+idolHub.fanLetters.hidden,Ẩn
+idolHub.fanLetters.detailTitle,Thư fan
+idolHub.fanLetters.notFound,Không tìm thấy thư này
+idolHub.fanLetters.toRecipient,Gửi. {{name}}
+idolHub.fanLetters.cardA11y,"Thư fan từ {{handle}} gửi {{name}}, {{count}} lượt tim"
+idolHub.fanLetters.heartA11y,{{count}} lượt tim
+idolHub.fanLetters.commentA11y,{{count}} bình luận
+idolHub.fanLetters.reportMoreA11y,Tùy chọn khác
+idolHub.fanLetters.menuReport,Báo cáo thư này
+idolHub.fanLetters.menuBlock,Chặn người dùng
+idolHub.fanLetters.moreSheet.report,Báo cáo
+idolHub.fanLetters.moreSheet.block,Chặn
+idolHub.fanLetters.blockConfirmTitle,Chặn {{handle}}?
+idolHub.fanLetters.blockConfirmMessage,Thư fan của họ sẽ không còn xuất hiện trong bảng tin của bạn.
+idolHub.fanLetters.blockConfirmAction,Chặn
+idolHub.fanLetters.blockSuccess,Đã chặn người dùng
+idolHub.fanLetters.blockAlreadyBlocked,Bạn đã chặn người dùng này
+idolHub.fanLetters.reportTitle,Báo cáo thư fan
+idolHub.fanLetters.reportSuccess,Cảm ơn bạn đã báo cáo
+idolHub.fanLetters.reportAlreadyReported,Bạn đã báo cáo thư này
+idolHub.fanLetters.reportReason.SPAM,Spam
+idolHub.fanLetters.reportReason.HARASSMENT,Quấy rối
+idolHub.fanLetters.reportReason.HATE,Ngôn từ thù ghét
+idolHub.fanLetters.reportReason.SEXUAL,Nội dung khiêu dâm
+idolHub.fanLetters.reportReason.OTHER,Khác
+idolHub.fanLetters.stickerReward.title,Chúc Mừng !
+idolHub.fanLetters.stickerReward.description,Bạn nhận được một bộ sticker sau khi hoàn thành nhiệm vụ {{missionName}}
+idolHub.fanLetters.stickerReward.cta,Gửi thư ngay
+idolHub.fanLetters.stickerReward.catalogLoadFailed,Không tải được phần thưởng sticker. Vui lòng thử lại.
+idolHub.fanLetters.create.fabA11y,Tạo thư fan
+idolHub.fanLetters.create.previewTitle,Xem trước thư fan
+idolHub.fanLetters.create.previewSend,Gửi
+idolHub.fanLetters.create.previewCancel,Hủy
+idolHub.fanLetters.create.errors.dailyLimit,Bạn chỉ có thể gửi một thư fan mỗi ngày cho idol này.
+idolHub.fanLetters.create.errors.invalidType,Vui lòng chọn ảnh PNG hoặc JPEG.
+idolHub.fanLetters.create.errors.tooLarge,Ảnh phải nhỏ hơn hoặc bằng 10 MB.
+idolHub.fanLetters.create.errors.captureFailed,Không thể chụp thư fan của bạn. Vui lòng thử lại.
+idolHub.fanLetters.create.errors.uploadFailed,Không thể tải ảnh lên. Vui lòng thử lại.
+idolHub.fanLetters.create.errors.createFailed,Không thể gửi thư fan. Vui lòng thử lại.
+idolHub.fanLetters.editor.title,Tạo thư fan
+idolHub.fanLetters.editor.send,Gửi
+idolHub.fanLetters.editor.undo,Hoàn tác
+idolHub.fanLetters.editor.discardTitle,Bỏ thư fan?
+idolHub.fanLetters.editor.discardMessage,Các thay đổi chưa gửi sẽ bị mất.
+idolHub.fanLetters.editor.discardCancel,Tiếp tục chỉnh sửa
+idolHub.fanLetters.editor.discardConfirm,Bỏ
+idolHub.fanLetters.editor.tools.theme,Nền
+idolHub.fanLetters.editor.tools.text,Chữ
+idolHub.fanLetters.editor.tools.sticker,Sticker
+idolHub.fanLetters.editor.tools.photo,Ảnh
+idolHub.fanLetters.editor.tools.draw,Vẽ
+idolHub.fanLetters.editor.text.add,Thêm chữ
+idolHub.fanLetters.editor.text.placeholder,Nhập lời nhắn của bạn
+idolHub.fanLetters.editor.text.font.default,Sans
+idolHub.fanLetters.editor.text.font.serif,Serif
+idolHub.fanLetters.editor.text.font.handwritten,Viết tay
+idolHub.fanLetters.editor.photo.pick,Chọn ảnh
+idolHub.fanLetters.editor.photo.mask.title,Khung
+idolHub.fanLetters.editor.photo.mask.rect,Vuông
+idolHub.fanLetters.editor.photo.mask.circle,Tròn
+idolHub.fanLetters.editor.photo.limit,{{count}}/3 ảnh
+idolHub.fanLetters.editor.draw.eraser,Tẩy
+idolHub.fanLetters.editor.draw.clear,Xóa nét vẽ
+idolHub.fanLetters.editor.draw.clearConfirm,Xóa toàn bộ nét vẽ?
+idolHub.fanLetters.editor.stickers.locked,Gói sticker này đang bị khóa
+idolHub.fanLetters.editor.stickers.recentsEmpty,Sticker bạn dùng sẽ hiện ở đây
+idolHub.fanLetters.editor.stickers.searchPlaceholder,Tìm bộ sticker
+idolHub.fanLetters.editor.stickers.searchEmpty,Không có bộ sticker nào khớp
+idolHub.fanLetters.editor.stickers.packs.recents,Gần đây
+idolHub.fanLetters.editor.stickers.preview.usePack,Dùng gói
+idolHub.fanLetters.editor.stickers.preview.claimFree,Nhận miễn phí
+idolHub.fanLetters.editor.stickers.preview.missionLocked,Hoàn thành nhiệm vụ để mở khóa gói này
+idolHub.fanLetters.editor.stickers.preview.goToMissions,Đi đến nhiệm vụ
+idolHub.fanLetters.editor.stickers.preview.loadError,Không thể tải gói sticker này
+idolHub.fanLetters.editor.stickers.preview.claimFailed,Không thể nhận gói sticker này. Vui lòng thử lại.
+idolHub.fanLetters.editor.stickers.preview.skuUnavailable,Gói sticker này hiện chưa mua được
+idolHub.digitalGift.empty,Hiện chưa có chiến dịch nào
+idolHub.digitalGift.defaultCornerTitle,Góc quà {{name}}
+idolHub.digitalGift.alwaysOpen,Luôn mở
+idolHub.digitalGift.sendCta,Tặng quà
+idolHub.digitalGift.revenueSplitUnavailable,Idol chưa thể nhận quà
+idolHub.digitalGift.startsOn,Bắt đầu {{date}}
+idolHub.digitalGift.contributeDisabled,Sắp diễn ra
+idolHub.digitalGift.campaignUnavailable,Chiến dịch này không còn khả dụng
+idolHub.digitalGift.remainingConflict,Chỉ còn {{remaining}} quà có thể tặng cho mục này
+idolHub.digitalGift.packageCompleted,Gói quà này đã được hoàn thành!
+idolHub.digitalGift.stats.milestone,CỘT MỐC
+idolHub.digitalGift.stats.giftsSent,QUÀ ĐÃ GỬI
+idolHub.digitalGift.stats.fans,FAN
+idolHub.digitalGift.carousel.contribute,Đóng góp
+idolHub.digitalGift.universeProgress.title,Tiến độ Vũ trụ
+idolHub.digitalGift.recentGifts.title,Quà gần đây
+idolHub.digitalGift.recentGifts.empty,Chưa có quà gần đây
+idolHub.digitalGift.recentGifts.emptyDescription,Chưa có quà gần đây. Hãy đón chờ!
+idolHub.digitalGift.detailTitle,Chi tiết gói
+idolHub.digitalGift.detailComingSoon,Chi tiết quà sẽ sớm có thêm.
+idolHub.digitalGift.notFound,Không tìm thấy quà này
+idolHub.digitalGift.myContributions,Đóng góp của tôi
+idolHub.digitalGift.communityProgress.unit,Quà
+idolHub.digitalGift.communityProgress.rewardCaption,"Sau khi hoàn thành mốc, phần thưởng sẽ được mở."
+idolHub.digitalGift.subGift.stars,{{count}} sao
+idolHub.digitalGift.rarity.common,Phổ biến
+idolHub.digitalGift.rarity.rare,Hiếm
+idolHub.digitalGift.rarity.epic,Sử thi
+idolHub.digitalGift.rarity.seasonal,Theo mùa
+idolHub.digitalGift.rarity.legendary,Huyền thoại
+idolHub.digitalGift.giftList.title,Danh sách quà
+idolHub.digitalGift.giftList.messagePlaceholder,Ghi lời nhắn của bạn (Tùy chọn)
+idolHub.digitalGift.giftList.submit,Gửi quà
+idolHub.digitalGift.giftList.sendDetailCta,Gửi quà
+idolHub.digitalGift.giftList.decreaseQuantity,Giảm số lượng
+idolHub.digitalGift.giftList.increaseQuantity,Tăng số lượng
+idolHub.digitalGift.giftList.insufficientBalanceTitle,Không đủ số dư sao
+idolHub.digitalGift.giftList.starBalanceLabel,Số dư sao:
+idolHub.digitalGift.giftList.partialPurchase,Đã mua {{purchased}} / {{requested}}
+idolHub.digitalGift.giftList.insufficientInventory,Bạn không đủ quà này
+idolHub.digitalGift.giftList.skuUnavailable,Quà này hiện chưa mua được
+idolHub.digitalGift.giftList.tabOwned,Đã mua
+idolHub.digitalGift.giftList.tabStore,Cửa hàng
+idolHub.digitalGift.giftList.messageLabel,Ghi lời nhắn
+idolHub.digitalGift.giftList.emptyOwned,Bạn chưa có quà nào
+idolHub.digitalGift.giftList.emptyStore,Cửa hàng chưa có quà
+idolHub.digitalGift.giftSendSuccess.screenTitle,Kết quả
+idolHub.digitalGift.giftSendSuccess.title,Gửi quà thành công
+idolHub.digitalGift.giftSendSuccess.viewGiftUniverse,Xem vũ trụ quà tặng
+idolHub.digitalGift.giftSendSuccess.sendMore,Gửi thêm quà
+idolHub.digitalGift.giftSendSuccess.fppEarned,+{{amount}} {{unit}}
+idolHub.digitalGift.giftSendSuccess.fppEarnedSubtitle,{{title}} {{name}}
+idolHub.digitalGift.giftSendSuccess.rankChange,Hạng {{from}} → hạng {{to}}
+idolHub.digitalGift.giftSendSuccess.rankCurrent,Hạng {{rank}}
+idolHub.digitalGift.giftSendSuccess.messageLabel,Lời nhắn :
+notifications.inboxTitle,Thông báo
+notifications.emptyTitle,Chưa có thông báo nào
+notifications.emptyDescription,Chưa có thông báo nào. Hãy đón chờ!
+merch.galleryEmpty,Chưa có vật phẩm nào. Scan QR trên merchandise để bắt đầu!
+merch.alreadyOwn,Bạn đã thêm merch này rồi
+merch.alreadyClaimed,Merch đã được thêm bởi fan khác
+merch.unlock,Mở khóa
+merch.addStars,Thêm sao
+merch.scanAgain,Scan lại
+merch.goGallery,Đến gallery
+gift.insufficient,Không đủ Star
+gift.sent,Món quà của bạn đã được gửi đến Vũ trụ của {{idol}}
+ecard.albumTitle,Sổ E-Card
+ecard.album.empty,Chưa có thẻ nào
+ecard.historyA11y,Xem lịch sử E-Card
+ecard.receive,Nhận
+ecard.doMission,Làm nhiệm vụ
+ecard.owned,Đã sở hữu
+ecard.moreA11y,Mở tuỳ chọn thẻ
+ecard.filters.owned,Đã sở hữu
+ecard.filters.notOwned,Chưa sở hữu
+ecard.rarity.C,Phổ biến
+ecard.rarity.R,Hiếm
+ecard.rarity.SR,Siêu hiếm
+ecard.rarity.SSR,Siêu siêu hiếm
+ecard.rarity.UR,Cực hiếm
+ecard.sectionTitle.C,Thẻ C
+ecard.sectionTitle.R,Thẻ R
+ecard.sectionTitle.SR,Thẻ SR
+ecard.optionsTitle,Tuỳ chọn
+ecard.detailLabel,Chi tiết thẻ
+ecard.detailAction,Xem
+ecard.deleteLabel,Xoá thẻ này
+ecard.deleteAction,Xoá
+ecard.deleteConfirmTitle,Xoá thẻ này?
+ecard.deleteConfirmDescription,Tất cả bản sao đang sở hữu sẽ bị huỷ.
+ecard.deleteSuccessTitle,Đã xoá thẻ
+ecard.deleteSuccessDescription,Các bản sao đã được gỡ khỏi sổ.
+ecard.detailTitle,Thông tin thẻ
+ecard.infoTitle,Thông tin E-Card
+ecard.cardType,Loại thẻ:
+ecard.ownedCount,Đang sở hữu : {{count}} thẻ
+ecard.merge,Gộp lên hạng
+ecard.exchange,Đổi vật phẩm
+ecard.mergeTitle,Nâng hạn thẻ
+ecard.mergeHeadline,Gộp thẻ để nâng hạn
+ecard.mergeRule,Gộp {{required}} thẻ {{from}} để nhận được {{granted}} thẻ {{to}}
+ecard.confirmMerge,Xác nhận gộp
+ecard.quantityA11y,Số lượng gộp {{selected}} trên {{owned}}
+ecard.decrementA11y,Giảm số lượng gộp
+ecard.incrementA11y,Tăng số lượng gộp
+ecard.resultTitle,Xin chúc mừng
+ecard.resultFailTitle,Gộp thẻ thất bại
+ecard.mergeSuccess,Gộp thẻ thành công
+ecard.mergeFail,Gộp thẻ không thành công
+ecard.receivedCard,Bạn nhận được {{count}} thẻ {{rarity}} {{name}}
+ecard.mergeMore,Gộp thêm thẻ khác
+ecard.viewInventory,Xem trong kho
+ecard.exchangeTitle,Đổi vật phẩm
+ecard.exchangeBanner,Dùng thẻ trùng hạng để đổi lấy vật phẩm trang trí trong My Space
+ecard.exchangeListTitle,Đổi vật phẩm Decor
+ecard.needCards,Cần {{count}} thẻ
+ecard.missingCards,Thiếu {{count}} thẻ
+ecard.exchangeAction,Đổi
+ecard.exchangeSuccess,Đã thêm vật phẩm vào My Space
+ecard.errors.exchangeFailed,Không đổi được. Vui lòng thử lại.
+ecard.historyTitle,Lịch sử gộp thẻ
+ecard.history.thisWeek,Tuần này
+ecard.history.thisMonth,Tháng này
+ecard.history.custom,Tuỳ chọn
+ecard.history.empty,Chưa có lịch sử E-Card
+ecard.history.mergeTitle,Nâng hạng thẻ {{name}}
+ecard.history.mergeUsed,Dùng {{count}} thẻ {{rarity}}
+ecard.history.mergeGranted,+{{count}}
+ecard.history.mergeGrantedBadge,Thẻ {{rarity}}
+ecard.history.exchangeTitle,Đổi lấy {{item}}
+ecard.history.exchangeUsed,Dùng {{count}} thẻ {{rarity}}
+ecard.history.deleteTitle,Đã xoá {{name}}
+ecard.history.deleteUsed,Huỷ toàn bộ bản sao
+ecard.history.claimTitle,Nhận {{name}}
+ecard.history.claimUsed,Đã nhận thẻ
+mySpace.roomTitle,Không gian của bạn
+mySpace.collectionTitle,Bộ sưu tập
+mySpace.tabs.room,Phòng
+mySpace.tabs.calendar,Lịch
+mySpace.tabs.store,Cửa hàng
+mySpace.tabs.stars,Sao
+mySpace.sidebar.camera,Camera
+mySpace.sidebar.collection,Bộ sưu tập
+mySpace.sidebar.calendar,Lịch
+mySpace.sidebar.mission,Nhiệm vụ
+mySpace.sidebar.inventory,Kho
+mySpace.sidebar.journeyBook,Sổ hành trình
+mySpace.actions.saveImage,Lưu ảnh
+mySpace.actions.shareSocial,Chia sẻ mạng xã hội
+mySpace.settingsA11y,Mở danh sách không gian
+mySpace.missionsA11y,Mở nhiệm vụ
+mySpace.customizeA11y,Tùy chỉnh phòng
+mySpace.calendarTitle,Lịch của tôi
+mySpace.calendar.monthYearLabel,Tháng {{month}} năm {{year}}
+mySpace.calendar.previousMonthA11y,Tháng trước
+mySpace.calendar.nextMonthA11y,Tháng sau
+mySpace.calendar.reminderComingSoon,Nhắc nhở sẽ sớm ra mắt
+mySpace.calendar.durationHours,{{count}} giờ
+mySpace.calendar.setReminder,Đặt nhắc nhở
+mySpace.calendar.reminderSet,Đã đặt nhắc nhở
+mySpace.storeTitle,Cửa hàng
+mySpace.openBasket,Giỏ vật phẩm
+mySpace.basketTitle,Giỏ vật phẩm
+mySpace.placeInRoom,Trang trí
+mySpace.clearPlacement.label,Gỡ khỏi sân khấu
+mySpace.clearPlacement.confirmBody,Vật phẩm vẫn còn trong bộ sưu tập. Chỉ gỡ khỏi sân khấu.
+mySpace.clearPlacement.action,Gỡ
+mySpace.clearPlacement.longPressA11y,Gỡ {{slot}} khỏi sân khấu
+mySpace.clearPlacement.errors.removeFailed,Không thể gỡ vật phẩm. Vui lòng thử lại.
+mySpace.slots.theme,Chủ đề
+mySpace.slots.stage,Sân khấu
+mySpace.slots.mic,Micro
+mySpace.slots.piano,Đàn piano
+mySpace.slots.left-guitar,Guitar trái
+mySpace.slots.right-guitar,Guitar phải
+mySpace.slots.left-poster,Poster trái
+mySpace.slots.right-poster,Poster phải
+mySpace.slots.left-speaker,Loa trái
+mySpace.slots.right-speaker,Loa phải
+mySpace.filters.all,Tất cả
+mySpace.filters.new,Mới
+mySpace.filters.type,Loại
+mySpace.filters.price,Giá
+mySpace.missionsTitle,Nhiệm vụ
+mySpace.go,Đi
+mySpace.mission.tabs.daily,Hàng ngày
+mySpace.mission.tabs.streak,Chuỗi
+mySpace.mission.tabs.achievement,Thành Tựu
+mySpace.mission.checkIn,Điểm danh hằng ngày
+mySpace.mission.checkInSub,Mở Không gian của bạn hôm nay
+mySpace.mission.game,Chơi mini game
+mySpace.mission.gameSub,Hoàn thành 3 mini game
+mySpace.mission.gift,Gửi quà
+mySpace.mission.giftSub,Gửi cho 1 bạn
+mySpace.mission.calendar,Thêm sự kiện lịch
+mySpace.mission.calendarSub,Thêm 3 sự kiện vào Lịch của tôi
+mySpace.mission.completedToday,Đã hoàn thành hôm nay
+mySpace.mission.pointRewardLabel,Điểm thưởng:
+mySpace.mission.rewardLabel,Phần thưởng
+mySpace.mission.pointsReward,{{count}} điểm
+mySpace.mission.dailyLogin,Đăng nhập hàng ngày
+mySpace.mission.dailyLoginSub,Ghé thăm không gian fandom của bạn
+mySpace.mission.musicalNotesReward,{{count}} Nốt nhạc
+mySpace.mission.checkInLabel,Điểm danh
+mySpace.mission.claim,Nhận
+mySpace.mission.claimed,Đã nhận
+mySpace.mission.doItNow,Thực hiện ngay
+mySpace.mission.inProgress,Đang thực hiện
+mySpace.mission.done,Đã thực hiện
+mySpace.mission.progressLabel,Tiến trình
+mySpace.mission.tierProgress,Bậc {{current}}/{{total}}
+mySpace.mission.expReward,{{count}} EXP
+mySpace.mission.levelBadge,Cấp {{level}}. {{name}}
+mySpace.mission.pointsToNext,{{current}} / {{max}} còn {{remaining}} tới {{nextName}}
+mySpace.mission.countProgress,{{current}}/{{max}}
+mySpace.mission.turnsProgress,{{current}}/{{max}} lượt
+mySpace.mission.emptyDailyTitle,Chưa có nhiệm vụ hàng ngày
+mySpace.mission.emptyDailyDescription,Hãy quay lại sau để nhận nhiệm vụ mới.
+mySpace.mission.emptyStreakTitle,Chưa có nhiệm vụ chuỗi
+mySpace.mission.emptyStreakDescription,Nhiệm vụ chuỗi sẽ xuất hiện tại đây.
+mySpace.mission.emptyAchievementTitle,Chưa có thành tựu
+mySpace.mission.emptyAchievementDescription,Thành tựu sẽ xuất hiện tại đây.
+mySpace.walletTitle,Star của tôi
+mySpace.buyStar,Mua Star
+mySpace.walletStatus.recharge,Nạp star
+mySpace.tx.dailyCheckInReward,Phần thưởng điểm danh hằng ngày
+mySpace.tx.dailyLogin,Đăng nhập hằng ngày
+mySpace.tx.giftSent,Đã gửi quà
+mySpace.tx.giftDonation,Tặng quà chiến dịch
+mySpace.tx.itemPurchase,Mua vật phẩm
+mySpace.tx.topupPurchase,Mua nạp star
+mySpace.events.chill,Chill cùng bạn bè
+mySpace.events.study,Buổi học nhóm
+mySpace.time.sixPm,18:00
+mySpace.time.eightPm,20:00
+mySpace.mySpacesTitle,Không gian của tôi
+mySpace.mySpacesHeading,KHÔNG GIAN CỦA TÔI
+mySpace.editSpace,Chỉnh sửa không gian
+mySpace.createNewSpace,Tạo không gian mới
+mySpace.categories.furniture,Nội thất
+mySpace.categories.wallpaper,Giấy dán tường
+mySpace.categories.floor,Sàn
+mySpace.categories.objects,Đồ trang trí
+mySpace.decor.piano,Piano
+mySpace.decor.potBlue,Cây cảnh
+mySpace.decor.potPink,Cây cảnh
+mySpace.decor.mic,Micro
+mySpace.decor.guitar,Guitar
+mySpace.decor.guitarLeft,Guitar trái
+mySpace.decor.guitarRight,Guitar phải
+mySpace.decor.speaker,Loa
+mySpace.decor.speakerLeft,Loa trái
+mySpace.decor.speakerRight,Loa phải
+mySpace.decor.sofa,Sofa
+mySpace.decor.desk,Bàn làm việc
+mySpace.decor.lamp,Đèn
+mySpace.decor.bed,Giường
+mySpace.decor.chair,Ghế
+mySpace.decor.rug,Thảm
+mySpace.decor.poster,Poster
+mySpace.decor.posterLeft,Poster trái
+mySpace.decor.posterRight,Poster phải
+mySpace.decor.stage,Sân khấu
+mySpace.decor.theme,Chủ đề
+mySpace.studio.newSpace,+Mới
+mySpace.studio.newSpaceA11y,Tạo không gian mới
+mySpace.studio.defaultBadge,MẶC ĐỊNH
+mySpace.studio.itemsPlaced,Đã trang trí: 
+mySpace.studio.lastUpdated,Cập nhật lần cuối: 
+mySpace.studio.hoursAgo,{{count}} giờ trước
+mySpace.studio.levelShort,Cấp {{level}}
+mySpace.studio.addDecorA11y,Thêm đồ trang trí
+mySpace.studio.carouselPrevA11y,Mục trước
+mySpace.studio.carouselNextA11y,Mục tiếp theo
+mySpace.studio.emptyFollowing,Theo dõi một fandom để mở không gian studio của bạn.
+mySpace.studio.followFandomCta,Khám phá fandom
+mySpace.studio.followFandomCtaA11y,Mở tìm kiếm fandom để theo dõi idol
+mySpace.studio.basketEmpty,Chưa có vật phẩm cho danh mục này.
+mySpace.studio.basketCategoryLocked,Mở khóa vị trí trang trí để xem vật phẩm.
+mySpace.studio.unlockItem,Mở khóa vật phẩm
+mySpace.studio.unlockItemA11y,Xem vật phẩm để mở khóa vị trí này
+mySpace.studio.purchaseItem,Mua
+mySpace.studio.purchaseItemA11y,Mua vật phẩm
+mySpace.studio.notReceived,Chưa nhận
+mySpace.studio.itemCount,{{count}} vật phẩm
+mySpace.studio.allChipLabel,Tất cả ({{count}})
+mySpace.studio.insufficientStarsAfterRecharge,Bạn vẫn chưa đủ Sao để mua vật phẩm này. Hãy mua thêm Sao và thử lại.
+mySpace.spaces.studioOrange,Studio của tôi — cam
+mySpace.spaces.studioBlue,Studio của tôi — xanh dương
+mySpace.spaces.studioPurple,Studio của tôi — tím
+camera.camera_permission_qr,Cho phép truy cập camera để quét mã QR
+camera.scan_device_qr,Quét mã QR trên merchandise của bạn
+camera.no_camera_available,Thiết bị này không có camera
+qrScan.flashOnA11y,Tắt đèn flash
+qrScan.flashOffA11y,Bật đèn flash
+qrScan.enterCode,Nhập mã
+qrScan.enterCodePlaceholder,Mã
+qrScan.enterCodeSubmit,Gửi
+qrScan.photo,Ảnh
+qrScan.errors.noQrInImage,Không tìm thấy mã QR trong ảnh.
+inventory.title,Kho vật phẩm
+inventory.buyMore,Mua thêm
+inventory.scannerA11y,Quét mã QR vật phẩm
+inventory.itemMoreA11y,Tùy chọn vật phẩm
+inventory.tabs.ecard,E-Card
+inventory.tabs.items,Vật phẩm
+inventory.tabs.gifts,Quà Donate
+inventory.gifts.send,Tặng quà
+inventory.gifts.sendTitle,Tặng quà
+inventory.gifts.balance,Số dư trong kho : {{count}}
+inventory.gifts.chooseIdol,Chọn idol để tặng
+inventory.gifts.empty,Chưa có quà
+inventory.gifts.noIdols,Hãy theo dõi idol để tặng quà
+inventory.gifts.unavailable,Quà này không còn trong kho
+inventory.gifts.fppThisMonth,{{count}} {{unit}} tháng này
+inventory.items.empty,Chưa có vật phẩm
+inventory.frames.sectionTitle,Khung ảnh đại diện
+inventory.frames.use,Sử dụng
+inventory.frames.inUse,Đang dùng
+inventory.frames.empty,Chưa có khung
+inventory.itemHistory.title,Lịch sử vật phẩm
+inventory.itemHistory.a11y,Xem lịch sử vật phẩm
+inventory.itemHistory.thisWeek,Tuần này
+inventory.itemHistory.thisMonth,Tháng này
+inventory.itemHistory.custom,Tuỳ chọn
+inventory.itemHistory.empty,Chưa có lịch sử vật phẩm
+inventory.itemHistory.quantity,+{{count}}
+inventory.itemHistory.cost,-{{count}} thẻ {{rarity}}
+inventory.itemHistory.filters.purchase,Mua
+inventory.itemHistory.filters.rankUp,Lên hạng
+inventory.itemHistory.filters.qrScan,Quét mã
+inventory.itemHistory.filters.merge,Gộp thẻ
+inventory.itemHistory.subtitle.purchase,Mua từ cửa hàng
+inventory.itemHistory.subtitle.rankUp,Nhận khi lên hạng
+inventory.itemHistory.subtitle.qrScan,Quét mã
+inventory.itemHistory.subtitle.merge,mẫu thẻ ra ngẫu nhiên
+inventory.itemHistory.badge.purchase,Mua
+inventory.itemHistory.badge.rankUp,Quà lên hạng
+inventory.itemHistory.badge.qrScan,Quét mã
+inventory.itemHistory.badge.merge,Gộp thẻ
+inventory.itemHistory.detail.title,Chi tiết giao dịch
+inventory.itemHistory.detail.transactionCode,Mã giao dịch
+inventory.itemHistory.detail.time,Thời gian
+inventory.itemHistory.detail.method.label,Phương thức
+inventory.itemHistory.detail.method.momo,Ví điện tử MoMo
+inventory.itemHistory.detail.method.stars,Sao
+inventory.itemHistory.detail.quantity,Số lượng
+inventory.itemHistory.detail.quantityValue,{{count}} thẻ {{rarity}}
+inventory.itemHistory.detail.quantityValue_other,{{count}} thẻ {{rarity}}
+inventory.itemHistory.detail.total,Thành tiền
+inventory.itemHistory.detail.statusSuccess,Giao dịch thành công
+inventory.itemHistory.detail.statusFailed,Giao dịch thất bại
+inventory.itemHistory.detail.viewInInventory,Xem thẻ trong kho
+inventory.itemHistory.detail.report,Báo lỗi giao dịch
+rewards.levelUpTitle,Chúc mừng lên {{levelName}}
+rewards.fromToLevel,Từ hạng {{from}} lên hạng {{to}}
+rewards.missionCompleteTitle,Hoàn thành nhiệm vụ!
+rewards.missionCompleteSubtitle,Bạn đã hoàn thành {{missionName}}
+rewards.receivedCount,Bạn nhận được {{count}} phần quà
+rewards.goToInventory,Đến kho item
+rewards.merchClaimTitle,Bạn đã nhận vật phẩm!
+rewards.merchClaimSubtitle,{{merchName}}
+rewards.monthlyRanking.fanPointsSubtitle,Điểm hâm mộ nghệ sĩ {{idolName}}
+rewards.monthlyRanking.youRanked,Bạn đạt hạng
+rewards.monthlyRanking.rewardsReceived,Phần thưởng đã nhận
+rewards.monthlyRanking.addedToInventory,Đã tự động thêm vào Kho
+rewards.monthlyRanking.fppReset,Điểm Fpp tháng {{endedMonth}} đã về 0. BXH tháng {{nextMonth}} bắt đầu từ hôm nay
+rewards.monthlyRanking.keepGoing,"Bạn đã làm rất tốt, cứ tiếp tục như vậy nhé !"
+rewards.monthlyRanking.viewInInventory,Xem quà trong kho
+rewards.monthlyRanking.viewLeaderboard,Xem bảng xếp hạng
+paywall.collectionTitle,Bộ sưu tập
+paywall.collectionScannerTitle,Quét QR
+paywall.collectionScannerA11y,Quét mã QR bộ sưu tập
+paywall.collectionA11y,Mở bộ sưu tập
+paywall.transactionHistoryTitle,Lịch sử giao dịch
+paywall.transactionHistoryA11y,Xem lịch sử giao dịch
+paywall.transactionHistory.empty,Chưa có giao dịch nào
+paywall.transactionHistory.spentInMonth,Đã chi trong {{month}}
+paywall.transactionHistory.filters.ecard,E-card
+paywall.transactionHistory.filters.sticker,Sticker
+paywall.transactionHistory.filters.items,Vật phẩm
+paywall.transactionHistory.filters.topUp,Nạp sao
+paywall.tx.earnMission,Phần thưởng nhiệm vụ
+paywall.tx.recharge,Nạp star
+paywall.starPacks.title,Gói sao
+paywall.starBalanceStats.currentBalance,Số dư sao
+paywall.starBalanceStats.discBalance,Thẻ sở hữu
+paywall.starBalanceStats.buyStar,Mua thêm sao
+paywall.starBalanceStats.buyDisc,Tìm thêm thẻ
+paywall.merchSectionTitle.collection,Bộ sưu tập
+paywall.merchSectionTitle.featuredMerch,Ưu đãi nổi bật
+paywall.merchSectionTitle.merch,Kho thẻ
+paywall.merchGallery.empty,Quét mã QR trên merchandise để thêm vào đây.
+paywall.scanner.errors.invalid,Mã QR không hợp lệ hoặc đã hết hạn.
+paywall.scanner.errors.claimedByOther,Mã này đã được fan khác sưu tầm.
+paywall.scanner.errors.generic,Đã xảy ra lỗi. Vui lòng thử lại.
+paywall.scanner.errors.previewUnavailable,Không tải được thông tin vật phẩm. Vui lòng thử lại.
+paywall.bottomSheet.continue,Tiếp tục
+paywall.bottomSheet.rechargeStars.title,Nạp sao
+paywall.bottomSheet.rechargeStars.description,Nạp thêm sao để mở khóa đồ trang trí và vật phẩm sưu tầm.
+paywall.bottomSheet.unlockDecor.title,Mở khóa vật phẩm
+paywall.bottomSheet.unlockDecor.description,Nạp sao để mở khóa đồ trang trí MySpace độc quyền.
+paywall.bottomSheet.confirmStarPurchase.title,Xác nhận mua
+paywall.bottomSheet.confirmStarPurchase.description,Dùng Sao để mở khóa vật phẩm này.
+paywall.bottomSheet.confirmStarPurchase.costLabel,Giá
+paywall.bottomSheet.confirmStarPurchase.confirm,Xác nhận
+paywall.merch.addToCollection,Thêm vào bộ sưu tập
+paywall.merch.exclusiveEmpty,Chưa có nội dung độc quyền
+paywall.merch.viewExclusive,Xem
+paywall.merch.unlockExclusiveA11y,Mở khóa nội dung độc quyền với {{starCost}} sao
+paywall.merch.viewExclusiveA11y,Xem nội dung độc quyền
+paywall.merch.unlockFailed,Không thể mở khóa nội dung. Vui lòng thử lại.
+paywall.merch.category.cornerCard,CARD BO GÓC
+paywall.merch.category.album,ALBUM
+paywall.avatarFrame.sectionTitle,Khung ảnh đại diện
+paywall.avatarFrame.filters.owned,Đã sở hữu
+paywall.avatarFrame.filters.notOwned,Chưa sở hữu
+paywall.avatarFrame.receive,Nhận
+paywall.avatarFrame.doMission,Nhiệm vụ
+paywall.avatarFrame.owned,Đã sở hữu
+paywall.avatarFrame.moreA11y,Mở tuỳ chọn khung
+paywall.avatarFrame.optionsTitle,Tuỳ chọn
+paywall.avatarFrame.configureLabel,Đặt làm khung Avatar
+paywall.avatarFrame.configureAction,Đặt
+paywall.avatarFrame.hideLabel,Gỡ khỏi bộ sưu tập
+paywall.avatarFrame.hideAction,Ẩn
+paywall.avatarFrame.doMissionTitle,Hoàn thành nhiệm vụ
+paywall.avatarFrame.doMissionMessage,Hoàn thành nhiệm vụ liên quan để mở khóa khung này.
+paywall.avatarFrame.selectTitle,Khung Avatar
+paywall.avatarFrame.ownedSectionTitle,Khung đã sở hữu
+paywall.avatarFrame.selectingStatus,Đang chọn
+paywall.avatarFrame.useFrame,Đặt làm khung ảnh
+paywall.avatarFrame.previewTitle,Xem trước
+paywall.avatarFrame.previewBanner,Khung này sẽ hiển ở các mục này
+paywall.avatarFrame.previewPersonalInfo,Hiển thị trong thông tin cá nhân
+paywall.avatarFrame.previewFanList,Hiển thị trong Danh sách fan
+paywall.avatarFrame.previewMySpace,Hiển thị trong Không gian của tôi
+paywall.avatarFrame.previewGiftSample,Rose x5
+paywall.avatarFrame.previewTimeSample,2 Phút
+paywall.avatarFrame.previewLevelSample,Cấp độ 2
+paywall.avatarFrame.finish,Hoàn tất
+externalLink.invalidUrlTitle,Liên kết không hợp lệ
+externalLink.invalidUrlMessage,Không thể mở liên kết này.
+settings.hubTitle,Cài đặt
+settings.sectionAccount,Tài khoản
+settings.sectionNotifications,Thông báo
+settings.sectionSupportLegal,Hỗ trợ & Pháp lý
+settings.sectionLogout,Đăng xuất
+settings.profile,Thông tin cá nhân
+settings.profileSubtitle,Chi tiết thông tin cá nhân
+settings.profileChangeName,Đổi tên
+settings.profileChangeDisplayName,Đổi
+settings.displayNameLabel,Tên hiển thị
+settings.displayNameSaved,Đã cập nhật tên hiển thị
+settings.profileAddPhone,Thêm số
+settings.profileChangePhone,Thay đổi
+settings.avatar,Ảnh đại diện
+settings.avatarSourceRequirements,"JPG, PNG · Tối đa 5MB · Tối thiểu 200×200px"
+settings.avatarCropTitle,Chỉnh ảnh
+settings.avatarCropHint,Chụm và kéo để căn chỉnh ảnh
+settings.avatarCropNote,Ảnh sẽ được crop tự động theo tỷ lệ 1x1. Điều chỉnh vùng ảnh ở bước tiếp theo.
+settings.avatarRotateLeft,Xoay trái
+settings.avatarRotateRight,Xoay phải
+settings.avatarTooLarge,Ảnh tối đa 5MB (JPG hoặc PNG).
+settings.avatarTooSmall,Ảnh tối thiểu 200×200 px (JPG hoặc PNG).
+settings.avatarInvalidType,Chỉ hỗ trợ ảnh JPG hoặc PNG.
+settings.avatarUploadFailed,Không cập nhật được ảnh. Vui lòng thử lại.
+settings.changeUsername,Tên tài khoản
+settings.changeUsernameBannerTitle,"Sau khi đổi, tên tài khoản cũ sẽ bị khóa trong 6 tháng!"
+settings.changeUsernameBannerSubtitle,Bạn có thể đổi tên tài khoản mỗi 30 ngày
+settings.changeUsernameSubtitle,Tối đa {{max}} lần đổi
+settings.changeUsernameSubtitleRemaining,Còn {{remaining}}/{{max}} lần đổi
+settings.socialLinking,Liên kết mạng xã hội
+settings.socialLinkingSubtitleLinked,{{providers}} đã liên kết
+settings.socialLinkingSubtitleNone,Chưa liên kết mạng xã hội
+settings.transactions,Lịch sử vật phẩm
+settings.transactionsSubtitle,Xem lịch sử vật phẩm của bạn
+settings.blockedUser,Người dùng bị chặn
+settings.blockedUserTitle,Danh sách chặn
+settings.blockedUserSubtitle,Các tài khoản bạn đã chặn trong Phòng tám.
+settings.blockedOn,chặn ngày {{date}}
+settings.unblock,Bỏ chặn
+settings.blockedUsersEmpty,Bạn chưa chặn ai.
+settings.unblockFailed,Không bỏ chặn được người dùng này. Vui lòng thử lại.
+settings.addPhone,Số điện thoại
+settings.addPhoneSubtitleNone,Chưa thêm số điện thoại
+settings.addPhoneSubtitleLinked,{{phone}}
+settings.notificationSettings,Thông báo
+settings.notificationSettingsSubtitle,Tùy chỉnh từng loại thông báo
+settings.notificationSettingsBanner,Cài đặt được lưu tự động. Bạn có thể tắt toàn bộ thông báo trừ thông báo hệ thống bảo mật.
+settings.helpCenter,Trung tâm hỗ trợ
+settings.terms,Điều khoản và sử dụng
+settings.privacyPolicy,Chính sách bảo mật
+settings.companyInfo,Thông tin công ty
+settings.logout,Đăng xuất
+settings.logoutConfirmTitle,Đăng xuất?
+settings.logoutConfirmBody,Bạn sẽ cần đăng nhập lại.
+settings.logoutConfirm,Đăng xuất
+settings.deleteAccount,Xóa tài khoản
+settings.deleteAccountConfirmTitle,Xóa tài khoản?
+settings.deleteAccountConfirmBody,"Hồ sơ, tiến trình và nội dung đã lưu của bạn sẽ bị xóa vĩnh viễn. Bạn có thể đăng nhập lại để tạo tài khoản mới, nhưng dữ liệu cũ sẽ không được khôi phục."
+settings.deleteAccountConfirm,Xóa tài khoản
+settings.deleteAccountFailed,Không thể xóa tài khoản. Vui lòng thử lại.
+settings.cancel,Hủy
+settings.backA11y,Quay lại
+settings.urlMissing,Trang này chưa khả dụng.
+settings.appVersion,Phiên bản {{version}}.{{build}}
+settings.saveUsername,Lưu
+settings.usernameLabel,Tên tài khoản
+settings.usernameNewLabel,Tên tài khoản mới
+settings.usernameSaved,Đã cập nhật tên tài khoản
+settings.usernameCaseChangeTitle,Đổi chữ hoa/thường?
+settings.usernameCaseChangeBody,Chỉ đổi chữ hoa/thường vẫn tính là 1 trong 3 lần đổi tên tài khoản.
+settings.socialGoogleReadonly,Google (email đăng nhập)
+settings.socialSaved,Đã cập nhật mạng xã hội
+settings.phoneSaved,Đã cập nhật số điện thoại
+settings.sendOtp,Gửi mã
+settings.verifyOtp,Xác minh
+settings.phoneLabel,Số điện thoại
+settings.phoneCurrentLabel,Số điện thoại hiện tại
+settings.phoneNewLabel,Số điện thoại mới
+settings.otpLabel,Mã xác minh
+settings.resendOtp,Gửi lại mã
+settings.resendIn,Gửi lại sau {{seconds}}s
+settings.otpLocked,Quá nhiều lần thử. Thử lại sau 15 phút.
+settings.phoneInUse,Số này đã được sử dụng
+settings.linkProvider,Liên kết
+settings.unlinkProvider,Hủy liên kết
+settings.linked,Đã liên kết
+settings.notLinked,Chưa liên kết
+settings.unlinkConfirmTitle,Hủy liên kết {{provider}}?
+settings.unlinkConfirmBody,Bạn có thể liên kết lại sau.
+settings.unlinkConfirm,Hủy liên kết
+settings.notifications.all_off_title,Tắt tất cả thông báo
+settings.notifications.all_off_subtitle,Trừ hệ thống bảo mật và tài khoản.
+settings.notifications.title,Thông báo
+settings.notifications.push,Push
+settings.notifications.inApp,In-app
+settings.notifications.categories.new_idol_post,Bài đăng mới từ idol
+settings.notifications.categories.upcoming_event,Sự kiện sắp tới
+settings.notifications.categories.game,Nhắc game / hạng
+settings.notifications.categories.letter,Thư fan được tim
+settings.notifications.categories.digital_campaign,Cập nhật fan project
+settings.notifications.categories.gift,Nhận quà
+settings.notifications.categories.system,"Hệ thống (bảo mật, tài khoản)"
+postComments.title,Tất cả bình luận
+postComments.likeSummaryNamed,{{name}} và {{count}} người khác
+postComments.likeSummaryCount,{{count}} người đã thả tym
+postComments.reply,Trả lời
+postComments.viewMoreReplies,Xem thêm {{count}} câu trả lời
+postComments.hideReplies,Ẩn câu trả lời
+postComments.replyingTo,Đang trả lời @{{name}}
+postComments.empty,Chưa có bình luận. Hãy là người đầu tiên.
+postComments.placeholder,Viết bình luận…
+postComments.sendError,Không gửi được bình luận. Thử lại.
+postComments.heartError,Không cập nhật được tym. Thử lại.
+postComments.heartA11y,Thả tym bình luận
+postComments.removeReactionA11y,Bỏ {{type}}
+postComments.closeA11y,Đóng bình luận
+postComments.stickerA11y,Sticker
+postComments.keyboardA11y,Bàn phím
+postComments.photoA11y,Thêm ảnh
+postComments.sendA11y,Gửi
+eventChat.title,Chat trực tiếp
+eventChat.openCta,Chat trực tiếp
+eventChat.composerPlaceholder,Viết tin nhắn…
+eventChat.sendA11y,Gửi
+eventChat.newMessages,Tin nhắn mới
+eventChat.notStartedTitle,Chat chưa mở
+eventChat.notStartedDescription,Hãy quay lại khi sự kiện bắt đầu.
+eventChat.endedTitle,Chat đã kết thúc
+eventChat.endedDescription,Sự kiện này đã kết thúc.
+eventChat.emptyLiveTitle,Chưa có tin nhắn
+eventChat.emptyLiveDescription,Hãy là người đầu tiên nhắn tin.
+eventChat.tapToRetry,Nhấn để gửi lại
+eventChat.retryA11y,Gửi lại tin nhắn
+eventChat.status.sending,Đang gửi
+eventChat.status.sent,Đã gửi
+eventChat.status.failed,Không gửi được
+eventChat.errors.sendFailed,Không gửi được tin nhắn. Vui lòng thử lại.
+eventChat.errors.sendFailedDetail,Không gửi được tin nhắn ({{detail}}). Vui lòng thử lại.
+eventChat.errors.deleteFailed,Không xóa được tin nhắn. Vui lòng thử lại.
+eventChat.blocked.title,Không vào được phòng !
+eventChat.blocked.description,Bạn bị cấm vào phòng sau khi vi phạm nội quy phòng chat !
+eventChat.blocked.reasonLabel,Lý do
+eventChat.blocked.untilLabel,Thời hạn phạt
+eventChat.blocked.untilValue,Đến {{date}}
+eventChat.optionsTitle,Tuỳ chọn
+eventChat.openOptionsA11y,Tuỳ chọn tin nhắn
+eventChat.copyMessage,Sao chép tin nhắn
+eventChat.deleteMessage,Xoá tin nhắn
+eventChat.deleteAction,Xoá
+eventChat.deleteConfirmTitle,Xoá tin nhắn này?
+eventChat.deleteConfirmMessage,Tin nhắn sẽ bị xoá với mọi người trong phòng chat này.
+eventChat.reportMessage,Báo tin nhắn
+eventChat.reportTitle,Báo cáo tin nhắn
+eventChat.reportReasons.groupSpam,Spam tin nhắn trong group
+eventChat.reportReasons.offensiveLanguage,Ngôn từ xúc phạm
+eventChat.reportReasons.obsceneContent,Nội dung đồi trụy
+eventChat.reportReasons.advertising,"Quảng cáo, bán hàng"
+eventChat.reportReasons.adminImpersonation,Mạo danh ban quản trị viên
+eventChat.reportReasons.exclusiveLeak,Rò rỉ nội dung độc quyền của idol
+eventChat.blockUser,Chặn người dùng
+eventChat.reportAction,Báo cáo
+eventChat.blockAction,Chặn
+eventChat.copied,Đã sao chép tin nhắn
+eventChat.copyUnavailable,Tin nhắn này không có nội dung để sao chép
+eventChat.deleted,Đã xoá tin nhắn
+eventChat.reportSuccess,Cảm ơn bạn đã báo cáo ({{reason}})
+eventChat.blockConfirmTitle,Chặn {{name}}?
+eventChat.blockConfirmMessage,"Tin nhắn của họ sẽ được ẩn trong phòng chat này, và thư fan của họ sẽ được ẩn khỏi bảng tin của bạn."
+eventChat.blockSuccess,Đã chặn người dùng
+eventChat.blockAlreadyBlocked,Bạn đã chặn người dùng này
